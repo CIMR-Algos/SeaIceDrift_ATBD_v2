@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>References &#8212; CIMR L2 Sea Ice Drift ATBD v1</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/watermark.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Algorithm Input and Output Data Definition (IODD)" href="algorithm_input_output_data_definition.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CIMR L2 Sea Ice Drift ATBD v1</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    CIMR L2 Sea Ice Drift ATBD
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="abstract.html">
+   Abstract
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="applicable_ref_docs.html">
+   Applicable and Reference Documents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="acronyms.html">
+   Acronyms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="definitions.html">
+   Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction_purpose_scope.html">
+   Introduction, purpose and scope
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="background_justification_algorithm.html">
+   Background and justification of selected algorithm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="L2_product_definition.html">
+   Level-2 product definition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="baseline_algorithm_definition.html">
+   Baseline Algorithm Definition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algorithm_input_output_data_definition.html">
+   Algorithm Input and Output Data Definition (IODD)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/CIMR-Algos/SeaIceDrift_ATBD"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/references.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>References</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h1>
+<div class="docutils container" id="id1">
+<dl class="citation">
+<dt class="label" id="id2"><span class="brackets">1</span></dt>
+<dd><p>T. A. Agnew, Hao Le, and T. Hirose. Estimation of large scale sea ice motion from SSMI 85.5 GHz imagery. <em>Annals of Glaciology</em>, 24:305–311, 1997.</p>
+</dd>
+<dt class="label" id="id3"><span class="brackets">2</span></dt>
+<dd><p>M. J. Brodzik, B. Billingsley, T. Haran, B. Raup, and M. H. Savoie. EASE-Grid 2.0: incremental but significant improvements for earth-gridded data sets. <em>ISPRS International Journal of Geo-Information</em>, 1(1):32 – 45, 2012. <a class="reference external" href="https://doi.org/10.3390/ijgi1010032">doi:10.3390/ijgi1010032</a>.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">3</span></dt>
+<dd><p>W. J. Emery, C. W. Fowler, J. Hawkins, and R. H. Preller. Fram Strait satellite image-derived ice motions. <em>Journal of Geophysical Research</em>, 96(C3):4751–4768, March 1991.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets">4</span></dt>
+<dd><p>W. J. Emery, A. C. Thomas, M. J. Collins, W. R. Crawford, and D. L. Mackas. An objective method for computing advective surface velocities from sequential infrared satellite images. <em>Journal of Geophysical Research</em>, 91:12865–12878, 1986.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">5</span></dt>
+<dd><p>Robert Ezraty, Fanny Girard-Ardhuin, and D. Croizé-Fillon. Sea ice drift in the central Arctic estimated using the 89 GHz brightness temperatures of the Advanced Microwave Scanning Radiometer – User's manual. v2.0, CERSAT, IFREMER, France, February 2007.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">6</span></dt>
+<dd><p>Fanny Girard-Ardhuin and Robert Ezraty. Enhanced arctic sea ice drift estimation merging radiometer and scatterometer data. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 50(7):2639–2648, 2012. <a class="reference external" href="https://doi.org/10.1109/TGRS.2012.2184124">doi:10.1109/TGRS.2012.2184124</a>.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">7</span></dt>
+<dd><p>J. Haarpaintner. Arctic-wide operational sea ice drift from enhanced-resolution Quikscat/SeaWinds scatterometry and its validation. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 44(1):102–107, January 2006.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">8</span></dt>
+<dd><p>T. W. Haine. Arctic freshwater export: status, mechanisms, and prospects. <em>Global Planet. Change</em>, 125:13–35, 2015.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">9</span></dt>
+<dd><p>P. Holland and R Kwok. Wind-driven trends in antarctic sea-ice drift. <em>Nature Geosciencies</em>, 2012. <a class="reference external" href="https://doi.org/https://doi.org/10.1038/ngeo1627">doi:https://doi.org/10.1038/ngeo1627</a>.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets">10</span></dt>
+<dd><p>Alexander S. Komarov and David G. Barber. Sea ice motion tracking from sequential dual-polarization radarsat-2 images. <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 52(1):121–136, 2014. <a class="reference external" href="https://doi.org/10.1109/TGRS.2012.2236845">doi:10.1109/TGRS.2012.2236845</a>.</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets">11</span></dt>
+<dd><p>T. Krumpen, H.J. Belter, and A. et al. Boetius. Arctic warming interrupts the transpolar drift and affects long-range transport of sea ice and ice-rafted matter. <em>Sci Rep</em>, 2019. <a class="reference external" href="https://doi.org/https://doi.org/10.1038/s41598-019-41456-y">doi:https://doi.org/10.1038/s41598-019-41456-y</a>.</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets">12</span></dt>
+<dd><p>R. Kwok. Summer sea ice motion from the 18 GHz channel of AMSR-E and the exchange of sea ice between the Pacific and Atlantic sectors. <em>Geophysical Research Letters</em>, 2008. <a class="reference external" href="https://doi.org/10.1029/2007GL032692">doi:10.1029/2007GL032692</a>.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets">13</span></dt>
+<dd><p>R. Kwok, J. C. Curlander, R. McConnel, and S. Pang. An ice-motion tracking system at the Alaska SAR Facility. <em>IEEE Journal of Oceanic Engineering</em>, 15:44–54, 1990.</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets">14</span></dt>
+<dd><p>R. Kwok, A. Schweiger, D. A. Rothrock, S. Pang, and C. Kottmeier. Sea ice motion from satellite passive microwave imagery assessed with ERS SAR and buoy motions. <em>Journal of Geophysical Research</em>, 103:8191–8214, April 1998. <a class="reference external" href="https://doi.org/10.1029/97JC03334">doi:10.1029/97JC03334</a>.</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets">15</span></dt>
+<dd><p>R. Kwok, G. Spreen, and S. Pang. Arctic sea ice circulation and drift speed: decadal trends and ocean currents. <em>Journal of Geophysical Research: Oceans</em>, 118(5):2408–2425, 2013. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/jgrc.20191">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/jgrc.20191</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/jgrc.20191">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/jgrc.20191</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1002/jgrc.20191">doi:https://doi.org/10.1002/jgrc.20191</a>.</p>
+</dd>
+<dt class="label" id="id17"><span class="brackets">16</span></dt>
+<dd><p>Ron Kwok, Shirley S. Pang, and Sahra Kacimi. Sea ice drift in the Southern Ocean: Regional patterns, variability, and trends. <em>Elementa: Science of the Anthropocene</em>, 06 2017. 32. <a class="reference external" href="https://doi.org/10.1525/elementa.226">doi:10.1525/elementa.226</a>.</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets">17</span></dt>
+<dd><p>Jeffrey C. Lagarias, James A. Reeds, Margaret H. Wright, and Paul E. Wright. Convergence properties of the Nelder-Mead simplex method in low dimensions. <em>SIAM Journal on Optimization</em>, 9:112–147, 1998.</p>
+</dd>
+<dt class="label" id="id20"><span class="brackets">18</span></dt>
+<dd><p>T. Lavergne, M. Piñol Solé, E. Down, and C. Donlon. Towards a swath-to-swath sea-ice drift product for the copernicus imaging microwave radiometer mission. <em>The Cryosphere</em>, 15(8):3681–3698, 2021. URL: <a class="reference external" href="https://tc.copernicus.org/articles/15/3681/2021/">https://tc.copernicus.org/articles/15/3681/2021/</a>, <a class="reference external" href="https://doi.org/10.5194/tc-15-3681-2021">doi:10.5194/tc-15-3681-2021</a>.</p>
+</dd>
+<dt class="label" id="id19"><span class="brackets">19</span></dt>
+<dd><p>Thomas Lavergne, Steinar Eastwood, Zakaria Teffah, Harald Schyberg, and Lars-Anders Breivik. Sea ice motion from low resolution satellite sensors: an alternative method and its validation in the Arctic. <em>Journal of Geophysical Research</em>, 2010. <a class="reference external" href="https://doi.org/10.1029/2009JC005958">doi:10.1029/2009JC005958</a>.</p>
+</dd>
+<dt class="label" id="id21"><span class="brackets">20</span></dt>
+<dd><p>M. Leppäranta. <em>The drift of sea ice</em>. Springer-Praxis Books in Geophysical Sciences. Springer-Verlag, 2nd edition, 2011.</p>
+</dd>
+<dt class="label" id="id22"><span class="brackets">21</span></dt>
+<dd><p>Anthony K. Liu, Yunhe Zhao, and Sunny Y. Wu. Arctic sea ice drift from wavelet analysis of NSCAT and Special Sensor Microwave Imager data. <em>Journal of Geophysical Research</em>, 104(C5):11529–11538, 1999.</p>
+</dd>
+<dt class="label" id="id27"><span class="brackets">22</span></dt>
+<dd><p>J. Maslanik, T. Agnew, M. Drinkwater, W. Emery, C. Fowler, R. Kwok, and A. Liu. Summary of ice-motion mapping using passive microwave data. Technical Report Special Publication 8, NSIDC — National Snow and Ice Data Center, November 1998. URL: <a class="reference external" href="{http://nsidc.org/pubs/special/nsidc_special_report_8.pdf}">{http://nsidc.org/pubs/special/nsidc_special_report_8.pdf}</a>.</p>
+</dd>
+<dt class="label" id="id23"><span class="brackets">23</span></dt>
+<dd><p>S. Muckenhuber, A. A. Korosov, and S. Sandven. Open-source feature-tracking algorithm for sea ice \hack \newline  drift retrieval from sentinel-1 sar imagery. <em>The Cryosphere</em>, 10(2):913–925, 2016. URL: <a class="reference external" href="https://tc.copernicus.org/articles/10/913/2016/">https://tc.copernicus.org/articles/10/913/2016/</a>, <a class="reference external" href="https://doi.org/10.5194/tc-10-913-2016">doi:10.5194/tc-10-913-2016</a>.</p>
+</dd>
+<dt class="label" id="id24"><span class="brackets">24</span></dt>
+<dd><p>J. A. Nelder and R. Mead. A simplex method for function minimization. <em>Computational Journal</em>, 7:308–313, 1968.</p>
+</dd>
+<dt class="label" id="id25"><span class="brackets">25</span></dt>
+<dd><p>R. M. Ninnis, W. J. Emery, and M. J. Collins. Automated extraction of pack ice motion from advanced very high-resolution radiometry. <em>Journal of Geophysical Research</em>, 91:10725–10734, 1986. <a class="reference external" href="https://doi.org/10.1029/JC091iC09p10725">doi:10.1029/JC091iC09p10725</a>.</p>
+</dd>
+<dt class="label" id="id26"><span class="brackets">26</span></dt>
+<dd><p>Giulio Notarstefano, Pierre-Marie Poulain, and Elena Mauri. Estimation of surface currents in the Adriatic sea from sequential infrared satellite images. <em>Journal of Atmospheric and Oceanic Technology</em>, 25:271–285, May 2007. <a class="reference external" href="https://doi.org/10.1175/2007JTECHO527.1">doi:10.1175/2007JTECHO527.1</a>.</p>
+</dd>
+<dt class="label" id="id28"><span class="brackets">27</span></dt>
+<dd><p>K.I. Ohshima, S. Nihashi, and K. Iwamoto. Global view of sea-ice production in polynyas and its linkage to dense/bottom water formation. <em>Geosci. Lett. 3, 13</em>, 2016. <a class="reference external" href="https://doi.org/https://doi.org/10.1186/s40562-016-0045-4">doi:https://doi.org/10.1186/s40562-016-0045-4</a>.</p>
+</dd>
+<dt class="label" id="id29"><span class="brackets">28</span></dt>
+<dd><p>Johannes Schmetz, Kenneth Holmlund, Joel Hoffman, Bernard Strauss, Brian Mason, Volker Gærtner, Arno Koch, and Leo van de Berg. Operational cloud-motion winds from Meteosat infrared images. <em>Journal of Applied Meteorology</em>, 32:1206–1225, July 1993.</p>
+</dd>
+<dt class="label" id="id30"><span class="brackets">29</span></dt>
+<dd><p>Gunnar Spreen, Ron Kwok, and Dimitris Menemenlis. Trends in arctic sea ice drift and role of wind forcing: 1992–2009. <em>Geophysical Research Letters</em>, 38(19):, 2011. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2011GL048970">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2011GL048970</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2011GL048970">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2011GL048970</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/2011GL048970">doi:https://doi.org/10.1029/2011GL048970</a>.</p>
+</dd>
+<dt class="label" id="id31"><span class="brackets">30</span></dt>
+<dd><p>Mary-Louise Timmermans and John Marshall. Understanding arctic ocean circulation: a review of ocean dynamics in a changing climate. <em>Journal of Geophysical Research: Oceans</em>, 125(4):e2018JC014378, 2020. e2018JC014378 10.1029/2018JC014378. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JC014378">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JC014378</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2018JC014378">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2018JC014378</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/2018JC014378">doi:https://doi.org/10.1029/2018JC014378</a>.</p>
+</dd>
+</dl>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="algorithm_input_output_data_definition.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Algorithm Input and Output Data Definition (IODD)</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Thomas Lavergne and Emily Down, Norwegian Meteorological Institute<br/>
+  
+    <div class="extra_footer">
+      <p>
+This ATBD was developed in the context of the ESA-funded CIMR DEVALGO study (2022-2024) (contract 4000137493).
+<br>
+ESA is not responsible in any way for the content of this document.
+</p>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
