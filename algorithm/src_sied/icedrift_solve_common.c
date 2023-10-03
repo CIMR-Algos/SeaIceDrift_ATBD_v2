@@ -2,17 +2,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <fmutil.h>
-#include <projects.h>
+#include <proj.h>
+#include "fmerrmsg.h"
+#include "fmutil_config.h"
 #include "icedrift_common.h"
 #include "icedrift_model.h"
-#include "icedrift_prepost.h"
 
 /* global variables from icedrift_solve_{meth}.c */
 extern int    xdim;
 extern double *x;
 extern size_t currentVector;
 extern short  currentPattern;
+
+void *fmMalloc(size_t size) {
+    void *res;
+    res = malloc(size);
+    if (!res) {
+        fmerrmsg("fmMalloc","Memory allocation problem.\n");
+        exit(FM_MEMALL_ERR);
+    }
+    return res;
+}
 
 int model_wrapper_CC(size_t nx,double *y,double *res) {
    

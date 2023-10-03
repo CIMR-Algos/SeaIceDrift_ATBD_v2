@@ -4,7 +4,7 @@
 #include <float.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <projects.h>
+#include <proj.h>
 #include "icedrift_common.h"
 #include "icedrift_model.h"
 #include "icedrift_flags.h"
@@ -593,15 +593,17 @@ void model_onevector_corr(int *n, double *x, double *fc, long e, short p) {
          for (o = 0 ; o < pattern_size[p] ; o++) {
             if ( pattern_mask[p][o] && (pattern_isvalid2[p][b][o] == TCIMAGE_OK) && (pattern_isvalid[p][b][o] == TCIMAGE_OK) ) {
                double v1 = pattern_img[p][b][o]; double v2 = pattern_img2[p][b][o];
+	       //printf("v1, v2 = %lf, %lf \n", v1, v2);
+	       
                if (isnan(v1) || isnan(v2)) continue;
                meanv  += v1;
                meanv2 += v2;
                stdv   += v1*v1;
                stdv2  += v2*v2;
 
-               if (isnan(meanv)) {
+               /*if (isnan(meanv)) {
                   printf("NAN (meanv): b is %d, v1 is %f\n",b,v1);
-               }
+               }*/
                nbvals++;
 
             }
@@ -636,10 +638,10 @@ void model_onevector_corr(int *n, double *x, double *fc, long e, short p) {
          correlation /= stdv * stdv2;
          obs_corr += correlation;
          obs_corrs[b] = correlation;
-         // printf("CORR[%d] is %f\n",b,correlation);
-         if (isnan(correlation)) {
+         //printf("CORR[%d] is %f\n",b,correlation);
+         /*if (isnan(correlation)) {
             printf("NAN! nbvals is %u. %f,%f,%f,%f\n",nbvals,meanv,meanv2,stdv,stdv2);
-         }
+	    }*/
       }
       obs_corr /= nbWaveBands;
 

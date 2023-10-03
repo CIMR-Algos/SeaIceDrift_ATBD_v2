@@ -3,6 +3,7 @@
 #define ICEDRIFT_SOLVE_COMMON_H
 
 
+void *fmMalloc(size_t size);
 int model_wrapper_CC(size_t nx,double *y,double *res);
 int model_wrapper_SD(size_t nx,double *y,double *res);
 int model_wrapper_SLSD(size_t nx,double *y,double *res);

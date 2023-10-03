@@ -3,17 +3,18 @@
 #include <stdlib.h>
 #include <float.h>
 #include <math.h>
-#include <projects.h>
-#include <fmutil.h>
-#include <errorcodes.h>
+#include <proj.h>
+#include "errorcodes.h"
+#include "fmutil_config.h"
+#include "fmerrmsg.h"
 #include "icedrift_flags.h"
 #include "icedrift_common.h"
-#include "icedrift_prepost.h"
 #include "icedrift_model.h"
 #include "icedrift_solve_filter.h"
 #include "optimization_simplex.h"
 #include "icedrift_solve_common.h"
 #include "icedrift_solve_core.h"
+#include "icedrift_prepost.h"
 #include <signal.h>
 
 #undef USE_NWP_FILTER
@@ -41,6 +42,18 @@ int compute_Posterior_Uncertainties(size_t p, short pat, double xbest[],
 				    double *dy_stddev, double *xy_correl,
 				    short uncertaintyflag[]);
 
+/*
+void *fmMalloc(size_t size) {
+    void *res;
+    res = malloc(size);
+    if (!res) {
+        fmerrmsg("fmMalloc","Memory allocation problem.\n");
+        exit(FM_MEMALL_ERR);
+    }
+    return res;
+}
+*/
+
 int core(void) {
 
    int ret;
@@ -60,6 +73,12 @@ int core(void) {
       
    /* ======= START CORE ====== */
 
+   printf("STARTED CORE \n");
+   printf("===> obs[0][0][400499] = %lf \n", obs[0][0][400499]);
+   printf("===> obs[0][0][400500] = %lf \n", obs[0][0][400500]);
+   printf("===> obs[0][0][400501] = %lf \n", obs[0][0][400501]);
+
+   
    /* open the log file (whose name we got from the parameter file) */
    printf("\tLog file is <%s>\n",reportFile);
    FILE *logf = fopen(reportFile,"w");
@@ -163,11 +182,11 @@ int core(void) {
       locfmijmap(iwcs[p],img_dims[XDIM],&xi,&yi);
       center_coord[XDIM] = xi; center_coord[YDIM] = yi ; center_coord[TDIM] = iwcs[p];
       pattern[p] = pat;
-
+      
       load_subimage(&ret,obs[BEG],TCflag[BEG],icelandmask[BEG],img_dims,
             center_coord,pattern_size[pat], pattern_mask[pat], pattern_windexes[pat], 
             pattern_img[pat], pattern_isvalid[pat], pattern_icemask[pat]);
-
+	
       long cptOut=0;
       for (size_t o = 0 ; o < pattern_size[pat] ; o++) {
          if ( pattern_mask[pat][o] && (pattern_isvalid[pat][0][o] == TCIMAGE_OUTSIDE_GRID) ) {
@@ -413,6 +432,19 @@ int core(void) {
          printf("ERROR with img_lat (%p) or img_lon (%p)\n",img_lat,img_lon);
       }
 
+      
+      // Was here test
+      /*
+      for (size_t o = 0 ; o < pattern_size[pat] ; o++) {
+	fmlogmsg(progname, "pattern_img2... %i - %lf", o, pattern_img2[pat][o]);
+	}
+
+      
+      for (size_t o = 11160 ; o < 11170 ; o++) {
+	fmlogmsg(progname, "obs... %lf", obs[0][0][o]);
+	} */
+ 
+      
       /* set the correlation function parameters (sigmoid) */
       setBestKnowledge(img_lat[iwcs[p]],img_lon[iwcs[p]]);
 
@@ -463,6 +495,9 @@ int core(void) {
       double xdrift = xbest[p*NUNKNOWNS + XDRIFT_IDX];
       double ydrift = xbest[p*NUNKNOWNS + YDRIFT_IDX];   
 
+      //printf("HERE xdrift = %lf \n", xdrift);
+
+      
       /* compute the latitude and longitude of start point */
       latB[p] = img_lat[iwcs[p]]; lonB[p] = img_lon[iwcs[p]];
       /* compute the latitude and longitude of final point */ 
@@ -486,6 +521,8 @@ int core(void) {
       compute_distance(latB[p],lonB[p],latE[p],lonE[p],&dlen);
       compute_directionToNorth(latB[p],lonB[p],latE[p],lonE[p],&ddir);
       leng[p] = dlen; dire[p] = ddir;
+
+      //printf("leng[p] = %lf, dire[p] = %lf \n", leng[p], dire[p]);
    }
 
    /* compute the local average drift vector */ 
@@ -533,12 +570,14 @@ int core(void) {
             }
          }
       }
-
+      //printf("Neightbours valid + invalid = %d %d \n", nbValidNeighbours, nbInvalidNeighbours);
+      
       navg[p] = nbValidNeighbours;
       xavg[p] = 1000; yavg[p] = 1000;
       xstd[p] = 1000; ystd[p] = 1000;
       double xavgP,yavgP,xstdP,ystdP;
       ret = compute_mean_vector(&xavgP,&yavgP,&xstdP,&ystdP,nbValidNeighbours,neighboursX,neighboursY);
+      //printf("MEAN VECTOR = %lf \n", xavgP);
       xavg[p] = xavgP;yavg[p] = yavgP;
       xstd[p] = xstdP;ystd[p] = ystdP;
       if ((nbValidNeighbours >= nb_neighbours_limit) && (xstdP < local_stddev_limit) && (ystdP < local_stddev_limit)) {

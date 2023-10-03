@@ -7,11 +7,11 @@ import numpy as np
 from pyresample import parse_area_file, geometry, image
 from netCDF4 import Dataset
 
-#from _idcore import ffi, lib
+from _idcore import ffi, lib
 
 from helper_fcns import fmtdate, corr_time_from_unit, round_sig
 from checkinst import checkinst
-from write_icedrift_product_file import write_icedrift
+#from write_icedrift_product_file import write_icedrift
 
 
 def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
@@ -217,32 +217,40 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
         # Input file lats/lons
         lats = np.reshape(np.array(dataset['lat']).astype(np.float64), img_size)
         lons = np.reshape(np.array(dataset['lon']).astype(np.float64), img_size)
-
+    print("LATS = ", lats)
+    print("LONS = ", lons)
 
     # Cycle over the images and wavebands, reading in the images
     timeref = [None] * 2
     for k, fname in enumerate(filelist):
-
+        print("FNAME = ", fname)
+        
         # The ice edge mask is only needed per file, not per waveband
         with Dataset(fname, 'r') as dataset:
             iceedges[k] = np.reshape(np.array(dataset['ice_edge']).astype(np.uint8), img_size)
 
             for j, channel in enumerate(chan_sort):
+                print("CHANNEL = ", channel)
                 # Check waveband name
                 m = re.match('(.*)_(.*)', channel)
                 if m:
                     wb = m.group(1)
                 else:
                     wb = channel
-
+                
                 # NetCDF variables to fetch
                 imagename = channel
                 images[k][j] = np.reshape(np.array(dataset[imagename]
                                           ).astype(np.float64), img_size)
+                print("MIN IMAGE = ", np.nanmin(images[k][j]))
+                print("MAX IMAGE = ", np.nanmax(images[k][j]))
+                
                 flagname = channel + '_flag'
                 flagname = channel + '_flag'
                 flags[k][j] = np.reshape(np.array(dataset[flagname]
                                           ).astype(np.short), img_size)
+                print("MIN FLAG = ", np.nanmin(flags[k][j]))
+                print("MAX FLAG = ", np.nanmax(flags[k][j]))
                 # The average time variable can be constant across wavebands
                 if (channel[:-4] + '_avgTime' in dataset.variables):
                     avtimename = channel[:-4] + '_avgTime'
@@ -259,6 +267,8 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
                     avtimes[k][j] = avtime
                 else:
                     print("WARNING: Issue reading average times")
+                print("MIN AVTIME = ", np.nanmin(avtimes[k][j]))
+                print("MAX AVTIME = ", np.nanmax(avtimes[k][j]))
 
             # Finding the time since 1970 for each file
             time_unit = dataset['time'].units
@@ -288,10 +298,10 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
     # the local directory
     workdir = os.path.dirname(os.path.abspath(__file__))
     griddeffilename = 'grids_py.def'
-    griddeffile = os.path.join(workdir, '../par', griddeffilename)
+    griddeffile = os.path.join(workdir, griddeffilename)
     if not (os.path.exists(griddeffile) and os.path.isfile(griddeffile)):
         raise FileNotFoundError("{} is not found.".format(griddeffile))
-    out_area_def = parse_area_file(griddeffile, out_area)[0]
+    out_area_def = parse_area_file(griddeffile, out_area_name)[0]
 
     out_dims = np.zeros(3, dtype=np.uint)
     out_dims[XDIM] = out_area_def.width
@@ -320,7 +330,7 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
     # The C grid is half a pixel smaller as it uses pixel centres
     out_Bx = (out_llx + (0.5 * out_area_def.resolution[0])) * out_unitconv
     out_By = (out_ury - (0.5 * out_area_def.resolution[1])) * out_unitconv
-
+    print("out Ax, Ay, Bx, By = ", out_Ax, out_Ay, out_Bx, out_By)
     img_unitsstr = [x for x in img_area_def.proj4_string.split()
                     if '+units=' in x][0][7:]
     if img_unitsstr == 'm':
@@ -333,12 +343,14 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
     # The C grid is half a pixel smaller as it uses pixel centres
     img_Bx = (img_llx + (0.5 * img_area_def.resolution[0])) * img_unitconv
     img_By = (img_ury - (0.5 * img_area_def.resolution[1])) * img_unitconv
+    print("img Ax, Ay, Bx, By = ", img_Ax, img_Ay, img_Bx, img_By)
 
     # Create the output latitude and longitude arrays
     olons, olats = out_area_def.get_lonlats()
     out_lats = np.reshape(np.array(olats).astype(np.float64), out_size)
     out_lons = np.reshape(np.array(olons).astype(np.float64), out_size)
-
+    print("out_lats = ", out_lats)
+    print("out_lons = ", out_lons)
     # Creating an array of output image indices
     owcs = np.zeros((out_size), dtype=np.uint32)
     owcs = np.array(range(out_size)).astype(np.uint32)
@@ -426,31 +438,39 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
 
     # STRINGS ====================================================
 
+    print("###########################################################")
+
+    
     iproj_bytestr = img_projstr.encode()
     iproj = allocator("char[]", iproj_bytestr)
     owned_memory.append(iproj)
     lib.img_projstr = iproj
-
+    print("projstr = ", ffi.string(lib.img_projstr))
+    
     om_bytestr = 'CC'.encode()
     om = allocator("char[]", om_bytestr)
     owned_memory.append(om)
     lib.OptimMetric = om
-
+    print("optimmetric = ", ffi.string(lib.OptimMetric))
+    
     oarea_bytestr = out_area.encode()
     oarea = allocator("char[]", oarea_bytestr)
     owned_memory.append(oarea)
     lib.out_area = oarea
-
+    print("out_area = ", ffi.string(lib.out_area))
+    
     oproj_bytestr = out_projstr.encode()
     oproj = allocator("char[]", oproj_bytestr)
     owned_memory.append(oproj)
     lib.out_projstr = oproj
-
+    print("out_projstr = ", ffi.string(lib.out_projstr))
+    
     clogf_bytestr = c_logfile.encode()
     clogf = allocator("char[]", clogf_bytestr)
     owned_memory.append(clogf)
     lib.reportFile = clogf
-
+    print("clog = ", ffi.string(lib.reportFile))
+    
     # SINGLE NUMERICAL VALUES =====================================
 
     # Input image dimensions. Ax and Ay are pixel size, and Bx and By
@@ -459,19 +479,29 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
     lib.img_Bx = img_Bx
     lib.img_Ay = img_Ay
     lib.img_By = img_By
-
+    print("img_Ax = ", lib.img_Ax)
+    print("img_Bx = ", lib.img_Bx)
+    print("img_Ay = ", lib.img_Ay)
+    print("img_By = ", lib.img_By)
+    
     # Number of wavebands
     lib.nbWaveBands = wbnum
+    print("nbWaveBands = ", lib.nbWaveBands)
 
     # Weighting, pass 1 for now (placeholder in ice-drift code)
     lib.twghtStart = 1
     lib.twghtEnd = 1
+    print("twghtStart = ", lib.twghtStart)
+    print("twghtEnd = ", lib.twghtEnd)
 
     lib.maxdriftdistance = maxdriftdistance
     lib.sigmoid_length = sigmoidlength
+    print("maxdriftdistance = ", lib.maxdriftdistance)
+    print("sigmoid_length = ", lib.sigmoid_length)
 
     # Number of points in output grid
     lib.NDRIFTPIXELS = out_size
+    print("NDRIFTPIXELS = ", lib.NDRIFTPIXELS)
 
     # Output image dimensions. Ax and Ay are pixel size, and Bx and By
     # are the coords of the upper left pixel
@@ -479,9 +509,14 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
     lib.out_Bx = out_Bx
     lib.out_Ay = out_Ay
     lib.out_By = out_By
+    print("out_Ax = ", lib.out_Ax)
+    print("out_Bx = ", lib.out_Bx)
+    print("out_Ay = ", lib.out_Ay)
+    print("out_By = ", lib.out_By)
 
     # Radius to look for neighbours
     lib.radiusNeighbours = rad_neigh
+    print("radiusNeighbours = ", lib.radiusNeighbours)
 
     # DATA ARRAYS =================================================
 
@@ -496,6 +531,27 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
             lib.obs[k][j] = obs_kj
             for i in range(img_size):
                 lib.obs[k][j][i] = images[k][j][i]
+    # OK, some real values
+#    for i in range(img_size):
+#        if lib.obs[0][0][i] > -10000000000.0:
+#            print("obs[0][0][", i, "] = ", lib.obs[0][0][i])
+#    print("===> obs[0][0][", 100000, "] = ", lib.obs[0][0][100000])
+#    print("===> obs[0][0][", 100100, "] = ", lib.obs[0][0][100100])
+#    print("===> obs[0][0][", 100500, "] = ", lib.obs[0][0][100500])
+#    print("===> obs[0][0][", 400000, "] = ", lib.obs[0][0][400000])
+#    print("===> obs[0][0][", 400100, "] = ", lib.obs[0][0][400100])
+#    print("===> obs[0][0][", 400500, "] = ", lib.obs[0][0][400500])
+#    print("===> obs[0][0][", 350000, "] = ", lib.obs[0][0][350000])
+#    print("===> obs[0][0][", 350100, "] = ", lib.obs[0][0][350100])
+#    print("===> obs[0][0][", 350500, "] = ", lib.obs[0][0][350500])
+    print("===> obs[0][0][", 400499, "] = ", lib.obs[0][0][400499])
+    print("===> obs[0][0][", 400500, "] = ", lib.obs[0][0][400500])
+    print("===> obs[0][0][", 400501, "] = ", lib.obs[0][0][400501])
+
+    print("===> obs[1][0][", 400499, "] = ", lib.obs[1][0][400499])
+    print("===> obs[1][0][", 400500, "] = ", lib.obs[1][0][400500])
+    print("===> obs[1][0][", 400501, "] = ", lib.obs[1][0][400501])
+
 
     # Flag for images
     for k in range(filenum):
@@ -508,6 +564,16 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
             lib.TCflag[k][j] = tcflag_kj
             for i in range(img_size):
                 lib.TCflag[k][j][i] = flags[k][j][i]
+    # OK flag is -1, 0, or 1
+    #for i in range(img_size):
+    #    if lib.TCflag[0][0][i] != 1:
+    #        print("TCflag[0][0][", i, "] = ", lib.TCflag[0][0][i])
+    print("===> TCflag[0][0][", 400499, "] = ", lib.TCflag[0][0][400499])
+    print("===> TCflag[0][0][", 400500, "] = ", lib.TCflag[0][0][400500])
+    print("===> TCflag[0][0][", 400501, "] = ", lib.TCflag[0][0][400501])
+    print("===> TCflag[1][0][", 400499, "] = ", lib.TCflag[1][0][400499])
+    print("===> TCflag[1][0][", 400500, "] = ", lib.TCflag[1][0][400500])
+    print("===> TCflag[1][0][", 400501, "] = ", lib.TCflag[1][0][400501])
 
     # Ice edge mask
     for k in range(filenum):
@@ -516,6 +582,10 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
         lib.icelandmask[k] = iceedges_k
         for i in range(img_size):
             lib.icelandmask[k][i] = iceedges[k][i]
+    # OK, icelandmask in 1, 3, 9
+    #for i in range(img_size):
+    #    if lib.icelandmask[0][i] not in [1, 3, 9]:
+    #        print("icelandmask[0][", i, "] = ", lib.icelandmask[0][i])
 
     # Input and output image dimensions
     # The size of these have already been defined in the build, so no
@@ -524,6 +594,8 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
         lib.img_dims[k] = img_dims[k]
     for k in range(3):
         lib.out_dims[k] = out_dims[k]
+    print("img_dims = ", lib.img_dims[0], lib.img_dims[1], lib.img_dims[2])
+    print("out_dims = ", lib.out_dims[0], lib.out_dims[1], lib.out_dims[2])
 
     # Latitude and longitude of input image
     img_lat_save = allocator("double[]", img_size)
@@ -536,6 +608,10 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
     lib.img_lon = img_lon_save
     for i in range(img_size):
         lib.img_lon[i] = lons[i]
+    # OK, all values look real
+    #for i in range(img_size):
+    #    if lib.img_lat[i] > -10000000000.0:
+    #        print("img_lat[", i, "] = ", lib.img_lat[i])
 
     # Latitude and longitude of output image
     olat_save = allocator("double[]", out_size)
@@ -548,10 +624,16 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
     lib.olon = olon_save
     for i in range(out_size):
         lib.olon[i] = out_lons[i]
+    # OK, all values look real
+    #for i in range(img_size):
+    #    if lib.olat[i] > -10000000000.0:
+    #        print("olat[", i, "] = ", lib.olat[i])
 
     # Starting pattern radius
     for k in range(NBPATTERNS):
         lib.pattern_radius[k] = pattern_radius[k]
+    for i in range(NBPATTERNS):
+        print("pattern_radius[", i, "] = ", lib.pattern_radius[i])
 
     # Input and output world coordinate system extraction indices
     iwcs_save = allocator("unsigned int[]", out_size)
@@ -564,7 +646,11 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
     lib.owcs = owcs_save
     for i in range(out_size):
         lib.owcs[i] = owcs[i]
-
+    # OK
+    #for i in range(out_size):
+    #    print("iwcs, owcs = ", lib.iwcs[i], lib.owcs[i])
+    print("###########################################################")
+    
     # Output arrays
     driftX_save = allocator("float[]", out_size)
     owned_memory.append(driftX_save)
@@ -662,6 +748,13 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
         stdy[i] = lib.stdY[i]
         patternindex[i] = lib.patternIndex[i]
 
+    print("driftx nanmin-----", np.nanmin(driftx))
+    print("driftx nanmax-----", np.nanmax(driftx))
+    print("flag nanmin-----", np.nanmin(flag))
+    print("flag nanmax-----", np.nanmax(flag))
+    print("set(flag)) ---", np.unique(flag, return_counts=True))
+
+    
     # Creating the output times, masking according to the ice drift
     UNDEFNC_FLOAT = -1.0e10
     UNDEFNC_INT = -1e10
@@ -704,15 +797,52 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
     w_stdy = stdy.reshape((out_dims[YDIM], out_dims[XDIM]))
     w_patternindex = patternindex.reshape((out_dims[YDIM], out_dims[XDIM]))
 
-    fname = write_icedrift(out_area_def,
-                           inst, plat, channels, start_date, end_date,
-                           out_area_name, out_projstr, out_dir,
-                           w_driftx, w_drifty, w_t0, w_t1, w_flag,
-                           w_sigdx, w_sigdy, w_corrdxdy,
-                           w_uflag, w_length, w_direction,
-                           w_outlonb, w_outlatb, w_outlone, w_outlate,
-                           w_outfc, w_snavg, w_avgx, w_avgy,
-                           w_length_avg, w_length_diff,
-                           w_stdx, w_stdy, w_patternindex)
+    icedrift_out = {'area_def': out_area_def,
+                    'inst': inst,
+                    'plat': plat,
+                    'channels': channels,
+                    'start_date': start_date,
+                    'end_date': end_date,
+                    'area_name': out_area_name,
+                    'projstr': out_projstr,
+                    'output_dir': out_dir,
+                    'drift_x': w_driftx,
+                    'drift_y': w_drifty,
+                    't0': w_t0,
+                    't1': w_t1,
+                    'flag': w_flag,
+                    'sig_dx': w_sigdx,
+                    'sig_dy': w_sigdy,
+                    'corr_dxdy': w_corrdxdy,
+                    'uflag': w_uflag,
+                    'length': w_length,
+                    'direction': w_direction,
+                    'lonb': w_outlonb,
+                    'latb': w_outlatb,
+                    'lone': w_outlone,
+                    'late': w_outlate,
+                    'fc': w_outfc,
+                    'snavg': w_snavg,
+                    'avg_x': w_avgx,
+                    'avg_y': w_avgy,
+                    'length_avg': w_length_avg,
+                    'length_diff': w_length_diff,
+                    'std_x': w_stdx,
+                    'std_y': w_stdy,
+                    'pattern_index': w_patternindex,
+                    'images': images
+                    }
+    
+#    fname = write_icedrift(out_area_def,
+#                           inst, plat, channels, start_date, end_date,
+#                           out_area_name, out_projstr, out_dir,
+#                           w_driftx, w_drifty, w_t0, w_t1, w_flag,
+#                           w_sigdx, w_sigdy, w_corrdxdy,
+#                           w_uflag, w_length, w_direction,
+#                           w_outlonb, w_outlatb, w_outlone, w_outlate,
+#                           w_outfc, w_snavg, w_avgx, w_avgy,
+#                           w_length_avg, w_length_diff,
+#                           w_stdx, w_stdy, w_patternindex)
 
-    return fname
+    #return fname
+    return icedrift_out

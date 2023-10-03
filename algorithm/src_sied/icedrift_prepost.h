@@ -18,4 +18,6 @@ void setBestKnowledge(double lat, double lon);
 
 int setNeighbourhoodPattern(double pattern_radius,size_t *lpattern_size,size_t *lpattern_center,short **lpattern_mask,long *lpattern_windexes[3]);
 
+int prepare_icedriftProduct(int *n, double x[], double fc[], short processingflag[], short pattern[], float leng[], float dire[], float latB[], float lonB[], float latE[], float lonE[], size_t navg[], float xavg[], float yavg[], float lenavg[], float lendiff[], float xstd[], float ystd[], double x_stddev[], double y_stddev[], double xy_correl[], short uncertaintyflag[]);
+
 #endif 

@@ -1,8 +1,6 @@
 
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <fmutil.h>
 #include <math.h>
 
 #include "icedrift_solve_filter.h"

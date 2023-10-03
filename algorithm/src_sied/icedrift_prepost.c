@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <projects.h>
-#include <fmutil.h>
-#include <errorcodes.h>
-#include <ice_common.h>
-#include <useproj.h>
+#include <proj.h>
+#include <string.h>
+#include "fmextra.h"
+#include "fmutil_config.h"
+#include "icedrift_solve_common.h"
 #include "icedrift_common.h"
 #include "icedrift_flags.h"
 #include "icedrift_model.h"
@@ -79,7 +79,6 @@ void setBestKnowledge(double lat, double lon) {
    bestKnowledge_lon = lon;
 }
 
-
 void initmod(int *n, double x[]) {
 
    int np,nu;
@@ -103,7 +102,8 @@ void initmod(int *n, double x[]) {
 
    /* intialize the out projection object (PROJ4)  */
    out_pj = NULL;
-   out_pj = pj_init_plus(out_projstr);
+   //out_pj = pj_init_plus(out_projstr);
+   out_pj = proj_create(0, out_projstr);
    if (!out_pj) {
       printf("ERROR (initmod) could not initialize the PROJ4 output remapping object.\n");
       return 1;
@@ -111,7 +111,8 @@ void initmod(int *n, double x[]) {
 
    /* intialize the img projection object (PROJ4) */
    img_pj = NULL;
-   img_pj = pj_init_plus(img_projstr);
+   //img_pj = pj_init_plus(img_projstr);
+   img_pj = proj_create(0, img_projstr);
    if (!img_pj) {
       printf("ERROR (initmod) could not initialize the PROJ4 image file remapping object.\n");
       return 1;
