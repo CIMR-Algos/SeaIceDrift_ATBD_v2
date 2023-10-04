@@ -6,13 +6,15 @@
 #define INSTRUMENT_SSMI   0
 #define INSTRUMENT_SSMIS  1
 #define INSTRUMENT_AMSR   2
+#define INSTRUMENT_MWI    8
 #define INSTRUMENT_ASCAT  3
+#define INSTRUMENT_SCA    9
 #define INSTRUMENT_SEAWINDS  4
 #define INSTRUMENT_MIRAS  5
 #define INSTRUMENT_AMSR2  6
-#define INSTRUMENT_CIMR   7
-#define INSTRUMENT_MULTI  8
-#define INSTRUMENT_NUMBER 9
+#define INSTRUMENT_CIMR   10
+#define INSTRUMENT_MULTI  7
+#define INSTRUMENT_NUMBER 11
 
 #define TAGFORMAT_NDEF   -1
 #define TAGFORMAT_CODE    0
@@ -33,6 +35,7 @@ extern char *PossibleWaveBandsQSCAT[];
 extern double PossibleFOVMAppertQSCAT[];
 extern char *PossibleWaveBandsMIRAS[];
 extern double PossibleFOVMAppertMIRAS[];
+extern char *PossibleWaveBandsCIMR[];
 extern double PossibleFOVMAppertCIMR[];
 extern char *PossibleWaveBandsMULTI[];
 extern double PossibleFOVMAppertMULTI[];

@@ -9,9 +9,10 @@ ffibuilder = FFI()
 #osisaf_path = '/home/emilyjd/osisaf-hl-sw'
 #icedrift_path = '/home/emilyjd/ice_drift/sidrift_lowres'
 #proj_path = '/home/emilyjd/ice_drift/proj-4.5.0_red/src'
-osisaf_path = '../../../osisaf-hl-sw'
-icedrift_path = '../..'
-proj_path = '../../../ice_drift/proj-4.5.0_red/src'
+
+#osisaf_path = '/home/emilyjd/osisaf_mwi'
+icedrift_path = '/home/emilyjd/cimr-devalgo/SeaIceDrift_ATBD_v2/algorithm/src_sied'
+#proj_path = '/home/emilyjd/ice_drift/proj-4.5.0_red/src'
 
 ffibuilder.set_source("_idcore", # name of the output C extension
 """
@@ -20,90 +21,96 @@ ffibuilder.set_source("_idcore", # name of the output C extension
     # include <string.h>
     # include <float.h>
     # include <math.h>
-    # include <projects.h>
-    # include <fmutil.h>
+    # include <proj.h>
     # include <assert.h>
-    # include <errorcodes.h>
-    # include <useproj.h>
+    # include "fmextra.h"
+    # include "fmerrmsg.h"
+    # include "fmutil_config.h"
     # include "icedrift_flags.h"
     # include "icedrift_common.h"
-    # include "icedrift_prepost.h"
     # include "icedrift_model.h"
     # include "icedrift_solve_filter.h"
     # include "optimization_simplex.h"
     # include "vector_anydim.h"
     # include "memory.h"
     # include "icedrift_solve_common.h"
-    # include "ice_common.h"
-    # include "proj_api.h"
+    # include "icedrift_common.h"
+    # include "icedrift_prepost.h"
     # include "icedrift_solve_core.h"
 
 """,
-    include_dirs=[os.path.join(icedrift_path, 'ice-tracking/src'),
-                  os.path.join(icedrift_path,
-                      'ice-tracking/src/src_simplex'),
-                  os.path.join(icedrift_path,
-                      'common/src'),
-                  os.path.join(osisaf_path,
-                      'OSI_HL_Ice/common/libicecommon/include'),
-                  os.path.join(osisaf_path,
-                      'OSI_HL_common/commondefs'),
-                  os.path.join(osisaf_path,
-                      'OSI_HL_AUX/libs/libfmutil/include'),
-                  os.path.join(osisaf_path,
-                               'OSI_HL_AUX/libs/libfmutil/src'),
-                  os.path.join(osisaf_path,
-                      'OSI_HL_AUX/OSI_HL_FUNC/useproj/include'),
+    include_dirs=[os.path.join(icedrift_path,
+                               'src_simplex'),
+                  '/usr/include'],
+                  #os.path.join(icedrift_path,
+                  #             'common'),
+                  #os.path.join(osisaf_path,
+                  #             'osi_ice_common/libicecommon/include'),
+                  #os.path.join(osisaf_path,
+                  #             'osi_base/OSI_HL_common/commondefs'),
+                  #os.path.join(osisaf_path,
+                  #             'osi_base/OSI_HL_AUX/libs/libfmutil/include'),
+                  #os.path.join(osisaf_path,
+                  #             'osi_base/OSI_HL_AUX/libs/libfmutil/src'),
+                  #os.path.join(osisaf_path,
+                  #             'osi_base/OSI_HL_AUX/OSI_HL_FUNC/useproj/include'),
                   # Reduced version of proj4 code
-                  proj_path],
+                  #proj_path],
 
-    sources=['icedrift_solve_core.c', 'icedrift_prepost.c',
-             'icedrift_solve_common.c', 'icedrift_model.c',
+    sources=['icedrift_solve_core.c',
+             'fmerrmsg.c',
+             'fmextra.c',
+             'icedrift_instruments.c',
+             'icedrift_model.c',
+             'icedrift_common.c',
+             'icedrift_prepost.c',
+             'icedrift_solve_common.c',
              'icedrift_solve_filter.c',
              os.path.join(icedrift_path,
-                 'ice-tracking/src/src_simplex/optimization_simplex.c'),
+                 'src_simplex/optimization_simplex.c'),
              os.path.join(icedrift_path,
-                 'ice-tracking/src/src_simplex/vector_anydim.c'),
+                 'src_simplex/vector_anydim.c'),
              os.path.join(icedrift_path,
-                 'ice-tracking/src/src_simplex/memory.c'),
-             os.path.join(icedrift_path,
-                 'common/src/icedrift_common.c'),
-             os.path.join(osisaf_path,
-                 'OSI_HL_AUX/libs/libfmutil/src/fmtime.c'),
-             os.path.join(osisaf_path,
-                 'OSI_HL_AUX/libs/libfmutil/src/fmsolar.c'),
-             os.path.join(osisaf_path,
-                 'OSI_HL_AUX/libs/libfmutil/src/fmangleconversion.c'),
-             os.path.join(osisaf_path,
-                 'OSI_HL_AUX/libs/libfmutil/src/fmstorage.c'),
-             os.path.join(osisaf_path,
-                 'OSI_HL_AUX/libs/libfmutil/src/fmstrings.c'),
-             os.path.join(osisaf_path,
-                 'OSI_HL_AUX/libs/libfmutil/src/fmerrmsg.c'),
+                 'src_simplex/memory.c')
+#             os.path.join(icedrift_path,
+#                 'common/icedrift_common.c'),
+#             os.path.join(osisaf_path,
+#                 'osi_base/OSI_HL_AUX/libs/libfmutil/src/fmtime.c'),
+#             os.path.join(osisaf_path,
+#                 'osi_base/OSI_HL_AUX/libs/libfmutil/src/fmsolar.c'),
+#             os.path.join(osisaf_path,
+#                 'osi_base/OSI_HL_AUX/libs/libfmutil/src/fmangleconversion.c'),
+#             os.path.join(osisaf_path,
+#                 'osi_base/OSI_HL_AUX/libs/libfmutil/src/fmstorage.c'),
+#             os.path.join(osisaf_path,
+#                 'osi_base/OSI_HL_AUX/libs/libfmutil/src/fmstrings.c'),
+#             os.path.join(osisaf_path,
+#                 'osi_base/OSI_HL_AUX/libs/libfmutil/src/fmerrmsg.c'),
              # Only the proj4 code which it complains without
-             os.path.join(proj_path, 'adjlon.c'),
-             os.path.join(proj_path, 'dmstor.c'),
-             os.path.join(proj_path, 'pj_auth.c'),
-             os.path.join(proj_path, 'pj_datums.c'),
-             os.path.join(proj_path, 'pj_datum_set.c'),
-             os.path.join(proj_path, 'pj_ellps.c'),
-             os.path.join(proj_path, 'pj_ell_set.c'),
-             os.path.join(proj_path, 'pj_errno.c'),
-             os.path.join(proj_path, 'pj_fwd.c'),
-             os.path.join(proj_path, 'pj_init.c'),
-             os.path.join(proj_path, 'pj_inv.c'),
-             os.path.join(proj_path, 'PJ_laea.c'),
-             os.path.join(proj_path, 'pj_latlong.c'),
-             os.path.join(proj_path, 'pj_list.c'),
-             os.path.join(proj_path, 'pj_malloc.c'),
-             os.path.join(proj_path, 'pj_open_lib.c'),
-             os.path.join(proj_path, 'pj_param.c'),
-             os.path.join(proj_path, 'pj_qsfn.c'),
-             os.path.join(proj_path, 'PJ_stere.c'),
-             os.path.join(proj_path, 'pj_tsfn.c'),
-             os.path.join(proj_path, 'pj_units.c')],
-
-    libraries=['c'])
+#             os.path.join(proj_path, 'adjlon.c'),
+#             os.path.join(proj_path, 'dmstor.c'),
+#             os.path.join(proj_path, 'pj_auth.c'),
+#             os.path.join(proj_path, 'pj_datums.c'),
+#             os.path.join(proj_path, 'pj_datum_set.c'),
+#             os.path.join(proj_path, 'pj_ellps.c'),
+#             os.path.join(proj_path, 'pj_ell_set.c'),
+#             os.path.join(proj_path, 'pj_errno.c'),
+#             os.path.join(proj_path, 'pj_fwd.c'),
+#             os.path.join(proj_path, 'pj_init.c'),
+#             os.path.join(proj_path, 'pj_inv.c'),
+#             os.path.join(proj_path, 'PJ_laea.c'),
+#             os.path.join(proj_path, 'pj_latlong.c'),
+#             os.path.join(proj_path, 'pj_list.c'),
+#             os.path.join(proj_path, 'pj_malloc.c'),
+#             os.path.join(proj_path, 'pj_open_lib.c'),
+#             os.path.join(proj_path, 'pj_param.c'),
+#             os.path.join(proj_path, 'pj_qsfn.c'),
+#             os.path.join(proj_path, 'PJ_stere.c'),
+#             os.path.join(proj_path, 'pj_tsfn.c'),
+#             os.path.join(proj_path, 'pj_units.c')],
+            ],
+    define_macros=[('ACCEPT_USE_OF_DEPRECATED_PROJ_API_H', '1')],
+    libraries=['c', 'proj'])
 
 
 # cdef() expects a single string declaring the C types, functions and

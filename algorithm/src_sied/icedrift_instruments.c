@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <icedrift_instruments.h>
+#include "icedrift_instruments.h"
 
 /* Global variables for each instrument */
 /* http://en.wikipedia.org/wiki/Special_sensor_microwave/imager */
@@ -20,11 +20,21 @@ char  *PossibleWaveBandsAMSR[]   = {"bt19v","bt19h","bt37v","bt37h","bt89v","bt8
 double PossibleFOVMAppertAMSR[]  = {    27.,    27.,    14.,    14.,     7.,     7.};
 double PossibleRadNoiseAMSR[]    = {     1.,     1.,     1.,     1.,     1.,     1.};
 char  *DefaultWaveBandsAMSR[]    = {"bt37v","bt37h"};
+/* MWI */
+char  *PossibleWaveBandsMWI[]  = {"bt19v","bt19h","bt37v","bt37h","bt91v","bt91h"};
+double PossibleFOVMAppertMWI[] = {    70.,    70.,    38.,    38.,    16.,    16.};
+double PossibleRadNoiseMWI[]   = {     1.,     1.,     1.,     1.,     1.,     1.};
+char  *DefaultWaveBandsMWI[]   = {"bt37v","bt37h"};
 /* ASCAT */
 char  *PossibleWaveBandsASCAT[]  = {"sigma0"};
 double PossibleFOVMAppertASCAT[] = {     25.};
 double PossibleRadNoiseASCAT[]   = {     1.};
 char  *DefaultWaveBandsASCAT[]   = {"sigma0"};
+/* SCA */
+char  *PossibleWaveBandsSCA[]  = {"sigma0"};
+double PossibleFOVMAppertSCA[] = {     25.};
+double PossibleRadNoiseSCA[]   = {     1.};
+char  *DefaultWaveBandsSCA[]   = {"sigma0"};
 /* SEAWINDS */
 char  *PossibleWaveBandsSEAWINDS[]  = {"sigma0H","sigma0V"};
 double PossibleFOVMAppertSEAWINDS[] = {     25.};
@@ -47,15 +57,17 @@ double PossibleRadNoiseMULTI[]   = {0.};
 char  *DefaultWaveBandsMULTI[]   = {NULL};
 
 /* all in an array */
-char **PossibleBands[] = {PossibleWaveBandsSSMI,PossibleWaveBandsSSMIS,PossibleWaveBandsAMSR,PossibleWaveBandsASCAT,PossibleWaveBandsSEAWINDS,PossibleWaveBandsMIRAS,PossibleWaveBandsAMSR,PossibleWaveBandsCIMR,PossibleWaveBandsMULTI};
-double *PossibleMApp[] = {PossibleFOVMAppertSSMI,PossibleFOVMAppertSSMIS,PossibleFOVMAppertAMSR,PossibleFOVMAppertASCAT,PossibleFOVMAppertSEAWINDS,PossibleFOVMAppertMIRAS,PossibleFOVMAppertAMSR,PossibleFOVMAppertCIMR,PossibleFOVMAppertMULTI};
-double *PossibleRNoise[] = {PossibleRadNoiseSSMI,PossibleRadNoiseSSMIS,PossibleRadNoiseAMSR,PossibleRadNoiseASCAT,PossibleRadNoiseSEAWINDS,PossibleRadNoiseMIRAS,PossibleRadNoiseAMSR,PossibleRadNoiseCIMR,PossibleRadNoiseMULTI};
-char **DefaultBands[] =  {DefaultWaveBandsSSMI,DefaultWaveBandsSSMIS,DefaultWaveBandsAMSR,DefaultWaveBandsASCAT,DefaultWaveBandsSEAWINDS,DefaultWaveBandsMIRAS,DefaultWaveBandsAMSR,DefaultWaveBandsCIMR,DefaultWaveBandsMULTI};
+char **PossibleBands[] = {PossibleWaveBandsSSMI,PossibleWaveBandsSSMIS,PossibleWaveBandsAMSR,PossibleWaveBandsMWI,PossibleWaveBandsASCAT,PossibleWaveBandsSCA,PossibleWaveBandsSEAWINDS,PossibleWaveBandsMIRAS,PossibleWaveBandsAMSR,PossibleWaveBandsCIMR,PossibleWaveBandsMULTI};
+double *PossibleMApp[] = {PossibleFOVMAppertSSMI,PossibleFOVMAppertSSMIS,PossibleFOVMAppertAMSR,PossibleFOVMAppertMWI,PossibleFOVMAppertASCAT,PossibleFOVMAppertSCA,PossibleFOVMAppertSEAWINDS,PossibleFOVMAppertMIRAS,PossibleFOVMAppertAMSR,PossibleFOVMAppertCIMR,PossibleFOVMAppertMULTI};
+double *PossibleRNoise[] = {PossibleRadNoiseSSMI,PossibleRadNoiseSSMIS,PossibleRadNoiseAMSR,PossibleRadNoiseMWI,PossibleRadNoiseASCAT,PossibleRadNoiseSCA,PossibleRadNoiseSEAWINDS,PossibleRadNoiseMIRAS,PossibleRadNoiseAMSR,PossibleRadNoiseCIMR,PossibleRadNoiseMULTI};
+char **DefaultBands[] =  {DefaultWaveBandsSSMI,DefaultWaveBandsSSMIS,DefaultWaveBandsAMSR,DefaultWaveBandsMWI,DefaultWaveBandsASCAT,DefaultWaveBandsSCA,DefaultWaveBandsSEAWINDS,DefaultWaveBandsMIRAS,DefaultWaveBandsAMSR,DefaultWaveBandsCIMR,DefaultWaveBandsMULTI};
 
 short  nbPossibleBands[] = {sizeof(PossibleWaveBandsSSMI)/sizeof(*PossibleWaveBandsSSMI),\
                             sizeof(PossibleWaveBandsSSMIS)/sizeof(*PossibleWaveBandsSSMIS),\
                             sizeof(PossibleWaveBandsAMSR)/sizeof(*PossibleWaveBandsAMSR),\
+                            sizeof(PossibleWaveBandsMWI)/sizeof(*PossibleWaveBandsMWI),\
                             sizeof(PossibleWaveBandsASCAT)/sizeof(*PossibleWaveBandsASCAT),\
+                            sizeof(PossibleWaveBandsSCA)/sizeof(*PossibleWaveBandsSCA),\
                             sizeof(PossibleWaveBandsSEAWINDS)/sizeof(*PossibleWaveBandsSEAWINDS),\
                             sizeof(PossibleWaveBandsMIRAS)/sizeof(*PossibleWaveBandsMIRAS),\
                             sizeof(PossibleWaveBandsAMSR)/sizeof(*PossibleWaveBandsAMSR),\
@@ -65,7 +77,9 @@ short  nbPossibleBands[] = {sizeof(PossibleWaveBandsSSMI)/sizeof(*PossibleWaveBa
 short  nbDefaultBands[] = {sizeof(DefaultWaveBandsSSMI)/sizeof(*DefaultWaveBandsSSMI),\
                             sizeof(DefaultWaveBandsSSMIS)/sizeof(*DefaultWaveBandsSSMIS),\
                             sizeof(DefaultWaveBandsAMSR)/sizeof(*DefaultWaveBandsAMSR),\
+                            sizeof(DefaultWaveBandsMWI)/sizeof(*DefaultWaveBandsMWI),\
                             sizeof(DefaultWaveBandsASCAT)/sizeof(*DefaultWaveBandsASCAT),\
+                            sizeof(DefaultWaveBandsSCA)/sizeof(*DefaultWaveBandsSCA),\
                             sizeof(DefaultWaveBandsSEAWINDS)/sizeof(*DefaultWaveBandsSEAWINDS),\
                             sizeof(DefaultWaveBandsMIRAS)/sizeof(*DefaultWaveBandsMIRAS),\
                             sizeof(DefaultWaveBandsAMSR)/sizeof(*DefaultWaveBandsAMSR),\
@@ -85,8 +99,14 @@ int is_AMSR(char *name) {
 int is_AMSR2(char *name) {
    return !strcmp(name,"amsr2");
 }
+int is_MWI(char *name) {
+   return !strcmp(name,"mwi");
+}
 int is_ASCAT(char *name) {
    return !strcmp(name,"ascat");
+}
+int is_SCA(char *name) {
+   return !strcmp(name,"sca");
 }
 int is_SEAWINDS(char *name) {
    return !strcmp(name,"seawinds");
@@ -113,8 +133,12 @@ int instrumentType(char *name) {
       ret = INSTRUMENT_AMSR;
    else if (is_AMSR2(name))
       ret = INSTRUMENT_AMSR2;
+   else if (is_MWI(name))
+      ret = INSTRUMENT_MWI;
    else if (is_ASCAT(name))
       ret = INSTRUMENT_ASCAT;
+   else if (is_SCA(name))
+      ret = INSTRUMENT_SCA;
    else if (is_SEAWINDS(name))
       ret = INSTRUMENT_SEAWINDS;
    else if (is_MIRAS(name))
@@ -181,6 +205,12 @@ int compatibleInstrumentAndPlatform(char *Instrument, char *Platform) {
             return 0;
          }
          break;
+      case INSTRUMENT_MWI:
+         if (strcmp(Platform,"sgb1")) {
+            fprintf(stderr,"ERROR (%s) Not SGB1 platform (%s) for MWI instrument\n",__func__,Platform);
+            return 0;
+         }
+         break;
       case INSTRUMENT_AMSR2:
          if (!strstr(Platform,"gw")) {
             fprintf(stderr,"ERROR (%s) Not gw? platform (%s) for AMSR2 instrument\n",__func__,Platform);
@@ -190,6 +220,12 @@ int compatibleInstrumentAndPlatform(char *Instrument, char *Platform) {
       case INSTRUMENT_ASCAT:
          if (!strstr(Platform,"metop")) {
             fprintf(stderr,"ERROR (%s) Not metop? platform (%s) for ASCAT instrument\n",__func__,Platform);
+            return 0;
+         }
+         break;
+      case INSTRUMENT_SCA:
+         if (strcmp(Platform,"sgb1")) {
+            fprintf(stderr,"ERROR (%s) Not SGB1 platform (%s) for SCA instrument\n",__func__,Platform);
             return 0;
          }
          break;

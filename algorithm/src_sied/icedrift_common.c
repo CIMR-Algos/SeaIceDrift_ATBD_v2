@@ -2,10 +2,11 @@
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
-#include <fmutil.h>
-#include <projects.h>
-#include <fmutil.h>
+#include <proj.h>
+#include "fmutil_config.h"
 #include "icedrift_common.h"
+
+#define fmPI 3.141592654
 
 void compute_distance(double lat0, double lon0, double lat1, double lon1, double *dist) {
 
@@ -47,11 +48,18 @@ void compute_directionToNorth(double lat0, double lon0, double lat1, double lon1
 /* WARNING: no checks on pj == NULL */
 int remap_ll2xy(double lat, double lon, PJ *pj, double Ax, double Bx, double Ay, double By, double *x, double *y, short round) {
    
-   projUV G;
-
+  //projUV G;
+   PJ_UV G;
+   PJ_COORD H;
+   
    G.u = lon * DEG_TO_RAD;
    G.v = lat * DEG_TO_RAD;
-   G   = pj_fwd(G, pj);
+   H.uv = G;
+   
+   //G   = pj_fwd(G, pj);
+   H = proj_trans(pj, 1, H); // 1 for a forward transformation
+   G = H.uv;
+   
    G.u /= 1000.;
    G.v /= 1000.;
 	
@@ -69,11 +77,18 @@ int remap_ll2xy(double lat, double lon, PJ *pj, double Ax, double Bx, double Ay,
 /* WARNING: no checks on pj == NULL */
 int remap_xy2ll(double x,double y, PJ *pj, double Ax, double Bx, double Ay, double By, double *lat, double *lon) {
    
-   projUV G;
-
+  //projUV G;
+   PJ_UV G;
+   PJ_COORD H;
+  
    G.u  = ( +x * Ax + Bx ) * 1000.;
    G.v  = ( -y * Ay + By ) * 1000.;
-   G    = pj_inv(G, pj);
+   H.uv = G;
+   
+   //G    = pj_inv(G, pj);
+   H = proj_trans(pj, -1, H); // -1 for inverse transformation
+   G = H.uv;
+   
    *lon = G.u * RAD_TO_DEG;
    *lat = G.v * RAD_TO_DEG;
 
