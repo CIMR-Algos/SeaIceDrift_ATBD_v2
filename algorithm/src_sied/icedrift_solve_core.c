@@ -73,11 +73,12 @@ int core(void) {
       
    /* ======= START CORE ====== */
 
+   /*
    printf("STARTED CORE \n");
    printf("===> obs[0][0][400499] = %lf \n", obs[0][0][400499]);
    printf("===> obs[0][0][400500] = %lf \n", obs[0][0][400500]);
    printf("===> obs[0][0][400501] = %lf \n", obs[0][0][400501]);
-
+   */
    
    /* open the log file (whose name we got from the parameter file) */
    printf("\tLog file is <%s>\n",reportFile);

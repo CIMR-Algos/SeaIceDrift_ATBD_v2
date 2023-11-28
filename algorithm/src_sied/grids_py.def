@@ -69,3 +69,21 @@ REGION: sh-ease2-050 {
        YSIZE:          2160
        AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
 };
+
+REGION: nh-ease2-025 {
+       NAME:           Lambert Azimuthal Equal Area (2.5 km)
+       PCS_ID:         nh-ease2-025
+       PCS_DEF:        proj=laea, lat_0=90, lon_0=0, x_0=0, y_0=0, datum=WGS84
+       XSIZE:          4320
+       YSIZE:          4320
+       AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
+};
+
+REGION: sh-ease2-025 {
+       NAME:           Lambert Azimuthal Equal Area (2.5 km)
+       PCS_ID:         sh-ease2-025
+       PCS_DEF:        proj=laea, lat_0=-90, lon_0=0, x_0=0, y_0=0, datum=WGS84
+       XSIZE:          4320
+       YSIZE:          4320
+       AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
+};
