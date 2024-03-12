@@ -11,11 +11,11 @@ from _idcore import ffi, lib
 
 from helper_fcns import fmtdate, corr_time_from_unit, round_sig
 from checkinst import checkinst
-#from write_icedrift_product_file import write_icedrift
 
 
 def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
-                     c_logfile, instr, area, channels, radius, rad_neigh):
+                     c_logfile, instr, area, channels, radius, rad_neigh,
+                     area_out=None):
     """Wrapper to do I/O for C core ice drift code"""
 
     # Split instrument into instrument and platform and check compatibility
@@ -30,29 +30,51 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
                          len(channels), MAX_NBWAVEBANDS))
 
     # Checking the area
-    if re.match('nh', area):
-        if re.search('ease', area):
-            out_area = 'nhease750'
-            out_area_name = 'nh-ease2-750'
+    # If no area is defined, this is guessed according to the input grid
+    if area_out is None:
+        if re.match('nh', area):
+            if re.search('ease', area):
+                out_area = 'nhease750'
+                out_area_name = 'nh-ease2-750'
+            else:
+                out_area = 'nh625'
+                out_area_name = 'nh-polstere-625'
+        elif re.match('sh', area):
+            if re.search('ease', area):
+                out_area = 'shease750'
+                out_area_name = 'sh-ease2-750'
+            else:
+                out_area = 'sh625'
+                out_area_name = 'sh-polstere-625'
+    # If an output area is defined, this is used
+    else:    
+        if re.match('nh', area_out):
+            if re.search('750', area_out):
+                out_area = 'nhease750'
+                out_area_name = 'nh-ease2-750'
+            elif re.search('625', area_out):
+                out_area = 'nh625'
+                out_area_name = 'nh-polstere-625'
+            elif re.search('250', area_out):
+                out_area = 'nhease250'
+                out_area_name = 'nh-ease2-250'            
+        elif re.match('sh', area_out):
+            if re.search('750', area_out):
+                out_area = 'shease750'
+                out_area_name = 'sh-ease2-750'
+            elif re.search('625', area_out):
+                out_area = 'sh625'
+                out_area_name = 'sh-polstere-625'
+            elif re.search('250', area_out):
+                out_area = 'shease250'
+                out_area_name = 'sh-ease2-250'            
         else:
-            out_area = 'nh625'
-            out_area_name = 'nh-polstere-625'
-    elif re.match('sh', area):
-        if re.search('ease', area):
-            out_area = 'shease750'
-            out_area_name = 'sh-ease2-750'
-        else:
-            out_area = 'sh625'
-            out_area_name = 'sh-polstere-625'
-    else:
-        raise ValueError("Unknown input grid {} (should be 'nhXX' or "
-                         "'shXX')".format(area))
+            raise ValueError("Unknown input grid {} (should be 'nhXX' or "
+                             "'shXX')".format(area))
 
     # Prepare for wavelength filtering, note that channels are in sorted
     # order in run_cmcc
-# TODO - need to figure out how to test for right order here...
-#    chan_sort = sorted(channels, reverse=True)
-    chan_sort = sorted(channels)
+    chan_sort = channels
     wbs = ''
     for i, wb in enumerate(chan_sort):
         if i > 0:
@@ -346,21 +368,6 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
     # but does not precisely match the original C code output (which
     # has some irregularities)
     # First find the x and y indices corresponding to the 1-D indices
-
-#    print("======================================")
-#    print("Input grid: ")
-#    print("x,y,lat,lon = ", 0, 0, img_area_def.get_lonlat(0, 0))
-#    print("x,y,lat,lon = ", 0, 607, img_area_def.get_lonlat(0, 607))
-#    print("x,y,lat,lon = ", 895, 0, img_area_def.get_lonlat(895, 0))
-#    print("x,y,lat,lon = ", 895, 607, img_area_def.get_lonlat(895, 607))
-#    print("======================================")
-#    print("Output grid: ")
-#    print("x,y,lat,lon = ", 0, 0, out_area_def.get_lonlat(0, 0))
-#    print("x,y,lat,lon = ", 0, 118, out_area_def.get_lonlat(0, 118))
-#    print("x,y,lat,lon = ", 176, 0, out_area_def.get_lonlat(176, 0))
-#    print("x,y,lat,lon = ", 176, 118, out_area_def.get_lonlat(176, 118))
-#    print("======================================")
-
     iwcs = np.zeros((out_size), dtype=np.uint32)
     for i in range(len(owcs)):
         row = math.floor(owcs[i] / out_dims[XDIM])
@@ -372,20 +379,6 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
             iwcs[i] = int((newcol * img_nx) + newrow)
         except:
             iwcs[i] = int(out_size)
-
-#    # Alternative method of calculating iwcs. This results in an
-#    # array with some irregularities.
-#    # Relating the input image indices to the output image indices
-#    # according to the area definitions
-#    iwcs = np.zeros((out_size), dtype=np.uint32)
-#    iwcs_inds = np.array([x for x in range(img_size)], dtype=np.uint32)
-#    iwcs_data = np.reshape(iwcs_inds, (img_ny, img_nx))
-#    # Radius of influence chosen at 10km, 1km is too small but 5km looks
-#    # OK, 10km chosen for safety margin
-#    iwcs_con = image.ImageContainerNearest(iwcs_data, img_area_def,
-#                                           radius_of_influence=10000)
-#    iwcs_2d = iwcs_con.resample(out_area_def).image_data
-#    iwcs = np.array(iwcs_2d).flatten()
 
     # Create output arrays for the drift
     driftx = np.zeros((out_size), dtype=np.single)
@@ -738,16 +731,4 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
                     'images': images
                     }
 
-#    fname = write_icedrift(out_area_def,
-#                           inst, plat, channels, start_date, end_date,
-#                           out_area_name, out_projstr, out_dir,
-#                           w_driftx, w_drifty, w_t0, w_t1, w_flag,
-#                           w_sigdx, w_sigdy, w_corrdxdy,
-#                           w_uflag, w_length, w_direction,
-#                           w_outlonb, w_outlatb, w_outlone, w_outlate,
-#                           w_outfc, w_snavg, w_avgx, w_avgy,
-#                           w_length_avg, w_length_diff,
-#                           w_stdx, w_stdy, w_patternindex)
-
-    #return fname
     return icedrift_out
