@@ -44,9 +44,9 @@ ffibuilder.set_source("_idcore", # name of the output C extension
              'icedrift_prepost.c',
              'icedrift_solve_common.c',
              'icedrift_solve_filter.c',
-             os.path.join(icedrift_path, 'src_simplex/optimization_simplex.c'),
-             os.path.join(icedrift_path, 'src_simplex/vector_anydim.c'),
-             os.path.join(icedrift_path, 'src_simplex/memory.c')
+             'src_simplex/optimization_simplex.c',
+             'src_simplex/vector_anydim.c',
+             'src_simplex/memory.c'
             ],
     define_macros=[('ACCEPT_USE_OF_DEPRECATED_PROJ_API_H', '1')],
     libraries=['c', 'proj'])
