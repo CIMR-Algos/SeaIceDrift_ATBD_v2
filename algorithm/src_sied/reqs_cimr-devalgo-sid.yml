@@ -1,0 +1,17 @@
+name: cimr-devalgo-sid
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python==3.9
+  - proj=9.0
+  - netcdf4
+  - jupyter
+  - cartopy 
+  - cython
+  - xarray
+  - matplotlib
+  - cmocean
+  - pyresample
+  - scipy
+  

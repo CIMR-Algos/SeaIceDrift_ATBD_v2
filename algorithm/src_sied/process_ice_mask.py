@@ -190,7 +190,7 @@ def nc_read(ncfile, var):
     return ncdata
 
 
-def write_edge(indata, outfile, gridname, mode='edge'):
+def write_icemask(indata, outfile, gridname, mode='edge'):
 
     with Dataset(outfile, 'w') as dataset:
 
@@ -304,8 +304,8 @@ def process_ice_mask(infile, outname, gridfile, gridname):
     # If the mode is conc, convert this to ice edge
     if mode == 'conc':
         datashape = indata['ice_conc'].shape
-        indata['ice_edge'] = np.zeros(datashape, dtype=int)
-        indata['ice_edge'][indata['ice_conc'] < 0.] = -1.
+        indata['ice_edge'] = ma.array(np.zeros(datashape, dtype=int))
+        indata['ice_edge'][indata['ice_conc'] < 0.] = -1
         open_water = np.logical_and(indata['ice_conc'] >= 0,
                                     indata['ice_conc'] < 30)
         indata['ice_edge'][open_water] = 0 #1
@@ -315,10 +315,14 @@ def process_ice_mask(infile, outname, gridfile, gridname):
         close_ice = np.logical_and(indata['ice_conc'] >= 70,
                                    indata['ice_conc'] < 120)
         indata['ice_edge'][close_ice] = 3
-        indata['ice_edge'][indata['ice_conc'] == indata['fv']] = 0
-        indata['ice_edge'][indata['ice_conc'].mask] = int(indata['fv'])
+        msk = indata['ice_conc'] < 0.
+        indata['ice_edge'][msk] = 0
+        indata['ice_edge'].mask = msk
 
-        indata['ice_edge'][indata['ice_edge'] == 2] = 3
+        # This doesn't work because the field has a multiplication factor
+        #indata['ice_edge'][indata['ice_conc'] == indata['fv']] = 0
+#        indata['ice_edge'][indata['ice_conc'].mask] = int(indata['fv'])
+#        indata['ice_edge'][indata['ice_edge'] == 2] = 3
 
 #    elif mode == 'edge':
 #        icey = np.logical_or(indata['ice_edge'] == 1,
@@ -387,8 +391,8 @@ def process_ice_mask(infile, outname, gridfile, gridname):
     else:
         raise ValueError("Output name is neither a file or a directory")
 
-    # Writing the edge file out
-    write_edge(indata, outfile, gridname, mode=mode)
+    # Writing the icemask file out
+    write_icemask(indata, outfile, gridname, mode=mode)
 
 
 def main():
