@@ -19,12 +19,12 @@ is first resampled to a common grid. This makes the level-2 sea-ice drift produc
 
 ## CIMR Level-1b re-sampling approach
 
-The re-sampling approach for resampling CIMR Level-1b Ku and Ka band imagery is not defined at this stage. From experience with sea-ice motion tracking from other passive
+The re-sampling approach for resampling CIMR Level-1b K and Ka band imagery is not defined at this stage. From experience with sea-ice motion tracking from other passive
 microwave mission, the Level-1b re-sampling approach does not have a large influence on the results. At this stage, the following characteristics are expected from the
 re-sampling:
 
 1. Remap incoming Level-1b files on two EASE2 polar grids (one covering northern hemisphere, the other covering the southern hemisphere);
-2. Remap 4 imagery channels (Ku-V, Ku-H, Ka-V, Ka-H);
+2. Remap 4 imagery channels (K-V, K-H, Ka-V, Ka-H);
 3. Remap the forward and backward scans separately;
 4. Aim at a grid spacing close to 5 km (TBC).
 
@@ -95,7 +95,7 @@ A source of sea-ice concentration (can be from CIMR Level-2 Sea Ice Concentratio
 
 #### Remap Level-1b brightness temperatures to the EASE2 image grids
 
-The Level-1b data (brightness temperature at Ku-V, Ku-H, Ka-V, Ka-H) are remapped onto the EASE2 image grids `nh_ease2-005` and `sh_ease2-005`. The forward and backward scans
+The Level-1b data (brightness temperature at K-V, K-H, Ka-V, Ka-H) are remapped onto the EASE2 image grids `nh_ease2-005` and `sh_ease2-005`. The forward and backward scans
 are remapped independently.
 
 A *valid time* is associated to the remapped imagery. It can be defined as the mean time of all the Level-1b samples remapped onto the image grid or the time of the observation closest to the (north or south pole).
@@ -320,7 +320,7 @@ from the others. $\mathcal{D}$ is a validity domain for $(\delta_x,\delta_y)$. E
 problem with domain constraint.
 
 Eq. {eq}`eq_maximonech` is valid for one pair of images. In the CIMR sea-ice drift algorithm, we however envision not one pair of (start, end) images but 16 pairs
-(fwd-fwd, fwd-bck, bck-fwd, and fwd-bck) for each of Ku-V, Ku-H, Ka-V, and Ka-H considering the foward and backward scans as separate images. Following {cite:t}`lavergne:2010:cmcc-jgr`
+(fwd-fwd, fwd-bck, bck-fwd, and fwd-bck) for each of K-V, K-H, Ka-V, and Ka-H considering the foward and backward scans as separate images. Following {cite:t}`lavergne:2010:cmcc-jgr`
 we implement an inplicit merging of the information content of the 16 imaging channels by maximizing a sum of cross-correlation functions:
 
 $$
