@@ -24,6 +24,11 @@ sphinx:
   config:
     bibtex_reference_style: author_year
     html_show_copyright: false
+    latex_elements: 
+      preamble: |
+        \usepackage{etoolbox}
+        \AtBeginEnvironment{figure}{\pretocmd{\hyperlink}{\protect}{}{}}
+
 
 
 # Information about where the book exists on the web
