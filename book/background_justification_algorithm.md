@@ -43,36 +43,36 @@ motion vector fields when the time span between the images is shortened
 {cite:p}`ezraty:2007:amsr-pum,haarpaintner:2006:qscat-drift,kwok:1998:ssmi85-drift`.
 **This is particularly important when the CIMR Level-2 product aims at sub-daily drift detection.**
 
-## Choice of Ku and Ka as main microwave frequencies
+## Choice of K and Ka as main microwave frequencies
 
 As introduced above, sea-ice motion tracking from pairs of satellite images does not require specific microwave frequencies to work. As long as
 the frequency allows a mostly unperturbed view of the sea-ice surface (window channels), the accuracy of the sea-ice drift retrieval does not
 depend on the frequency per se, but rather on the spatial resolution achieved. Imagery with higher spatial resolution should result in higher
 accuracy of the motion vectors.
 
-This is the reason why the primary microwave frequencies for the Level-2 sea-ice drift product are the Ku (18.7 GHz) and Ka (36.5 GHz) channels
+This is the reason why the primary microwave frequencies for the Level-2 sea-ice drift product are the K (18.7 GHz) and Ka (36.5 GHz) channels
 that will achieve spatial resolution of 5 km and better. Experience from the EUMETSAT OSI SAF near-real-time and climate processing confirms that
-the Ka-band imagery of AMSR2 provides the best results. In CIMR, the spatial resolution of the Ku-band imagery will be only slightly worse than at
-Ka-band, so that it should be included in the main processing. {cite:t}`kwok:2008:summer-drift` showed that the Ku-band imagery of AMSR2 provided
+the Ka-band imagery of AMSR2 provides the best results. In CIMR, the spatial resolution of the K-band imagery will be only slightly worse than at
+Ka-band, so that it should be included in the main processing. {cite:t}`kwok:2008:summer-drift` showed that the K-band imagery of AMSR2 provided
 valuable sea-ice motion information during the summer melt season, but {cite:t}`lavergne:2021:s2s` did not find better performance of summer
-sea-ice motion retrievals from Ku compared with Ka.
+sea-ice motion retrievals from K compared with Ka.
 
 The lower frequency channels of CIMR (L, C, X) could possibly contribute to sea-ice motion tracking, but two challenges are their coarser spatial
-resolution and the lack of intensity patterns to track from one image to the next (Ku and Ka imagery are sensitive to snow and sea-ice type, which has
-large variability across the polar sea-ice and is stable over the tracking window of 0,5 to 2 days). This ATBD thus focus on Ku and Ka imagery but leaves
+resolution and the lack of intensity patterns to track from one image to the next (K and Ka imagery are sensitive to snow and sea-ice type, which has
+large variability across the polar sea-ice and is stable over the tracking window of 0,5 to 2 days). This ATBD thus focus on K and Ka imagery but leaves
 the door open for later inclusion of at least C and X.
 
 ## Exploitation of the forward and backward scan
 
 In the past (e.g. {cite:t}`haarpaintner:2006:qscat-drift,kwok:1998:ssmi85-drift,girard-ardhuin:2012:drift`, among others), one sea-ice motion vector field would have been processed
-for each microwave channel as input, i.e. one vector field from the Ku-H band, one from Ku-V, etc... the different vector fields would then be merged together a-posteriori.
+for each microwave channel as input, i.e. one vector field from the K-H band, one from K-V, etc... the different vector fields would then be merged together a-posteriori.
 
 {cite:t}`lavergne:2010:cmcc-jgr` introduced a different approach where a single sea-ice drift motion field is processed in one go from all the available imagery channels. This *implicit* merging
 it implemented at the core of the motion tracking algorithm, by solving for the maximum value of the sum of the cross-correlation of several imagery channels, instead of just one imagery channel.
 
-For CIMR, this can be further extended by considering the imagery from *forward* and *backward* scans as independent imaging channels. There are thus two images with Ku-H, two with Ku-V, etc... in
+For CIMR, this can be further extended by considering the imagery from *forward* and *backward* scans as independent imaging channels. There are thus two images with K-H, two with K-V, etc... in
 total eight imaging channels for each swath. When doing sea-ice motion tracking with CIMR, one can thus do an implicit merging with 16 pairs of images (fwd-fwd, fwd-bck, bck-fwd, and fwd-bck) for each of
-Ku-V, Ku-H, Ka-V, and Ka-H. It is expected that using the forward and backward scans as part of the implicit merging will be benefitial to reduce the retrieval uncertainty and limit the number of
+K-V, K-H, Ka-V, and Ka-H. It is expected that using the forward and backward scans as part of the implicit merging will be benefitial to reduce the retrieval uncertainty and limit the number of
 rogue vectors. This will have to be validated in the product development phase since CIMR is the first passive microwave mission offering full scans for sea-ice motion tracking.
 
 ## Swath-to-swath Motion Tracking (Level-2 strategy)
