@@ -991,7 +991,8 @@ int compute_Posterior_Uncertainties(size_t p, short pat, double xbest[], double 
    dy_var = d2fdx2 / delta;
    dxdy_covar = - d2fdxdy / delta;
    if ( (dx_var <= 0) || (dy_var <= 0) ) {
-      fprintf(stdout,"ERROR (%s) [p:%u] Negative variances (%f,%f)\n",__func__,p,dx_var,dy_var);
+     // Commenting out to reduce length of output
+     //fprintf(stdout,"ERROR (%s) [p:%u] Negative variances (%f,%f)\n",__func__,p,dx_var,dy_var);
       /*
          uncertaintyflag[p] = ICEDRIFTPOST_NEG;
          printf("X-H:%f X+H:%f Y-H:%f Y+H:%f\n",(xd_sav-epsilon),(xd_sav+epsilon),(yd_sav-epsilon),(yd_sav+epsilon));

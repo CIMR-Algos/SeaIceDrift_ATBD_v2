@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: book/abstract
+- file: abstract
   title: Abstract
 - file: applicable_ref_docs
   title: Applicable and Reference Documents
@@ -22,11 +22,11 @@ chapters:
   title: Baseline Algorithm Definition
 - file: algorithm_input_output_data_definition.md
   title: Algorithm Input and Output Data Definition (IODD)
-- file: algorithm/CIMR_L2_Sea_Ice_Drift_algorithm
+- file: CIMR_L2_Sea_Ice_Drift_algorithm
   title: Prototype Implementation (ATBD v2)
-- file: algorithm/CIMR_L2_Sea_Ice_Drift_performanceAssessment
+- file: CIMR_L2_Sea_Ice_Drift_performanceAssessment
   title: Prototype Performance Assessment (ATBD v2)
-- file: book/roadmap_for_future_atbd_developments
+- file: roadmap_for_future_atbd_developments
   title: Roadmap for future ATBD developments (ATBD v2)
 - file: references
   title: References

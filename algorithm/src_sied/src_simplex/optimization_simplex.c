@@ -281,7 +281,8 @@ NextIteration:
       count_iterations++;
       
       if (count_iterations == ITERA_MAX) {
-         printf("The maximum number of iterations (%u) is reached. The best point up to now is ",count_iterations);
+	// Commenting out to reduce heavy output
+	//printf("The maximum number of iterations (%u) is reached. The best point up to now is ",count_iterations);
 	 PrintVect((const Vect *)vertices[best]);
          success=REACHED_ITERA_MAX;
 	 break; 

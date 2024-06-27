@@ -57,12 +57,15 @@ void PrintVect(const Vect *v)
 {
    /* first part (the params) should be delegated to the physical X */
    /* param values: */
-   printf("X: {");
+  // Commenting out to reduce length of output
+  //printf("X: {");
    for (size_t n = 0 ; n < v->nx ; n ++) {
-      printf("%f,",v->x[n]);
+     // Commenting out to reduce length of output
+     //printf("%f,",v->x[n]);
    }
    /* finish with score */
-   printf("\b}. Score=%.10f\n",v->score);
+   // Commenting out to reduce length of output
+   //printf("\b}. Score=%.10f\n",v->score);
 }
 
 void PrintCoordVect(const Vect *v)
