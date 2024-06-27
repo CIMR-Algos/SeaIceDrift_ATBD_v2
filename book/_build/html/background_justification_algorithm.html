@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 product definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_algorithm.html">A Level-2 Sea Ice Drift (SID) algorithm for CIMR</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_performanceAssessment.html">Prototype Performance Assessment (ATBD v2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap_for_future_atbd_developments.html">Roadmap for future ATBD developments (ATBD v2)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
@@ -353,7 +358,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-continuous-maximum-cross-correlation-method-cmcc">The Continuous Maximum Cross-Correlation method (CMCC)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choice-of-ku-and-ka-as-main-microwave-frequencies">Choice of Ku and Ka as main microwave frequencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choice-of-k-and-ka-as-main-microwave-frequencies">Choice of K and Ka as main microwave frequencies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploitation-of-the-forward-and-backward-scan">Exploitation of the forward and backward scan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#swath-to-swath-motion-tracking-level-2-strategy">Swath-to-swath Motion Tracking (Level-2 strategy)</a></li>
 </ul>
@@ -408,32 +413,32 @@ motion vector fields when the time span between the images is shortened
 <span id="id5">[<a class="reference internal" href="references.html#id5" title="Robert Ezraty, Fanny Girard-Ardhuin, and D. Croizé-Fillon. Sea ice drift in the central Arctic estimated using the 89 GHz brightness temperatures of the Advanced Microwave Scanning Radiometer – User's manual. v2.0, CERSAT, IFREMER, France, February 2007.">Ezraty <em>et al.</em>, 2007</a>, <a class="reference internal" href="references.html#id9" title="J. Haarpaintner. Arctic-wide operational sea ice drift from enhanced-resolution Quikscat/SeaWinds scatterometry and its validation. IEEE Transactions on Geoscience and Remote Sensing, 44(1):102–107, January 2006.">Haarpaintner, 2006</a>, <a class="reference internal" href="references.html#id14" title="R. Kwok, A. Schweiger, D. A. Rothrock, S. Pang, and C. Kottmeier. Sea ice motion from satellite passive microwave imagery assessed with ERS SAR and buoy motions. Journal of Geophysical Research, 103:8191–8214, April 1998. doi:10.1029/97JC03334.">Kwok <em>et al.</em>, 1998</a>]</span>.
 <strong>This is particularly important when the CIMR Level-2 product aims at sub-daily drift detection.</strong></p>
 </section>
-<section id="choice-of-ku-and-ka-as-main-microwave-frequencies">
-<h2>Choice of Ku and Ka as main microwave frequencies<a class="headerlink" href="#choice-of-ku-and-ka-as-main-microwave-frequencies" title="Permalink to this heading">#</a></h2>
+<section id="choice-of-k-and-ka-as-main-microwave-frequencies">
+<h2>Choice of K and Ka as main microwave frequencies<a class="headerlink" href="#choice-of-k-and-ka-as-main-microwave-frequencies" title="Permalink to this heading">#</a></h2>
 <p>As introduced above, sea-ice motion tracking from pairs of satellite images does not require specific microwave frequencies to work. As long as
 the frequency allows a mostly unperturbed view of the sea-ice surface (window channels), the accuracy of the sea-ice drift retrieval does not
 depend on the frequency per se, but rather on the spatial resolution achieved. Imagery with higher spatial resolution should result in higher
 accuracy of the motion vectors.</p>
-<p>This is the reason why the primary microwave frequencies for the Level-2 sea-ice drift product are the Ku (18.7 GHz) and Ka (36.5 GHz) channels
+<p>This is the reason why the primary microwave frequencies for the Level-2 sea-ice drift product are the K (18.7 GHz) and Ka (36.5 GHz) channels
 that will achieve spatial resolution of 5 km and better. Experience from the EUMETSAT OSI SAF near-real-time and climate processing confirms that
-the Ka-band imagery of AMSR2 provides the best results. In CIMR, the spatial resolution of the Ku-band imagery will be only slightly worse than at
-Ka-band, so that it should be included in the main processing. <span id="id6">Kwok [<a class="reference internal" href="references.html#id15" title="R. Kwok. Summer sea ice motion from the 18 GHz channel of AMSR-E and the exchange of sea ice between the Pacific and Atlantic sectors. Geophysical Research Letters, 2008. doi:10.1029/2007GL032692.">2008</a>]</span> showed that the Ku-band imagery of AMSR2 provided
+the Ka-band imagery of AMSR2 provides the best results. In CIMR, the spatial resolution of the K-band imagery will be only slightly worse than at
+Ka-band, so that it should be included in the main processing. <span id="id6">Kwok [<a class="reference internal" href="references.html#id15" title="R. Kwok. Summer sea ice motion from the 18 GHz channel of AMSR-E and the exchange of sea ice between the Pacific and Atlantic sectors. Geophysical Research Letters, 2008. doi:10.1029/2007GL032692.">2008</a>]</span> showed that the K-band imagery of AMSR2 provided
 valuable sea-ice motion information during the summer melt season, but <span id="id7">Lavergne <em>et al.</em> [<a class="reference internal" href="references.html#id20" title="T. Lavergne, M. Piñol Solé, E. Down, and C. Donlon. Towards a swath-to-swath sea-ice drift product for the copernicus imaging microwave radiometer mission. The Cryosphere, 15(8):3681–3698, 2021. URL: https://tc.copernicus.org/articles/15/3681/2021/, doi:10.5194/tc-15-3681-2021.">2021</a>]</span> did not find better performance of summer
-sea-ice motion retrievals from Ku compared with Ka.</p>
+sea-ice motion retrievals from K compared with Ka.</p>
 <p>The lower frequency channels of CIMR (L, C, X) could possibly contribute to sea-ice motion tracking, but two challenges are their coarser spatial
-resolution and the lack of intensity patterns to track from one image to the next (Ku and Ka imagery are sensitive to snow and sea-ice type, which has
-large variability across the polar sea-ice and is stable over the tracking window of 0,5 to 2 days). This ATBD thus focus on Ku and Ka imagery but leaves
+resolution and the lack of intensity patterns to track from one image to the next (K and Ka imagery are sensitive to snow and sea-ice type, which has
+large variability across the polar sea-ice and is stable over the tracking window of 0,5 to 2 days). This ATBD thus focus on K and Ka imagery but leaves
 the door open for later inclusion of at least C and X.</p>
 </section>
 <section id="exploitation-of-the-forward-and-backward-scan">
 <h2>Exploitation of the forward and backward scan<a class="headerlink" href="#exploitation-of-the-forward-and-backward-scan" title="Permalink to this heading">#</a></h2>
 <p>In the past (e.g. <span id="id8">Girard-Ardhuin and Ezraty [<a class="reference internal" href="references.html#id7" title="Fanny Girard-Ardhuin and Robert Ezraty. Enhanced arctic sea ice drift estimation merging radiometer and scatterometer data. IEEE Transactions on Geoscience and Remote Sensing, 50(7):2639-2648, 2012. doi:10.1109/TGRS.2012.2184124.">2012</a>], Haarpaintner [<a class="reference internal" href="references.html#id9" title="J. Haarpaintner. Arctic-wide operational sea ice drift from enhanced-resolution Quikscat/SeaWinds scatterometry and its validation. IEEE Transactions on Geoscience and Remote Sensing, 44(1):102–107, January 2006.">2006</a>], Kwok <em>et al.</em> [<a class="reference internal" href="references.html#id14" title="R. Kwok, A. Schweiger, D. A. Rothrock, S. Pang, and C. Kottmeier. Sea ice motion from satellite passive microwave imagery assessed with ERS SAR and buoy motions. Journal of Geophysical Research, 103:8191–8214, April 1998. doi:10.1029/97JC03334.">1998</a>]</span>, among others), one sea-ice motion vector field would have been processed
-for each microwave channel as input, i.e. one vector field from the Ku-H band, one from Ku-V, etc… the different vector fields would then be merged together a-posteriori.</p>
+for each microwave channel as input, i.e. one vector field from the K-H band, one from K-V, etc… the different vector fields would then be merged together a-posteriori.</p>
 <p><span id="id9">Lavergne <em>et al.</em> [<a class="reference internal" href="references.html#id19" title="Thomas Lavergne, Steinar Eastwood, Zakaria Teffah, Harald Schyberg, and Lars-Anders Breivik. Sea ice motion from low resolution satellite sensors: an alternative method and its validation in the Arctic. Journal of Geophysical Research, 2010. doi:10.1029/2009JC005958.">2010</a>]</span> introduced a different approach where a single sea-ice drift motion field is processed in one go from all the available imagery channels. This <em>implicit</em> merging
 it implemented at the core of the motion tracking algorithm, by solving for the maximum value of the sum of the cross-correlation of several imagery channels, instead of just one imagery channel.</p>
-<p>For CIMR, this can be further extended by considering the imagery from <em>forward</em> and <em>backward</em> scans as independent imaging channels. There are thus two images with Ku-H, two with Ku-V, etc… in
+<p>For CIMR, this can be further extended by considering the imagery from <em>forward</em> and <em>backward</em> scans as independent imaging channels. There are thus two images with K-H, two with K-V, etc… in
 total eight imaging channels for each swath. When doing sea-ice motion tracking with CIMR, one can thus do an implicit merging with 16 pairs of images (fwd-fwd, fwd-bck, bck-fwd, and fwd-bck) for each of
-Ku-V, Ku-H, Ka-V, and Ka-H. It is expected that using the forward and backward scans as part of the implicit merging will be benefitial to reduce the retrieval uncertainty and limit the number of
+K-V, K-H, Ka-V, and Ka-H. It is expected that using the forward and backward scans as part of the implicit merging will be benefitial to reduce the retrieval uncertainty and limit the number of
 rogue vectors. This will have to be validated in the product development phase since CIMR is the first passive microwave mission offering full scans for sea-ice motion tracking.</p>
 </section>
 <section id="swath-to-swath-motion-tracking-level-2-strategy">
@@ -518,7 +523,7 @@ rogue vectors. This will have to be validated in the product development phase s
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-continuous-maximum-cross-correlation-method-cmcc">The Continuous Maximum Cross-Correlation method (CMCC)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choice-of-ku-and-ka-as-main-microwave-frequencies">Choice of Ku and Ka as main microwave frequencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choice-of-k-and-ka-as-main-microwave-frequencies">Choice of K and Ka as main microwave frequencies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploitation-of-the-forward-and-backward-scan">Exploitation of the forward and backward scan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#swath-to-swath-motion-tracking-level-2-strategy">Swath-to-swath Motion Tracking (Level-2 strategy)</a></li>
 </ul>

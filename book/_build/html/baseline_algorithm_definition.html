@@ -190,6 +190,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 product definition</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Baseline Algorithm Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_algorithm.html">A Level-2 Sea Ice Drift (SID) algorithm for CIMR</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_performanceAssessment.html">Prototype Performance Assessment (ATBD v2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap_for_future_atbd_developments.html">Roadmap for future ATBD developments (ATBD v2)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
@@ -420,7 +425,7 @@ document.write(`
 <p>In the following sections, the Level-2 sea-ice drift algorithm is further
 described. It consists in those steps:</p>
 <ul class="simple">
-<li><p>resampling og Level-1b data;</p></li>
+<li><p>resampling of Level-1b data;</p></li>
 <li><p>selection of tracking locations and preliminary screening;</p></li>
 <li><p>block-based maximisation of the correlation metric via the CMCC;</p></li>
 <li><p>filtering and correction step;</p></li>
@@ -436,16 +441,16 @@ is first resampled to a common grid. This makes the level-2 sea-ice drift produc
 </ol>
 <section id="cimr-level-1b-re-sampling-approach">
 <h2>CIMR Level-1b re-sampling approach<a class="headerlink" href="#cimr-level-1b-re-sampling-approach" title="Permalink to this heading">#</a></h2>
-<p>The re-sampling approach for resampling CIMR Level-1b Ku and Ka band imagery is not defined at this stage. From experience with sea-ice motion tracking from other passive
+<p>The re-sampling approach for resampling CIMR Level-1b K and Ka band imagery is not defined at this stage. From experience with sea-ice motion tracking from other passive
 microwave mission, the Level-1b re-sampling approach does not have a large influence on the results. At this stage, the following characteristics are expected from the
 re-sampling:</p>
 <ol class="arabic simple">
-<li><p>Remap incoming Level-1b files on two EASE2 polar grids (one covering northern hemisphere, the other covering the southern hemisphere);</p></li>
-<li><p>Remap 4 imagery channels (Ku-V, Ku-H, Ka-V, Ka-H);</p></li>
+<li><p>Remap incoming Level-1b files on two EASE2 polar grids (one covering Northern Hemisphere, the other covering the Southern Hemisphere);</p></li>
+<li><p>Remap 4 imagery channels (K-V, K-H, Ka-V, Ka-H);</p></li>
 <li><p>Remap the forward and backward scans separately;</p></li>
 <li><p>Aim at a grid spacing close to 5 km (TBC).</p></li>
 </ol>
-<p><a class="reference internal" href="#grids"><span class="std std-numref">Table 4</span></a> defines four grids, two for the northern hemisphere, two for the southern hemisphere. nx (ny) is the number of grid cells in x (y) dimension, Ax (Ay) is the grid spacing, and Cx (Cy) is the coordinate
+<p><a class="reference internal" href="#grids"><span class="std std-numref">Table 4</span></a> defines four grids, two for the Northern Hemisphere, two for the Southern Hemisphere. nx (ny) is the number of grid cells in x (y) dimension, Ax (Ay) is the grid spacing, and Cx (Cy) is the coordinate
 of the upper-left corner of the upper-left cell in the grid. Grids <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-005</span></code> have 5 km grid spacing and are candidate target grids on which to remap the Level-1b imagery. Grids <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-250</span></code> have 25 km grid spacing
 and are candidate grids for the resulting Level-2 sea-ice drift product. By construction, the center of the cells of the two ‘250’ grids fall exactly at the center of one every five grid cells of the ‘005’ grids. This
 ensures that drift vectors (at every grid cell of the ‘250’ grids) use image blocks (from the ‘005’ grids) that are perfectly aligned.</p>
@@ -484,14 +489,14 @@ ensures that drift vectors (at every grid cell of the ‘250’ grids) use image
 4 km spacing and consider a ‘1-every-6’ ratio (Level-2 grid spacing at 24 km) or keep a ‘1-every-5’ ratio (Level-2 grid spacing at 20 km).</p>
 <p>The remaining of the algorithm description does not depend on this choice, which can easily be changed in the course of the product development.</p>
 <p>Each incoming Level-1b file thus results in 16 gridded fields of brightness temperature: 2 hemispheres x 2 scans x 4 bands. These can be written in two L1C-like netCDF files (1 per hemisphere) or
-directly entered in the motion tracking algorithm. They must be written to netCDF files at one point so that they are available for sea-ice drift processing when the next Level-1b swath file arrives.</p>
+directly entered the motion tracking algorithm. They must be written to netCDF files at one point so that they are available for sea-ice drift processing when the next Level-1b swath file arrives.</p>
 </section>
 <section id="algorithm-assumptions-and-simplifications">
 <h2>Algorithm Assumptions and Simplifications<a class="headerlink" href="#algorithm-assumptions-and-simplifications" title="Permalink to this heading">#</a></h2>
 <p>All block-based motion have similar assumptions and simplifications. They assume that each pixel in a block moves at a constant rate from one image to the next: what is retrieved are the <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code>
 components of the motion vector. In case of rotational motion within the area of the image block, the retrieved components will be those representing most faithfully the change in intensity between
 the two images, but the rotation rate is not measured. By the same token, if deformation (convergence / divergence / shear) occurs within the area of the image blocks, this will not be detected.
-Rotation and deformation betwen image blocks (between neighbouring pixels) can of course be detected.</p>
+Rotation and deformation between image blocks (between neighbouring pixels) can of course be detected.</p>
 <p>To detect and possibly correct “rogue” vectors in the motion field, we have to assume that the motion field is spatially coherent in a neighbourhood. This is because we detect anomalous motion vectors
 by their distance to the local average motion. One must be careful with this assumption as to not artificially smooth the motion fields and remove actual diverging / converging motion.</p>
 </section>
@@ -528,20 +533,20 @@ as a land-mask to only process over sea ice.</p>
 </section>
 <section id="remap-level-1b-brightness-temperatures-to-the-ease2-image-grids">
 <h4>Remap Level-1b brightness temperatures to the EASE2 image grids<a class="headerlink" href="#remap-level-1b-brightness-temperatures-to-the-ease2-image-grids" title="Permalink to this heading">#</a></h4>
-<p>The Level-1b data (brightness temperature at Ku-V, Ku-H, Ka-V, Ka-H) are remapped onto the EASE2 image grids <code class="docutils literal notranslate"><span class="pre">nh_ease2-005</span></code> and <code class="docutils literal notranslate"><span class="pre">sh_ease2-005</span></code>. The forward and backward scans
+<p>The Level-1b data (brightness temperature at K-V, K-H, Ka-V, Ka-H) are remapped onto the EASE2 image grids <code class="docutils literal notranslate"><span class="pre">nh_ease2-005</span></code> and <code class="docutils literal notranslate"><span class="pre">sh_ease2-005</span></code>. The forward and backward scans
 are remapped independently.</p>
-<p>A <em>valid time</em> is associated to the remapped imagery. It can be defined as the mean time of all the Level-1b samples remapped onto the image grid or the time of the observation closest to the (north or south pole).
-The exact definition is not critical, neither is the accuracy, so that a single valid time is associated to all 8 remapped imagery bands in the northern hemisphere, and a single (different) time to the 8
-remapped imagery bands i nthe southern hemisphere.</p>
+<p>A <em>valid time</em> is associated to the remapped imagery. It can be defined as the mean time of all the Level-1b samples remapped onto the image grid or the time of the observation closest to the (North or South Pole).
+The exact definition is not critical, neither is the accuracy, so that a single valid time is associated to all 8 remapped imagery bands in the Northern Hemisphere, and a single (different) time to the 8
+remapped imagery bands in the Southern Hemisphere.</p>
 <section id="mathematical-description">
 <h5>Mathematical description<a class="headerlink" href="#mathematical-description" title="Permalink to this heading">#</a></h5>
 <p>Remapping is the process of computing the Level-1b brightness temperature onto a regular Earth-based grid. The values in the image grid can generally be described as a weighted sum of
-the values in the Level-1b swath projection. The mathematical description is TBD and will depend on the selected remapping strategy (TBD for v2 ATBD).</p>
+the values in the Level-1b swath projection. The mathematical description is TBD and will depend on the selected remapping strategy.</p>
 </section>
 <section id="id1">
 <h5>Input data<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h5>
 <p>The latitude and longitude of the image grids <code class="docutils literal notranslate"><span class="pre">nh_ease2-005</span></code> and <code class="docutils literal notranslate"><span class="pre">sh_ease2-005</span></code>.</p>
-<p>The Level-1b brightness temperatures of all samples in the  input Level-1b file, splitted in a forward and a backward scan.</p>
+<p>The Level-1b brightness temperatures of all samples in the input Level-1b file, split in a forward and a backward scan.</p>
 </section>
 <section id="id2">
 <h5>Output data<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h5>
@@ -554,9 +559,9 @@ the values in the Level-1b swath projection. The mathematical description is TBD
 </section>
 <section id="image-preprocessing-laplacian-filter">
 <h4>Image preprocessing (Laplacian filter)<a class="headerlink" href="#image-preprocessing-laplacian-filter" title="Permalink to this heading">#</a></h4>
-<p>The remapped brightness temperatures are not used direclty as input to the sea-ice motion tracking step. Instead, a filter is first applied to the remapped imagery to
+<p>The remapped brightness temperatures are not used directly as input to the sea-ice motion tracking step. Instead, a filter is first applied to the remapped imagery to
 enhance and stabilize intensity patterns.</p>
-<p>At the end of the step, the laplacian processed imagery are saved to disk, e.g. in netCDF files (two separated files for the two hemispheres).</p>
+<p>At the end of the step, the Laplacian processed imagery are saved to disk, e.g. in netCDF files (two separated files for the two hemispheres).</p>
 <section id="id3">
 <h5>Mathematical description<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h5>
 <p>A common filter, used by <span id="id4">Girard-Ardhuin and Ezraty [<a class="reference internal" href="references.html#id7" title="Fanny Girard-Ardhuin and Robert Ezraty. Enhanced arctic sea ice drift estimation merging radiometer and scatterometer data. IEEE Transactions on Geoscience and Remote Sensing, 50(7):2639-2648, 2012. doi:10.1109/TGRS.2012.2184124.">2012</a>]</span> and <span id="id5">Lavergne <em>et al.</em> [<a class="reference internal" href="references.html#id19" title="Thomas Lavergne, Steinar Eastwood, Zakaria Teffah, Harald Schyberg, and Lars-Anders Breivik. Sea ice motion from low resolution satellite sensors: an alternative method and its validation in the Arctic. Journal of Geophysical Research, 2010. doi:10.1029/2009JC005958.">2010</a>]</span>, is the Laplace filter, that is based on computing the second derivatives of the image intensity.</p>
@@ -580,7 +585,7 @@ N^{-} &amp;=&amp; \sum_{n=i-2}^{i+2} \sum_{m=j-2}^{j+2} \delta_{\textrm{na}}(n,m
 \end{aligned}
 \end{split}\]</div>
 <p>In Eq. <a class="reference internal" href="#equation-eq-laplace">(1)</a> and <a class="reference internal" href="#equation-eq-laplace2">(2)</a>, <span class="math notranslate nohighlight">\(\delta_{\textrm{na}}(n,m)\)</span> has value <span class="math notranslate nohighlight">\(0\)</span> if <span class="math notranslate nohighlight">\(\mathcal{I}[n,m]\)</span> is
-non available (a missing value in the swath, or missing values outside the coverage of the swath) and
+non-available (a missing value in the swath, or missing values outside the coverage of the swath) and
 <span class="math notranslate nohighlight">\(\delta_{\textrm{ice}}(n,m)\)</span> is <span class="math notranslate nohighlight">\(1\)</span> only over ice pixels, as
 specified by the ice/water/land mask. It means that only <em>valid</em>, <em>sea ice</em>
 pixels enter the Laplacian field in order to limit spurious features
@@ -607,7 +612,7 @@ grid cell <span class="math notranslate nohighlight">\([i,j]\)</span>.</p>
 </section>
 <section id="sea-ice-motion-tracking">
 <h3>Sea-ice motion tracking<a class="headerlink" href="#sea-ice-motion-tracking" title="Permalink to this heading">#</a></h3>
-<p>To compute sea-ice drift vectors require two images. A <em>start</em> and an <em>end</em> image. In the near-real-time Level-2 processing context, the end image is the (laplacian filtered) remapped imagery
+<p>To compute sea-ice drift vectors require two images. A <em>start</em> and an <em>end</em> image. In the near-real-time Level-2 processing context, the end image is the (Laplacian filtered) remapped imagery
 from the input Level-1b file. Start images are taken from a running pool of remapped imagery from the previous runs of the sea-ice drift algorithm. In principle, many start images can be selected
 and run into the sea-ice motion tracking against the end image. The difference between the valid time of the start and end imagery determines the drift duration (<em>aka</em> time span) of the Level-2
 drift vectors.</p>
@@ -615,10 +620,10 @@ drift vectors.</p>
 Ideally, the sea-ice motion tracking algorithm described below is applied for several (start, end) image pair to obtain a good temporal sampling of the sea-ice motion (e.g. 24 hours, 18 hours, 12 hours, 6 hours, etc…). At max,
 the sea-ice motion tracking algorithm would be applied with all (start, end) image pairs for which the valid time of the start image is less or equal to 24 hours from the valid time of the end image. Each (start, end) image pair
 will correspond to different area of intersect between the two swaths, and thus to different numbers of resulting sea-ice drift vectors. Pairs with too limited overlaps could be discarded up-front to favour processing pairs
-with a large overlap. Because swath-to-swath motion tracking is very sensitive to (systematic) geolocation errors <span id="id9">[<a class="reference internal" href="references.html#id20" title="T. Lavergne, M. Piñol Solé, E. Down, and C. Donlon. Towards a swath-to-swath sea-ice drift product for the copernicus imaging microwave radiometer mission. The Cryosphere, 15(8):3681–3698, 2021. URL: https://tc.copernicus.org/articles/15/3681/2021/, doi:10.5194/tc-15-3681-2021.">Lavergne <em>et al.</em>, 2021</a>]</span> it might be preferrable to not process some pairs (e.g. ascending vs descending) that
+with a large overlap. Because swath-to-swath motion tracking is very sensitive to (systematic) geolocation errors <span id="id9">[<a class="reference internal" href="references.html#id20" title="T. Lavergne, M. Piñol Solé, E. Down, and C. Donlon. Towards a swath-to-swath sea-ice drift product for the copernicus imaging microwave radiometer mission. The Cryosphere, 15(8):3681–3698, 2021. URL: https://tc.copernicus.org/articles/15/3681/2021/, doi:10.5194/tc-15-3681-2021.">Lavergne <em>et al.</em>, 2021</a>]</span> it might be preferable to not process some pairs (e.g. ascending vs descending) that
 would have larger uncertainties.</p>
 <p>A hard limit is that the processing of all the image pairs must happen before the next input Level-1b input file is available for processing. Parallel computing strategy will help reduce the
-total processing time (since each image pair can be processed independently from each others). A schedulding strategy must be designed to affort the maximum number of image pairs before it causes a problem for product latency.</p>
+total processing time (since each image pair can be processed independently of each others). A scheduling strategy must be designed to afford the maximum number of image pairs before it causes a problem for product latency.</p>
 <p>At this stage it is TBD if each (start, end) image pairs results in individual Level-2 product files (better for the latency) or if all the sea-ice drift vectors (with different time spans) are concatenated in a single
 Level-2 product file.</p>
 <p>In any case, the description below is for a single (start, end) image pair, and for each image grid (nh and sh) separately.</p>
@@ -648,7 +653,7 @@ Discard the grid locations whose blocks hold missing data.</p></li>
 <section id="id10">
 <h5>Input data<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h5>
 <p>The two (start and end) ice/ocean/land masks on the image grid <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-005</span></code>.</p>
-<p>The two (start and end) laplacian-filtered brightness temperature maps on the image grid <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-005</span></code>.</p>
+<p>The two (start and end) Laplacian-filtered brightness temperature maps on the image grid <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-005</span></code>.</p>
 <p>The diameter of the sub-image (<em>aka</em> image block) to be used in the CMCC, in number of pixels.</p>
 <p>The definition of the Level-2 product grid <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-025</span></code>.</p>
 </section>
@@ -663,7 +668,7 @@ Discard the grid locations whose blocks hold missing data.</p></li>
 <section id="id12">
 <h5>Mathematical description<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h5>
 <p>We note <span class="math notranslate nohighlight">\(\mathcal{L}_0(x,y)[i]\)</span> the <span class="math notranslate nohighlight">\(i^{th}\)</span> pixel of the <em>start</em>
-sub-image centred at point <span class="math notranslate nohighlight">\((x,y)\)</span>, extracted from the <span class="math notranslate nohighlight">\(\mathcal{L}_0\)</span>
+sub-image centered at point <span class="math notranslate nohighlight">\((x,y)\)</span>, extracted from the <span class="math notranslate nohighlight">\(\mathcal{L}_0\)</span>
 image. <span class="math notranslate nohighlight">\((x,y)\)</span> are the coordinates expressed in the underpinning EASE2
 projection (units km).</p>
 <p>The total number of pixels <span class="math notranslate nohighlight">\(N\)</span> in a sub-image depends on the diameter of the sub-image (input parameter).</p>
@@ -726,14 +731,14 @@ be expressed as the following maximisation problem:</p>
 from the others. <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> is a validity domain for <span class="math notranslate nohighlight">\((\delta_x,\delta_y)\)</span>. Eq. <a class="reference internal" href="#equation-eq-maximonech">(5)</a> thus defines a two dimensional optimisation
 problem with domain constraint.</p>
 <p>Eq. <a class="reference internal" href="#equation-eq-maximonech">(5)</a> is valid for one pair of images. In the CIMR sea-ice drift algorithm, we however envision not one pair of (start, end) images but 16 pairs
-(fwd-fwd, fwd-bck, bck-fwd, and fwd-bck) for each of Ku-V, Ku-H, Ka-V, and Ka-H considering the foward and backward scans as separate images. Following <span id="id13">Lavergne <em>et al.</em> [<a class="reference internal" href="references.html#id19" title="Thomas Lavergne, Steinar Eastwood, Zakaria Teffah, Harald Schyberg, and Lars-Anders Breivik. Sea ice motion from low resolution satellite sensors: an alternative method and its validation in the Arctic. Journal of Geophysical Research, 2010. doi:10.1029/2009JC005958.">2010</a>]</span>
+(fwd-fwd, fwd-bck, bck-fwd, and fwd-bck) for each of K-V, K-H, Ka-V, and Ka-H considering the foward and backward scans as separate images. Following <span id="id13">Lavergne <em>et al.</em> [<a class="reference internal" href="references.html#id19" title="Thomas Lavergne, Steinar Eastwood, Zakaria Teffah, Harald Schyberg, and Lars-Anders Breivik. Sea ice motion from low resolution satellite sensors: an alternative method and its validation in the Arctic. Journal of Geophysical Research, 2010. doi:10.1029/2009JC005958.">2010</a>]</span>
 we implement an inplicit merging of the information content of the 16 imaging channels by maximizing a sum of cross-correlation functions:</p>
 <div class="math notranslate nohighlight" id="equation-eq-maxim">
 <span class="eqno">(6)<a class="headerlink" href="#equation-eq-maxim" title="Permalink to this equation">#</a></span>\[
 \max_{(x,y)\in\mathcal{D}} \frac{1}{N_{ch}} \sum_{c=1}^{c=N_{ch}} \rho^{c}(x,y,\delta_x,\delta_y)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(N_{ch}\)</span> is the number of channels (<span class="math notranslate nohighlight">\(N_{ch} = 16\)</span>).</p>
-<p>Eq. <a class="reference internal" href="#equation-eq-maxim">(6)</a> is solved by the Nelder Mead algorithm <span id="id14">[<a class="reference internal" href="references.html#id24" title="J. A. Nelder and R. Mead. A simplex method for function minimization. Computational Journal, 7:308–313, 1968.">Nelder and Mead, 1968</a>]</span>. This algorithm is
+<p>Eq. <a class="reference internal" href="#equation-eq-maxim">(6)</a> is solved by the Nelder-Mead algorithm <span id="id14">[<a class="reference internal" href="references.html#id24" title="J. A. Nelder and R. Mead. A simplex method for function minimization. Computational Journal, 7:308–313, 1968.">Nelder and Mead, 1968</a>]</span>. This algorithm is
 chosen since it is simple to implement and does not require computing the gradients of the function to be minimized. It furthermore has good convergence
 and computational properties in problems with low dimensionality <span id="id15">[<a class="reference internal" href="references.html#id18" title="Jeffrey C. Lagarias, James A. Reeds, Margaret H. Wright, and Paul E. Wright. Convergence properties of the Nelder-Mead simplex method in low dimensions. SIAM Journal on Optimization, 9:112–147, 1998.">Lagarias <em>et al.</em>, 1998</a>]</span>.</p>
 <p>Starting points for the optimisation are sampled on a length-angle regular grid around point <span class="math notranslate nohighlight">\((0,0)\)</span> as on <a class="reference internal" href="#fig-startpoints"><span class="std std-numref">Fig. 4</span></a>.</p>

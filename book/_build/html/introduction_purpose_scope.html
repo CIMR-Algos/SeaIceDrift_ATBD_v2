@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 product definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_algorithm.html">A Level-2 Sea Ice Drift (SID) algorithm for CIMR</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_performanceAssessment.html">Prototype Performance Assessment (ATBD v2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap_for_future_atbd_developments.html">Roadmap for future ATBD developments (ATBD v2)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
@@ -372,13 +377,13 @@ and coarse spatial resolution (&gt; 30 km) and daily complete coverage for t
 employed are quite similar and stem from the maximum cross-correlation (MCC) technique <span id="id12">[<a class="reference internal" href="references.html#id4" title="W. J. Emery, A. C. Thomas, M. J. Collins, W. R. Crawford, and D. L. Mackas. An objective method for computing advective surface velocities from sequential infrared satellite images. Journal of Geophysical Research, 91:12865–12878, 1986.">Emery <em>et al.</em>, 1986</a>]</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The characteristics of the CIMR mission, and especially the spatial resolution obtained at Ku (5 km)
+<p>The characteristics of the CIMR mission, and especially the spatial resolution obtained at K (5 km)
 and Ka (4 km) should allow global, year-round (irrespective of solar illumination and cloud cover), sub-daily moniroting at medium spatial resolution (25 km), which is unprecedented.</p>
 </div>
 <p>The Level-2 sea-ice drift product described in this ATBD has been specifically designed to fully exploit the CIMR mission, in particular:</p>
 <ol class="arabic simple">
 <li><p>the CIMR sea-ice drift product is a Level-2 product, adopting a swath-to-swath approach <span id="id13">[<a class="reference internal" href="references.html#id20" title="T. Lavergne, M. Piñol Solé, E. Down, and C. Donlon. Towards a swath-to-swath sea-ice drift product for the copernicus imaging microwave radiometer mission. The Cryosphere, 15(8):3681–3698, 2021. URL: https://tc.copernicus.org/articles/15/3681/2021/, doi:10.5194/tc-15-3681-2021.">Lavergne <em>et al.</em>, 2021</a>]</span>. This is conversely to all existing sea-ice drift products from passive microwave missions (OSI SAF, IFREMER, NSIDC, etc…) that are Level-3 products (available once a day from daily averaged maps of brightness temperatures). SAR-based products (e.g. from the CMEMS Sea Ice Thematic Assembly Center) are generally swath-to-swath products (but with spatial coverage limited by the coverage of the SAR missions).</p></li>
-<li><p>the CIMR sea-ice drift product aims at a 25 km grid spacing, taking full advantage of the Ku and Ka imagery.</p></li>
+<li><p>the CIMR sea-ice drift product aims at a 25 km grid spacing, taking full advantage of the K and Ka imagery.</p></li>
 <li><p>sea-ice drift is derived both from the forward and backward scans separately to improve quality control (filtering of “rogue” vectors)</p></li>
 </ol>
 </section>

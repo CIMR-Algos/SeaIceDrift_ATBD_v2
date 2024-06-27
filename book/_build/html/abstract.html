@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 product definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_algorithm.html">A Level-2 Sea Ice Drift (SID) algorithm for CIMR</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_performanceAssessment.html">Prototype Performance Assessment (ATBD v2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap_for_future_atbd_developments.html">Roadmap for future ATBD developments (ATBD v2)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
@@ -359,10 +364,10 @@ document.write(`
 <p>Pushed by winds and ocean currents, sea ice is always on the move. Satellite remote sensing is an effective tool to monitor this motion, especially from microwave imagery.</p>
 <p>Monitoring of sea ice drift vectors by means of passive microwave is commonly based on motion tracking algorithms working from pairs of brightness temperature imagery in both horizontal and vertical polarisation.
 Depending on the satellite missions, different microwave frequencies have been used, but one generally expects higher accuracy from the higher resolution channels.
-Accordingly, this version of the Sea Ice Drift Level-2 product focuses on the Ku and Ka imagery.</p>
+Accordingly, this version of the Sea Ice Drift Level-2 product focuses on the K and Ka imagery.</p>
 <p>Contrarily to other existing operational sea-ice drift product (such as those of IFREMER Cersat or EUMETSAT OSI SAF), the CIMR sea-ice drift product is a Level-2 product. It is thus computed from pairs of
 overlapping swaths, not from pairs of daily averaged maps. This “swath-to-swath” setup was introduced in <span id="id1">Lavergne <em>et al.</em> [<a class="reference internal" href="references.html#id20" title="T. Lavergne, M. Piñol Solé, E. Down, and C. Donlon. Towards a swath-to-swath sea-ice drift product for the copernicus imaging microwave radiometer mission. The Cryosphere, 15(8):3681–3698, 2021. URL: https://tc.copernicus.org/articles/15/3681/2021/, doi:10.5194/tc-15-3681-2021.">2021</a>]</span>.</p>
-<p>Key assets of CIMR in terms of Sea Ice Drift monitoring are 1) its increased spatial resolution at Ku- and Ka-band (more accurate drift vectors), 2) larger swath (more drift vectors) and 3) the forward
+<p>Key assets of CIMR in terms of Sea Ice Drift monitoring are 1) its increased spatial resolution at K- and Ka-band (more accurate drift vectors), 2) larger swath (more drift vectors) and 3) the forward
 and backward scans (better quality control). The main source of uncertainty for the CIMR Sea Ice Drift product will probably be the geolocation uncertainty, hence the importance of the pointing
 accuracy (in orbit) and geolocation correction steps (in Level-1).</p>
 <p>Sea-ice drift vectors are assessed against trajectories from in situ buoy deployed on the ice. A sufficient number of these buoys must be ensured throughout the lifetime of the mission, both in the northern and
