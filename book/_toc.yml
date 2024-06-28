@@ -22,8 +22,10 @@ chapters:
   title: Baseline Algorithm Definition
 - file: algorithm_input_output_data_definition.md
   title: Algorithm Input and Output Data Definition (IODD)
+- file: CIMR_L2_Sea_Ice_Drift_preproc
+  title: Prototype Algorithm Preprocessing (ATBD v2)
 - file: CIMR_L2_Sea_Ice_Drift_algorithm
-  title: Prototype Implementation (ATBD v2)
+  title: Prototype Algorithm Implementation (ATBD v2)
 - file: CIMR_L2_Sea_Ice_Drift_performanceAssessment
   title: Prototype Performance Assessment (ATBD v2)
 - file: roadmap_for_future_atbd_developments
