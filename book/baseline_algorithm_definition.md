@@ -5,7 +5,7 @@ described. It consists in those steps:
 
 -   resampling of Level-1b data;
 -   selection of tracking locations and preliminary screening;
--   block-based maximisation of the correlation metric via the CMCC;
+-   block-based maximization of the correlation metric via the CMCC;
 -   filtering and correction step;
 -   assign status flags and per-vector uncertainties.
 
@@ -54,9 +54,9 @@ directly entered the motion tracking algorithm. They must be written to netCDF f
 All block-based motion have similar assumptions and simplifications. They assume that each pixel in a block moves at a constant rate from one image to the next: what is retrieved are the `dx` and `dy`
 components of the motion vector. In case of rotational motion within the area of the image block, the retrieved components will be those representing most faithfully the change in intensity between
 the two images, but the rotation rate is not measured. By the same token, if deformation (convergence / divergence / shear) occurs within the area of the image blocks, this will not be detected.
-Rotation and deformation between image blocks (between neighbouring pixels) can of course be detected.
+Rotation and deformation between image blocks (between neighboring pixels) can of course be detected.
 
-To detect and possibly correct "rogue" vectors in the motion field, we have to assume that the motion field is spatially coherent in a neighbourhood. This is because we detect anomalous motion vectors
+To detect and possibly correct "rogue" vectors in the motion field, we have to assume that the motion field is spatially coherent in a neighborhood. This is because we detect anomalous motion vectors
 by their distance to the local average motion. One must be careful with this assumption as to not artificially smooth the motion fields and remove actual diverging / converging motion.
 
 ## Level-2 end to end algorithm functional flow diagram
@@ -188,7 +188,7 @@ drift vectors.
 At minimum (and in priority), the Level-2 sea-ice drift algorithm should be applied once with a start image with valid time approximately 24 hours before the valid time of the end image. This results in 24 hours drift vectors.
 Ideally, the sea-ice motion tracking algorithm described below is applied for several (start, end) image pair to obtain a good temporal sampling of the sea-ice motion (e.g. 24 hours, 18 hours, 12 hours, 6 hours, etc...). At max,
 the sea-ice motion tracking algorithm would be applied with all (start, end) image pairs for which the valid time of the start image is less or equal to 24 hours from the valid time of the end image. Each (start, end) image pair
-will correspond to different area of intersect between the two swaths, and thus to different numbers of resulting sea-ice drift vectors. Pairs with too limited overlaps could be discarded up-front to favour processing pairs
+will correspond to different area of intersect between the two swaths, and thus to different numbers of resulting sea-ice drift vectors. Pairs with too limited overlaps could be discarded up-front to favor processing pairs
 with a large overlap. Because swath-to-swath motion tracking is very sensitive to (systematic) geolocation errors {cite:p}`lavergne:2021:s2s` it might be preferable to not process some pairs (e.g. ascending vs descending) that
 would have larger uncertainties.
 
@@ -305,18 +305,18 @@ s_t        & = & \frac{t}{|t|}
 $$
 
 For example, for $t=-2.8$, $\bar{t}=-2$, $\epsilon_t=0.8$ and $s_t=-1$. Eq. {eq}`eq_imginterp` permits computing *virtual*
-sub-images at continuously varying centre points $(u,v)$ and thus building a continuous optimisation framework to the estimation of motion
+sub-images at continuously varying centre points $(u,v)$ and thus building a continuous optimization framework to the estimation of motion
 vectors from a pair of images.
 
 Finding the motion vector $(\delta_x,\delta_y)$ at position $(x,y)$ can
-be expressed as the following maximisation problem:
+be expressed as the following maximization problem:
 
 $$
 \max_{(x,y)\in\mathcal{D}} \rho(x,y,\delta_x,\delta_y)
 $$ (eq_maximonech)
 
-which is solved at all grid positions where the motion vector is searched for (see previous step). Each optimisation is conducted independently
-from the others. $\mathcal{D}$ is a validity domain for $(\delta_x,\delta_y)$. Eq. {eq}`eq_maximonech` thus defines a two dimensional optimisation
+which is solved at all grid positions where the motion vector is searched for (see previous step). Each optimization is conducted independently
+from the others. $\mathcal{D}$ is a validity domain for $(\delta_x,\delta_y)$. Eq. {eq}`eq_maximonech` thus defines a two dimensional optimization
 problem with domain constraint.
 
 Eq. {eq}`eq_maximonech` is valid for one pair of images. In the CIMR sea-ice drift algorithm, we however envision not one pair of (start, end) images but 16 pairs
@@ -333,7 +333,7 @@ Eq. {eq}`eq_maxim` is solved by the Nelder-Mead algorithm {cite:p}`nelder:1968:o
 chosen since it is simple to implement and does not require computing the gradients of the function to be minimized. It furthermore has good convergence
 and computational properties in problems with low dimensionality {cite:p}`Lagarias:1998:neldermead`.
 
-Starting points for the optimisation are sampled on a length-angle regular grid around point $(0,0)$ as on {numref}`fig_startpoints`.
+Starting points for the optimization are sampled on a length-angle regular grid around point $(0,0)$ as on {numref}`fig_startpoints`.
 
 ```{figure} ./static_imgs/CMCC_startpoints.png
 --- 
@@ -348,15 +348,15 @@ $45^{\circ}$. The circle has radius $\mathbf{L}$, the maximum drift
 distance defining $\mathcal{D}$.
 
 $\rho(x,y,\delta_x,\delta_y)$ is computed at each of those points and the best 3 vertexes are kept for initialising the Nelder-Mead
-optimisation.
+optimization.
 
 Termination and convergence is tested upon via a relative difference of function values at the current *best* and *worst* vertexes, $f_b$ and
 $f_w$. Specifically, the algorithm is said to have converged if and only if $| f_b - f_w | < (f_b + f_w) \times \tau + \epsilon$, with $\tau$ and
 $\epsilon$ small and positive floating point values. As a safeguard, the maximum number of iterations is set to 1000. 
 
 In Eq. {eq}`eq_maxim` $\mathcal{D}$ is a disc shaped domain expressing the *a-priori*
-knowledge we bring to the optimisation problem. Its purpose is to limit
-the search area for the solution vector during the optimisation process. It is defined by a centre point $(x_c,y_c)$ and radius $\mathbf{L}$.
+knowledge we bring to the optimization problem. Its purpose is to limit
+the search area for the solution vector during the optimization process. It is defined by a centre point $(x_c,y_c)$ and radius $\mathbf{L}$.
 
 $$
 (\delta_x,\delta_y) \in \mathcal{D}_{x_c,y_c} \Leftrightarrow d(x_c,y_c;\delta_x,\delta_y) < \mathbf{L}
@@ -366,10 +366,10 @@ In Eq. {eq}`eq_domain`, $d(x_c,y_c;\delta_x,\delta_y)$ is the distance
 (great circle) between the centre point of $\mathcal{D}$ and
 the tip of the drift vector $(\delta_x,\delta_y)$. $(x_c,y_c)$
 represents our best *a-priori* knowledge at the time of performing the
-optimisation. It is initially set to $(0,0)$.
+optimization. It is initially set to $(0,0)$.
 
-Eq. {eq}`eq_domain` cannot be used *as is* in the optimisation routine since it leads to
-abrupt and non-linear behaviour. $\mathcal{D}$ is instead implemented as a *soft* constraint based on a
+Eq. {eq}`eq_domain` cannot be used *as is* in the optimization routine since it leads to
+abrupt and non-linear behavior. $\mathcal{D}$ is instead implemented as a *soft* constraint based on a
 mono-dimensional sigmoid function $W(d)$:
 
 $$
@@ -400,13 +400,13 @@ close to $-1$.
 name: fig_sigmoids
 width: 50%
 ---
-Example soft constraint implemented with a sigmoid penalisation function $W$ and its application on a synthetic,
+Example soft constraint implemented with a sigmoid penalization function $W$ and its application on a synthetic,
 mono-dimensional correlation signal $\rho$. Here, the $\mathbf{L}$ parameter is $1.3$ and $k$ is $20$.}
 ```
 
 In Eq. {eq}`eq_penalising`, $\rho_D$ is the penalised correlation function. Finding the maximum
 of $\rho_D$ is taken as a proxy for solving the original, constrained,
-optimisation problem of Eq. {eq}`eq_maxim`. $\rho_D$ is the function entering the Nelder-Mead
+optimization problem of Eq. {eq}`eq_maxim`. $\rho_D$ is the function entering the Nelder-Mead
 algorithm instead of $\rho$.
 
 It is customary to compute $\mathbf{L}$ as a maximum expected speed
@@ -446,9 +446,9 @@ Causes for those erroneous vectors include:
 
 Whatever the reason be, the filtering step is based on the
 distance from individual displacement vectors to the average of its
-neighbouring vectors. If this distance is less than a fixed threshold,
+neighboring vectors. If this distance is less than a fixed threshold,
 the displacement vector being tested is validated and another vector is
-tested upon. Otherwise, a new CMCC motion tracking optimisation is triggered.
+tested upon. Otherwise, a new CMCC motion tracking optimization is triggered.
 
 In this new CMCC optimization, the Nelder Mead algorithm is initialised and run like in the previous
 section, except that the validity domain $\mathbf{D}$ is adapted (center and radius) to translate the new constraint.
@@ -462,12 +462,12 @@ Let $\Delta_{\textrm{avg}}$ be the distance between the tip of the
 current drift vector $(\delta_x,\delta_y)$ and the tip of the zonal
 average drift vector
 $(\delta^{\textrm{avg}}_x,\delta^{\textrm{avg}}_y)$. The average drift
-vector is computed from the 8 neighbouring drift vectors, that is the 8
+vector is computed from the 8 neighboring drift vectors, that is the 8
 closest vectors *not including the current one*. The local $\mathbf{D}$
 domain is then the disc with centre
 $(\delta^{\textrm{avg}}_x,\delta^{\textrm{avg}}_y)$ and radius
 $\Delta^{\textrm{avg}}_{\textrm{max}}$. $\Delta^{\textrm{avg}}_{\textrm{max}}$ is set to $10$km.
-Neighbouring vectors with a maximum correlation value of less than $0.5$ are not
+Neighboring vectors with a maximum correlation value of less than $0.5$ are not
 used, to avoid degrading the average drift field with possibly wrong
 estimates.
 
@@ -484,10 +484,10 @@ The red disc has radius $\Delta^{\textrm{avg}}_{\textrm{max}}$ and is the validi
 {numref}`fig_filter` illustrates a typical case where a single erroneous vector is surrounded by a smooth vector field. Since the central estimate is not used in the
 average, isolated wrong vectors stand out very easily in terms of their $\Delta_{\textrm{avg}}$.
 
-During this second CMCC optimisation, the search for the maximum is limited to the area eclosed by the red circle. If a satisfying maximum
+During this second CMCC optimization, the search for the maximum is limited to the area enclosed by the red circle. If a satisfying maximum
 correlation is found inside $\mathbf{D}$ it is kept and the surrounding average vectors are immediately updated, as well as each
-$\Delta_{\textrm{avg}}$ lengths. If the constrained optimisation does not converge or if the new vector does not have a good enough maximum
-correlation value, both the old and new vectors are discarded and the average vectors, as well as $\Delta_{\textrm{avg}}$ at the neighbouring
+$\Delta_{\textrm{avg}}$ lengths. If the constrained optimization does not converge or if the new vector does not have a good enough maximum
+correlation value, both the old and new vectors are discarded and the average vectors, as well as $\Delta_{\textrm{avg}}$ at the neighboring
 locations are updated.
 
 Although the method described above works in many cases, it sometimes fail when several erroneous vectors are close one to each other. This
@@ -495,7 +495,7 @@ happens especially when noise dominates the signal in a large region of one of t
 corrected has an influence on the final efficiency for the filtering.
 
 To minimize this influence, motion vectors are first sorted from the largest to the shortest $\Delta_{\textrm{avg}}$ and the filtering is
-applied to the vector exhibiting the worst of those distances. Since, changing a vector has an influence on its direct neighbours, the sorting
+applied to the vector exhibiting the worst of those distances. Since, changing a vector has an influence on its direct neighbors, the sorting
 is repeated after each correction. A mechanism is put in place to avoid falling into an infinite loop. This strategy also ensures that the good
 vectors around an erroneous estimate are not modified before the latter is actually processed through the filter.
 

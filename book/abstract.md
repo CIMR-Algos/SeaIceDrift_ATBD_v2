@@ -2,7 +2,7 @@
 
 Pushed by winds and ocean currents, sea ice is always on the move. Satellite remote sensing is an effective tool to monitor this motion, especially from microwave imagery. 
 
-Monitoring of sea ice drift vectors by means of passive microwave is commonly based on motion tracking algorithms working from pairs of brightness temperature imagery in both horizontal and vertical polarisation.
+Monitoring of sea ice drift vectors by means of passive microwave is commonly based on motion tracking algorithms working from pairs of brightness temperature imagery in both horizontal and vertical polarization.
 Depending on the satellite missions, different microwave frequencies have been used, but one generally expects higher accuracy from the higher resolution channels.
 Accordingly, this version of the Sea Ice Drift Level-2 product focuses on the K and Ka imagery.
 
