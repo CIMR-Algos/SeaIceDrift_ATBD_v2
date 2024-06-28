@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Baseline Algorithm Definition &#8212; CIMR L2 Sea Ice Drift ATBD v1</title>
   
@@ -15,55 +14,51 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="_static/watermark.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles.css?v=3437f865" />
+    <link rel="stylesheet" type="text/css" href="_static/watermark.css?v=80f188f4" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'baseline_algorithm_definition';</script>
@@ -80,28 +75,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -124,19 +114,19 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
 
-  <header>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -170,7 +160,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -190,10 +191,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 product definition</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Baseline Algorithm Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_algorithm.html">A Level-2 Sea Ice Drift (SID) algorithm for CIMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_preproc.html">Preprocessing</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_algorithm.html">Algorithm</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_performanceAssessment.html">Prototype Performance Assessment (ATBD v2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CIMR_L2_Sea_Ice_Drift_performanceAssessment.html">Performance Assessment</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="roadmap_for_future_atbd_developments.html">Roadmap for future ATBD developments (ATBD v2)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
@@ -211,7 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -220,14 +223,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -336,9 +339,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -421,13 +424,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="baseline-algorithm-definition">
-<h1>Baseline Algorithm Definition<a class="headerlink" href="#baseline-algorithm-definition" title="Permalink to this heading">#</a></h1>
+<h1>Baseline Algorithm Definition<a class="headerlink" href="#baseline-algorithm-definition" title="Link to this heading">#</a></h1>
 <p>In the following sections, the Level-2 sea-ice drift algorithm is further
 described. It consists in those steps:</p>
 <ul class="simple">
 <li><p>resampling of Level-1b data;</p></li>
 <li><p>selection of tracking locations and preliminary screening;</p></li>
-<li><p>block-based maximisation of the correlation metric via the CMCC;</p></li>
+<li><p>block-based maximization of the correlation metric via the CMCC;</p></li>
 <li><p>filtering and correction step;</p></li>
 <li><p>assign status flags and per-vector uncertainties.</p></li>
 </ul>
@@ -440,7 +443,7 @@ is first resampled to a common grid. This makes the level-2 sea-ice drift produc
 <li><p>for each incoming Level-1b file, one can generate more than one Level-2 sea-ice drift product (consider the swath intersection with the most recent Level-1b swath, the one before, etc…)</p></li>
 </ol>
 <section id="cimr-level-1b-re-sampling-approach">
-<h2>CIMR Level-1b re-sampling approach<a class="headerlink" href="#cimr-level-1b-re-sampling-approach" title="Permalink to this heading">#</a></h2>
+<h2>CIMR Level-1b re-sampling approach<a class="headerlink" href="#cimr-level-1b-re-sampling-approach" title="Link to this heading">#</a></h2>
 <p>The re-sampling approach for resampling CIMR Level-1b K and Ka band imagery is not defined at this stage. From experience with sea-ice motion tracking from other passive
 microwave mission, the Level-1b re-sampling approach does not have a large influence on the results. At this stage, the following characteristics are expected from the
 re-sampling:</p>
@@ -454,8 +457,8 @@ re-sampling:</p>
 of the upper-left corner of the upper-left cell in the grid. Grids <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-005</span></code> have 5 km grid spacing and are candidate target grids on which to remap the Level-1b imagery. Grids <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-250</span></code> have 25 km grid spacing
 and are candidate grids for the resulting Level-2 sea-ice drift product. By construction, the center of the cells of the two ‘250’ grids fall exactly at the center of one every five grid cells of the ‘005’ grids. This
 ensures that drift vectors (at every grid cell of the ‘250’ grids) use image blocks (from the ‘005’ grids) that are perfectly aligned.</p>
-<table class="colwidths-auto table" id="grids">
-<caption><span class="caption-number">Table 4 </span><span class="caption-text">Definition of EASE2 grids used in the Level-2 sea-ice drift processing (TBC)</span><a class="headerlink" href="#grids" title="Permalink to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="grids">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Definition of EASE2 grids used in the Level-2 sea-ice drift processing (TBC)</span><a class="headerlink" href="#grids" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Id</p></th>
 <th class="head"><p>nx</p></th>
@@ -485,6 +488,7 @@ ensures that drift vectors (at every grid cell of the ‘250’ grids) use image
 </tr>
 </tbody>
 </table>
+</div>
 <p>Such a ‘1-every-5’ construct is not a requirement of the sea-ice drift algorithm, but a simplification used in many motion extraction algorithms. Other alternatives are to grid the Level-1b data with
 4 km spacing and consider a ‘1-every-6’ ratio (Level-2 grid spacing at 24 km) or keep a ‘1-every-5’ ratio (Level-2 grid spacing at 20 km).</p>
 <p>The remaining of the algorithm description does not depend on this choice, which can easily be changed in the course of the product development.</p>
@@ -492,81 +496,81 @@ ensures that drift vectors (at every grid cell of the ‘250’ grids) use image
 directly entered the motion tracking algorithm. They must be written to netCDF files at one point so that they are available for sea-ice drift processing when the next Level-1b swath file arrives.</p>
 </section>
 <section id="algorithm-assumptions-and-simplifications">
-<h2>Algorithm Assumptions and Simplifications<a class="headerlink" href="#algorithm-assumptions-and-simplifications" title="Permalink to this heading">#</a></h2>
+<h2>Algorithm Assumptions and Simplifications<a class="headerlink" href="#algorithm-assumptions-and-simplifications" title="Link to this heading">#</a></h2>
 <p>All block-based motion have similar assumptions and simplifications. They assume that each pixel in a block moves at a constant rate from one image to the next: what is retrieved are the <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code>
 components of the motion vector. In case of rotational motion within the area of the image block, the retrieved components will be those representing most faithfully the change in intensity between
 the two images, but the rotation rate is not measured. By the same token, if deformation (convergence / divergence / shear) occurs within the area of the image blocks, this will not be detected.
-Rotation and deformation between image blocks (between neighbouring pixels) can of course be detected.</p>
-<p>To detect and possibly correct “rogue” vectors in the motion field, we have to assume that the motion field is spatially coherent in a neighbourhood. This is because we detect anomalous motion vectors
+Rotation and deformation between image blocks (between neighboring pixels) can of course be detected.</p>
+<p>To detect and possibly correct “rogue” vectors in the motion field, we have to assume that the motion field is spatially coherent in a neighborhood. This is because we detect anomalous motion vectors
 by their distance to the local average motion. One must be careful with this assumption as to not artificially smooth the motion fields and remove actual diverging / converging motion.</p>
 </section>
 <section id="level-2-end-to-end-algorithm-functional-flow-diagram">
-<h2>Level-2 end to end algorithm functional flow diagram<a class="headerlink" href="#level-2-end-to-end-algorithm-functional-flow-diagram" title="Permalink to this heading">#</a></h2>
+<h2>Level-2 end to end algorithm functional flow diagram<a class="headerlink" href="#level-2-end-to-end-algorithm-functional-flow-diagram" title="Link to this heading">#</a></h2>
 <p><a class="reference internal" href="#fig-flow-diagram"><span class="std std-numref">Fig. 3</span></a> shows the flow diagram for the CIMR Level-2 sea-ice drift algorithm. Note the structure in two chains: preprocessing of the image, and sea-ice motion tracking per se.</p>
 <figure class="align-default" id="fig-flow-diagram">
 <a class="reference internal image-reference" href="_images/CIMR_L2_Sea_Ice_Drift_Flow_Diagram.png"><img alt="_images/CIMR_L2_Sea_Ice_Drift_Flow_Diagram.png" src="_images/CIMR_L2_Sea_Ice_Drift_Flow_Diagram.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">End-to-end algorithm flow diagram of the CIMR Level-2 sea-ice drift algorithm</span><a class="headerlink" href="#fig-flow-diagram" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">End-to-end algorithm flow diagram of the CIMR Level-2 sea-ice drift algorithm</span><a class="headerlink" href="#fig-flow-diagram" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="functional-description-of-each-algorithm-step">
-<h2>Functional description of each Algorithm step<a class="headerlink" href="#functional-description-of-each-algorithm-step" title="Permalink to this heading">#</a></h2>
+<h2>Functional description of each Algorithm step<a class="headerlink" href="#functional-description-of-each-algorithm-step" title="Link to this heading">#</a></h2>
 <section id="pre-processing">
-<h3>Pre-processing<a class="headerlink" href="#pre-processing" title="Permalink to this heading">#</a></h3>
+<h3>Pre-processing<a class="headerlink" href="#pre-processing" title="Link to this heading">#</a></h3>
 <section id="prepare-ice-ocean-land-mask">
-<h4>Prepare ice/ocean/land mask<a class="headerlink" href="#prepare-ice-ocean-land-mask" title="Permalink to this heading">#</a></h4>
+<h4>Prepare ice/ocean/land mask<a class="headerlink" href="#prepare-ice-ocean-land-mask" title="Link to this heading">#</a></h4>
 <p>The Level-2 sea-ice drift algorithm shall only be applied over sea-ice portions of the image. We thus need to prepare an ice/ocean mask as well
 as a land-mask to only process over sea ice.</p>
 <section id="input-data">
-<h5>Input data<a class="headerlink" href="#input-data" title="Permalink to this heading">#</a></h5>
+<h5>Input data<a class="headerlink" href="#input-data" title="Link to this heading">#</a></h5>
 <p>The latitude and longitude of the image grids <code class="docutils literal notranslate"><span class="pre">nh_ease2-005</span></code> and <code class="docutils literal notranslate"><span class="pre">sh_ease2-005</span></code>.</p>
 </section>
 <section id="output-data">
-<h5>Output data<a class="headerlink" href="#output-data" title="Permalink to this heading">#</a></h5>
+<h5>Output data<a class="headerlink" href="#output-data" title="Link to this heading">#</a></h5>
 <p>A 2D field of ice/no-ice/land on the image grids.</p>
 </section>
 <section id="auxiliary-data">
-<h5>Auxiliary data<a class="headerlink" href="#auxiliary-data" title="Permalink to this heading">#</a></h5>
+<h5>Auxiliary data<a class="headerlink" href="#auxiliary-data" title="Link to this heading">#</a></h5>
 <p>A source of sea-ice concentration (can be from CIMR Level-2 Sea Ice Concentration product, or Level-2 Integrated-Retrieval product).</p>
 </section>
 </section>
 <section id="remap-level-1b-brightness-temperatures-to-the-ease2-image-grids">
-<h4>Remap Level-1b brightness temperatures to the EASE2 image grids<a class="headerlink" href="#remap-level-1b-brightness-temperatures-to-the-ease2-image-grids" title="Permalink to this heading">#</a></h4>
+<h4>Remap Level-1b brightness temperatures to the EASE2 image grids<a class="headerlink" href="#remap-level-1b-brightness-temperatures-to-the-ease2-image-grids" title="Link to this heading">#</a></h4>
 <p>The Level-1b data (brightness temperature at K-V, K-H, Ka-V, Ka-H) are remapped onto the EASE2 image grids <code class="docutils literal notranslate"><span class="pre">nh_ease2-005</span></code> and <code class="docutils literal notranslate"><span class="pre">sh_ease2-005</span></code>. The forward and backward scans
 are remapped independently.</p>
 <p>A <em>valid time</em> is associated to the remapped imagery. It can be defined as the mean time of all the Level-1b samples remapped onto the image grid or the time of the observation closest to the (North or South Pole).
 The exact definition is not critical, neither is the accuracy, so that a single valid time is associated to all 8 remapped imagery bands in the Northern Hemisphere, and a single (different) time to the 8
 remapped imagery bands in the Southern Hemisphere.</p>
 <section id="mathematical-description">
-<h5>Mathematical description<a class="headerlink" href="#mathematical-description" title="Permalink to this heading">#</a></h5>
+<h5>Mathematical description<a class="headerlink" href="#mathematical-description" title="Link to this heading">#</a></h5>
 <p>Remapping is the process of computing the Level-1b brightness temperature onto a regular Earth-based grid. The values in the image grid can generally be described as a weighted sum of
 the values in the Level-1b swath projection. The mathematical description is TBD and will depend on the selected remapping strategy.</p>
 </section>
 <section id="id1">
-<h5>Input data<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h5>
+<h5>Input data<a class="headerlink" href="#id1" title="Link to this heading">#</a></h5>
 <p>The latitude and longitude of the image grids <code class="docutils literal notranslate"><span class="pre">nh_ease2-005</span></code> and <code class="docutils literal notranslate"><span class="pre">sh_ease2-005</span></code>.</p>
 <p>The Level-1b brightness temperatures of all samples in the input Level-1b file, split in a forward and a backward scan.</p>
 </section>
 <section id="id2">
-<h5>Output data<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h5>
+<h5>Output data<a class="headerlink" href="#id2" title="Link to this heading">#</a></h5>
 <p>16 2D field of brightness temperature on the image grids (2 grids x 2 scans x 4 channels).</p>
 </section>
 <section id="ancillary-data">
-<h5>Ancillary data<a class="headerlink" href="#ancillary-data" title="Permalink to this heading">#</a></h5>
+<h5>Ancillary data<a class="headerlink" href="#ancillary-data" title="Link to this heading">#</a></h5>
 <p>The latitude and longitude of all the Level-1b samples.</p>
 </section>
 </section>
 <section id="image-preprocessing-laplacian-filter">
-<h4>Image preprocessing (Laplacian filter)<a class="headerlink" href="#image-preprocessing-laplacian-filter" title="Permalink to this heading">#</a></h4>
+<h4>Image preprocessing (Laplacian filter)<a class="headerlink" href="#image-preprocessing-laplacian-filter" title="Link to this heading">#</a></h4>
 <p>The remapped brightness temperatures are not used directly as input to the sea-ice motion tracking step. Instead, a filter is first applied to the remapped imagery to
 enhance and stabilize intensity patterns.</p>
 <p>At the end of the step, the Laplacian processed imagery are saved to disk, e.g. in netCDF files (two separated files for the two hemispheres).</p>
 <section id="id3">
-<h5>Mathematical description<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h5>
+<h5>Mathematical description<a class="headerlink" href="#id3" title="Link to this heading">#</a></h5>
 <p>A common filter, used by <span id="id4">Girard-Ardhuin and Ezraty [<a class="reference internal" href="references.html#id7" title="Fanny Girard-Ardhuin and Robert Ezraty. Enhanced arctic sea ice drift estimation merging radiometer and scatterometer data. IEEE Transactions on Geoscience and Remote Sensing, 50(7):2639-2648, 2012. doi:10.1109/TGRS.2012.2184124.">2012</a>]</span> and <span id="id5">Lavergne <em>et al.</em> [<a class="reference internal" href="references.html#id19" title="Thomas Lavergne, Steinar Eastwood, Zakaria Teffah, Harald Schyberg, and Lars-Anders Breivik. Sea ice motion from low resolution satellite sensors: an alternative method and its validation in the Arctic. Journal of Geophysical Research, 2010. doi:10.1029/2009JC005958.">2010</a>]</span>, is the Laplace filter, that is based on computing the second derivatives of the image intensity.</p>
 <div class="math notranslate nohighlight" id="equation-eq-laplace">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq-laplace" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-laplace" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{split}
 \mathcal{L}[i,j] &amp;= \frac{1}{N^{+}} \sum_{n=i-1}^{i+1} \sum_{m=j-1}^{j+1}
                        \delta_{\textrm{na}}(n,m) \delta_{\textrm{ice}}(n,m) \delta_1^{i,j}(n,m) \mathcal{I}[n,m] \\
@@ -576,7 +580,7 @@ enhance and stabilize intensity patterns.</p>
 \end{split}\]</div>
 <p>with</p>
 <div class="math notranslate nohighlight" id="equation-eq-laplace2">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eq-laplace2" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-laplace2" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 \delta_k^{i,j}(n,m) &amp; = &amp; \left\{ \begin{array}{ll} 1 &amp; \mbox{if $|i-n| = k$ or $|j-m| = k$};\\ \nonumber
              0 &amp; \mbox{otherwise}.\end{array} \right.   \\ \nonumber
@@ -597,21 +601,21 @@ available for computing <span class="math notranslate nohighlight">\(\mathcal{L}
 grid cell <span class="math notranslate nohighlight">\([i,j]\)</span>.</p>
 </section>
 <section id="id6">
-<h5>Input data<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h5>
+<h5>Input data<a class="headerlink" href="#id6" title="Link to this heading">#</a></h5>
 <p>The remapped brightness temperatures on the image grids (16 2D fields).</p>
 </section>
 <section id="id7">
-<h5>Output data<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h5>
+<h5>Output data<a class="headerlink" href="#id7" title="Link to this heading">#</a></h5>
 <p>16 2D field of laplacian-filtered brightness temperature on the image grids.</p>
 </section>
 <section id="id8">
-<h5>Ancillary data<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h5>
+<h5>Ancillary data<a class="headerlink" href="#id8" title="Link to this heading">#</a></h5>
 <p>The ice/water/land mask on the image grids.</p>
 </section>
 </section>
 </section>
 <section id="sea-ice-motion-tracking">
-<h3>Sea-ice motion tracking<a class="headerlink" href="#sea-ice-motion-tracking" title="Permalink to this heading">#</a></h3>
+<h3>Sea-ice motion tracking<a class="headerlink" href="#sea-ice-motion-tracking" title="Link to this heading">#</a></h3>
 <p>To compute sea-ice drift vectors require two images. A <em>start</em> and an <em>end</em> image. In the near-real-time Level-2 processing context, the end image is the (Laplacian filtered) remapped imagery
 from the input Level-1b file. Start images are taken from a running pool of remapped imagery from the previous runs of the sea-ice drift algorithm. In principle, many start images can be selected
 and run into the sea-ice motion tracking against the end image. The difference between the valid time of the start and end imagery determines the drift duration (<em>aka</em> time span) of the Level-2
@@ -619,7 +623,7 @@ drift vectors.</p>
 <p>At minimum (and in priority), the Level-2 sea-ice drift algorithm should be applied once with a start image with valid time approximately 24 hours before the valid time of the end image. This results in 24 hours drift vectors.
 Ideally, the sea-ice motion tracking algorithm described below is applied for several (start, end) image pair to obtain a good temporal sampling of the sea-ice motion (e.g. 24 hours, 18 hours, 12 hours, 6 hours, etc…). At max,
 the sea-ice motion tracking algorithm would be applied with all (start, end) image pairs for which the valid time of the start image is less or equal to 24 hours from the valid time of the end image. Each (start, end) image pair
-will correspond to different area of intersect between the two swaths, and thus to different numbers of resulting sea-ice drift vectors. Pairs with too limited overlaps could be discarded up-front to favour processing pairs
+will correspond to different area of intersect between the two swaths, and thus to different numbers of resulting sea-ice drift vectors. Pairs with too limited overlaps could be discarded up-front to favor processing pairs
 with a large overlap. Because swath-to-swath motion tracking is very sensitive to (systematic) geolocation errors <span id="id9">[<a class="reference internal" href="references.html#id20" title="T. Lavergne, M. Piñol Solé, E. Down, and C. Donlon. Towards a swath-to-swath sea-ice drift product for the copernicus imaging microwave radiometer mission. The Cryosphere, 15(8):3681–3698, 2021. URL: https://tc.copernicus.org/articles/15/3681/2021/, doi:10.5194/tc-15-3681-2021.">Lavergne <em>et al.</em>, 2021</a>]</span> it might be preferable to not process some pairs (e.g. ascending vs descending) that
 would have larger uncertainties.</p>
 <p>A hard limit is that the processing of all the image pairs must happen before the next input Level-1b input file is available for processing. Parallel computing strategy will help reduce the
@@ -628,11 +632,11 @@ total processing time (since each image pair can be processed independently of e
 Level-2 product file.</p>
 <p>In any case, the description below is for a single (start, end) image pair, and for each image grid (nh and sh) separately.</p>
 <section id="select-grid-locations-where-to-apply-the-cmcc-algorithm">
-<h4>Select grid locations where to apply the CMCC algorithm<a class="headerlink" href="#select-grid-locations-where-to-apply-the-cmcc-algorithm" title="Permalink to this heading">#</a></h4>
+<h4>Select grid locations where to apply the CMCC algorithm<a class="headerlink" href="#select-grid-locations-where-to-apply-the-cmcc-algorithm" title="Link to this heading">#</a></h4>
 <p>The CMCC can only be applied where the two swaths (start and end images) overlap over sea ice. A first step in the processing is thus to go through all the positions in the <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-250</span></code> grid and test if
 there is sufficient overlap between the two images, and if the overlap is over sea ice.</p>
 <section id="logical-description">
-<h5>Logical description<a class="headerlink" href="#logical-description" title="Permalink to this heading">#</a></h5>
+<h5>Logical description<a class="headerlink" href="#logical-description" title="Link to this heading">#</a></h5>
 <p>For each grid position in the Level-2 product grid, the following tests are performed.</p>
 <p>Masking of land pixel (step 1)</p>
 <ul class="simple">
@@ -651,22 +655,22 @@ Discard the grid locations whose blocks hold missing data.</p></li>
 <p>The positions that are not discarded after those three steps are passed to the next processing step (CMCC).</p>
 </section>
 <section id="id10">
-<h5>Input data<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h5>
+<h5>Input data<a class="headerlink" href="#id10" title="Link to this heading">#</a></h5>
 <p>The two (start and end) ice/ocean/land masks on the image grid <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-005</span></code>.</p>
 <p>The two (start and end) Laplacian-filtered brightness temperature maps on the image grid <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-005</span></code>.</p>
 <p>The diameter of the sub-image (<em>aka</em> image block) to be used in the CMCC, in number of pixels.</p>
 <p>The definition of the Level-2 product grid <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-025</span></code>.</p>
 </section>
 <section id="id11">
-<h5>Output data<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h5>
+<h5>Output data<a class="headerlink" href="#id11" title="Link to this heading">#</a></h5>
 <p>A 2D field of status flags recording the status at the end of this selection step (in particular recording where and why CMCC will not be attempted).</p>
 </section>
 </section>
 <section id="run-the-cmcc-algorithm">
-<h4>Run the CMCC algorithm<a class="headerlink" href="#run-the-cmcc-algorithm" title="Permalink to this heading">#</a></h4>
+<h4>Run the CMCC algorithm<a class="headerlink" href="#run-the-cmcc-algorithm" title="Link to this heading">#</a></h4>
 <p>The CMCC is the core sea-ice motion algorithm</p>
 <section id="id12">
-<h5>Mathematical description<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h5>
+<h5>Mathematical description<a class="headerlink" href="#id12" title="Link to this heading">#</a></h5>
 <p>We note <span class="math notranslate nohighlight">\(\mathcal{L}_0(x,y)[i]\)</span> the <span class="math notranslate nohighlight">\(i^{th}\)</span> pixel of the <em>start</em>
 sub-image centered at point <span class="math notranslate nohighlight">\((x,y)\)</span>, extracted from the <span class="math notranslate nohighlight">\(\mathcal{L}_0\)</span>
 image. <span class="math notranslate nohighlight">\((x,y)\)</span> are the coordinates expressed in the underpinning EASE2
@@ -685,7 +689,7 @@ projection (units km).</p>
 <span class="math notranslate nohighlight">\(\sigma ( \mathcal{L}_1(u,v) )\)</span>.</p>
 <p>The match between a start and a stop sub-image is evaluated via the correlation metric:</p>
 <div class="math notranslate nohighlight" id="equation-eq-rho">
-<span class="eqno">(3)<a class="headerlink" href="#equation-eq-rho" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-rho" title="Link to this equation">#</a></span>\[
 \rho(x,y,\delta_x,\delta_y) =
 \frac{
 \sum_{i=1}^{N} (\mathcal{L}_0(x,y)[i]-\langle \mathcal{L}_0(x,y) \rangle) (\mathcal{L}_1(x+\delta_x,y+\delta_y)[i]-\langle \mathcal{L}_1(x+\delta_x,y+\delta_y) \rangle)
@@ -701,7 +705,7 @@ the drift vector.</p>
 computed from bi-linear interpolations of the pixels of <span class="math notranslate nohighlight">\(\mathcal{L}_1\)</span>.
 For example, <span class="math notranslate nohighlight">\(\mathcal{L}_1(u,v)[i]\)</span> is given by:</p>
 <div class="math notranslate nohighlight" id="equation-eq-imginterp">
-<span class="eqno">(4)<a class="headerlink" href="#equation-eq-imginterp" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-imginterp" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{split}
 \mathcal{L}_1(u,v)[i] &amp; = (1 - \epsilon_{u}) \times (1 - \epsilon_{v}) \times \mathcal{L}_1(\bar{u},\bar{v})[i] \\
         &amp;+  (1 - \epsilon_{u}) \times \epsilon_{v} \times  \mathcal{L}_1(\bar{u},\bar{v}+s_{v})[i] \\
@@ -719,60 +723,60 @@ s_t        &amp; = &amp; \frac{t}{|t|}
 \end{aligned}
 \end{split}\]</div>
 <p>For example, for <span class="math notranslate nohighlight">\(t=-2.8\)</span>, <span class="math notranslate nohighlight">\(\bar{t}=-2\)</span>, <span class="math notranslate nohighlight">\(\epsilon_t=0.8\)</span> and <span class="math notranslate nohighlight">\(s_t=-1\)</span>. Eq. <a class="reference internal" href="#equation-eq-imginterp">(4)</a> permits computing <em>virtual</em>
-sub-images at continuously varying centre points <span class="math notranslate nohighlight">\((u,v)\)</span> and thus building a continuous optimisation framework to the estimation of motion
+sub-images at continuously varying centre points <span class="math notranslate nohighlight">\((u,v)\)</span> and thus building a continuous optimization framework to the estimation of motion
 vectors from a pair of images.</p>
 <p>Finding the motion vector <span class="math notranslate nohighlight">\((\delta_x,\delta_y)\)</span> at position <span class="math notranslate nohighlight">\((x,y)\)</span> can
-be expressed as the following maximisation problem:</p>
+be expressed as the following maximization problem:</p>
 <div class="math notranslate nohighlight" id="equation-eq-maximonech">
-<span class="eqno">(5)<a class="headerlink" href="#equation-eq-maximonech" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-maximonech" title="Link to this equation">#</a></span>\[
 \max_{(x,y)\in\mathcal{D}} \rho(x,y,\delta_x,\delta_y)
 \]</div>
-<p>which is solved at all grid positions where the motion vector is searched for (see previous step). Each optimisation is conducted independently
-from the others. <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> is a validity domain for <span class="math notranslate nohighlight">\((\delta_x,\delta_y)\)</span>. Eq. <a class="reference internal" href="#equation-eq-maximonech">(5)</a> thus defines a two dimensional optimisation
+<p>which is solved at all grid positions where the motion vector is searched for (see previous step). Each optimization is conducted independently
+from the others. <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> is a validity domain for <span class="math notranslate nohighlight">\((\delta_x,\delta_y)\)</span>. Eq. <a class="reference internal" href="#equation-eq-maximonech">(5)</a> thus defines a two dimensional optimization
 problem with domain constraint.</p>
 <p>Eq. <a class="reference internal" href="#equation-eq-maximonech">(5)</a> is valid for one pair of images. In the CIMR sea-ice drift algorithm, we however envision not one pair of (start, end) images but 16 pairs
 (fwd-fwd, fwd-bck, bck-fwd, and fwd-bck) for each of K-V, K-H, Ka-V, and Ka-H considering the foward and backward scans as separate images. Following <span id="id13">Lavergne <em>et al.</em> [<a class="reference internal" href="references.html#id19" title="Thomas Lavergne, Steinar Eastwood, Zakaria Teffah, Harald Schyberg, and Lars-Anders Breivik. Sea ice motion from low resolution satellite sensors: an alternative method and its validation in the Arctic. Journal of Geophysical Research, 2010. doi:10.1029/2009JC005958.">2010</a>]</span>
 we implement an inplicit merging of the information content of the 16 imaging channels by maximizing a sum of cross-correlation functions:</p>
 <div class="math notranslate nohighlight" id="equation-eq-maxim">
-<span class="eqno">(6)<a class="headerlink" href="#equation-eq-maxim" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-maxim" title="Link to this equation">#</a></span>\[
 \max_{(x,y)\in\mathcal{D}} \frac{1}{N_{ch}} \sum_{c=1}^{c=N_{ch}} \rho^{c}(x,y,\delta_x,\delta_y)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(N_{ch}\)</span> is the number of channels (<span class="math notranslate nohighlight">\(N_{ch} = 16\)</span>).</p>
 <p>Eq. <a class="reference internal" href="#equation-eq-maxim">(6)</a> is solved by the Nelder-Mead algorithm <span id="id14">[<a class="reference internal" href="references.html#id24" title="J. A. Nelder and R. Mead. A simplex method for function minimization. Computational Journal, 7:308–313, 1968.">Nelder and Mead, 1968</a>]</span>. This algorithm is
 chosen since it is simple to implement and does not require computing the gradients of the function to be minimized. It furthermore has good convergence
 and computational properties in problems with low dimensionality <span id="id15">[<a class="reference internal" href="references.html#id18" title="Jeffrey C. Lagarias, James A. Reeds, Margaret H. Wright, and Paul E. Wright. Convergence properties of the Nelder-Mead simplex method in low dimensions. SIAM Journal on Optimization, 9:112–147, 1998.">Lagarias <em>et al.</em>, 1998</a>]</span>.</p>
-<p>Starting points for the optimisation are sampled on a length-angle regular grid around point <span class="math notranslate nohighlight">\((0,0)\)</span> as on <a class="reference internal" href="#fig-startpoints"><span class="std std-numref">Fig. 4</span></a>.</p>
+<p>Starting points for the optimization are sampled on a length-angle regular grid around point <span class="math notranslate nohighlight">\((0,0)\)</span> as on <a class="reference internal" href="#fig-startpoints"><span class="std std-numref">Fig. 4</span></a>.</p>
 <figure class="align-default" id="fig-startpoints">
 <a class="reference internal image-reference" href="_images/CMCC_startpoints.png"><img alt="_images/CMCC_startpoints.png" src="_images/CMCC_startpoints.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Initialization points for the Nelder-Mead algorithm, chosen on a regular length-angle grid aroung point <span class="math notranslate nohighlight">\((0,0)\)</span>.</span><a class="headerlink" href="#fig-startpoints" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Initialization points for the Nelder-Mead algorithm, chosen on a regular length-angle grid aroung point <span class="math notranslate nohighlight">\((0,0)\)</span>.</span><a class="headerlink" href="#fig-startpoints" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The length increment is set to <span class="math notranslate nohighlight">\(10\)</span>km and the angular increment to
 <span class="math notranslate nohighlight">\(45^{\circ}\)</span>. The circle has radius <span class="math notranslate nohighlight">\(\mathbf{L}\)</span>, the maximum drift
 distance defining <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\rho(x,y,\delta_x,\delta_y)\)</span> is computed at each of those points and the best 3 vertexes are kept for initialising the Nelder-Mead
-optimisation.</p>
+optimization.</p>
 <p>Termination and convergence is tested upon via a relative difference of function values at the current <em>best</em> and <em>worst</em> vertexes, <span class="math notranslate nohighlight">\(f_b\)</span> and
 <span class="math notranslate nohighlight">\(f_w\)</span>. Specifically, the algorithm is said to have converged if and only if <span class="math notranslate nohighlight">\(| f_b - f_w | &lt; (f_b + f_w) \times \tau + \epsilon\)</span>, with <span class="math notranslate nohighlight">\(\tau\)</span> and
 <span class="math notranslate nohighlight">\(\epsilon\)</span> small and positive floating point values. As a safeguard, the maximum number of iterations is set to 1000.</p>
 <p>In Eq. <a class="reference internal" href="#equation-eq-maxim">(6)</a> <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> is a disc shaped domain expressing the <em>a-priori</em>
-knowledge we bring to the optimisation problem. Its purpose is to limit
-the search area for the solution vector during the optimisation process. It is defined by a centre point <span class="math notranslate nohighlight">\((x_c,y_c)\)</span> and radius <span class="math notranslate nohighlight">\(\mathbf{L}\)</span>.</p>
+knowledge we bring to the optimization problem. Its purpose is to limit
+the search area for the solution vector during the optimization process. It is defined by a centre point <span class="math notranslate nohighlight">\((x_c,y_c)\)</span> and radius <span class="math notranslate nohighlight">\(\mathbf{L}\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-eq-domain">
-<span class="eqno">(7)<a class="headerlink" href="#equation-eq-domain" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-domain" title="Link to this equation">#</a></span>\[
 (\delta_x,\delta_y) \in \mathcal{D}_{x_c,y_c} \Leftrightarrow d(x_c,y_c;\delta_x,\delta_y) &lt; \mathbf{L}
 \]</div>
 <p>In Eq. <a class="reference internal" href="#equation-eq-domain">(7)</a>, <span class="math notranslate nohighlight">\(d(x_c,y_c;\delta_x,\delta_y)\)</span> is the distance
 (great circle) between the centre point of <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> and
 the tip of the drift vector <span class="math notranslate nohighlight">\((\delta_x,\delta_y)\)</span>. <span class="math notranslate nohighlight">\((x_c,y_c)\)</span>
 represents our best <em>a-priori</em> knowledge at the time of performing the
-optimisation. It is initially set to <span class="math notranslate nohighlight">\((0,0)\)</span>.</p>
-<p>Eq. <a class="reference internal" href="#equation-eq-domain">(7)</a> cannot be used <em>as is</em> in the optimisation routine since it leads to
-abrupt and non-linear behaviour. <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> is instead implemented as a <em>soft</em> constraint based on a
+optimization. It is initially set to <span class="math notranslate nohighlight">\((0,0)\)</span>.</p>
+<p>Eq. <a class="reference internal" href="#equation-eq-domain">(7)</a> cannot be used <em>as is</em> in the optimization routine since it leads to
+abrupt and non-linear behavior. <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> is instead implemented as a <em>soft</em> constraint based on a
 mono-dimensional sigmoid function <span class="math notranslate nohighlight">\(W(d)\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eq-sigmoid">
-<span class="eqno">(8)<a class="headerlink" href="#equation-eq-sigmoid" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq-sigmoid" title="Link to this equation">#</a></span>\[
 W(d)   = \frac{1}{1 + e^{k(d - \mathbf{L})}} 
 \]</div>
 <p>In Eq. <a class="reference internal" href="#equation-eq-sigmoid">(8)</a>, <span class="math notranslate nohighlight">\(k\)</span> is a parameter controlling the steepness
@@ -783,7 +787,7 @@ remaining smooth and continuous.</p>
 <p>Eq. <a class="reference internal" href="#equation-eq-penalising">(9)</a> illustrate how the penalty is applied to the correlation function
 <span class="math notranslate nohighlight">\(\rho^c(x,y,\delta_x,\delta_y)\)</span> (Eq. <a class="reference internal" href="#equation-eq-maxim">(6)</a>).</p>
 <div class="math notranslate nohighlight" id="equation-eq-penalising">
-<span class="eqno">(9)<a class="headerlink" href="#equation-eq-penalising" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-penalising" title="Link to this equation">#</a></span>\[
 \rho^c_D(x,y,\delta_x,\delta_y) = (\rho^c(x,y,\delta_x,\delta_y) + 1) \times W(d(x_c,y_c;\delta_x,\delta_y)) - 1
 \]</div>
 <p><a class="reference internal" href="#fig-sigmoids"><span class="std std-numref">Fig. 5</span></a> plots a mono-dimensional example of applying a sigmoid penalty function
@@ -794,13 +798,13 @@ close to <span class="math notranslate nohighlight">\(-1\)</span>.</p>
 <figure class="align-default" id="fig-sigmoids">
 <a class="reference internal image-reference" href="_images/sigmoids.png"><img alt="_images/sigmoids.png" src="_images/sigmoids.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Example soft constraint implemented with a sigmoid penalisation function <span class="math notranslate nohighlight">\(W\)</span> and its application on a synthetic,
-mono-dimensional correlation signal <span class="math notranslate nohighlight">\(\rho\)</span>. Here, the <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> parameter is <span class="math notranslate nohighlight">\(1.3\)</span> and <span class="math notranslate nohighlight">\(k\)</span> is <span class="math notranslate nohighlight">\(20\)</span>.}</span><a class="headerlink" href="#fig-sigmoids" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Example soft constraint implemented with a sigmoid penalization function <span class="math notranslate nohighlight">\(W\)</span> and its application on a synthetic,
+mono-dimensional correlation signal <span class="math notranslate nohighlight">\(\rho\)</span>. Here, the <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> parameter is <span class="math notranslate nohighlight">\(1.3\)</span> and <span class="math notranslate nohighlight">\(k\)</span> is <span class="math notranslate nohighlight">\(20\)</span>.}</span><a class="headerlink" href="#fig-sigmoids" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In Eq. <a class="reference internal" href="#equation-eq-penalising">(9)</a>, <span class="math notranslate nohighlight">\(\rho_D\)</span> is the penalised correlation function. Finding the maximum
 of <span class="math notranslate nohighlight">\(\rho_D\)</span> is taken as a proxy for solving the original, constrained,
-optimisation problem of Eq. <a class="reference internal" href="#equation-eq-maxim">(6)</a>. <span class="math notranslate nohighlight">\(\rho_D\)</span> is the function entering the Nelder-Mead
+optimization problem of Eq. <a class="reference internal" href="#equation-eq-maxim">(6)</a>. <span class="math notranslate nohighlight">\(\rho_D\)</span> is the function entering the Nelder-Mead
 algorithm instead of <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
 <p>It is customary to compute <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> as a maximum expected speed
 <span class="math notranslate nohighlight">\(v_{max}\)</span>, multiplied by the time separation between the valid times of the two images
@@ -808,20 +812,20 @@ algorithm instead of <span class="math notranslate nohighlight">\(\rho\)</span>.
 expected straight-line distance that can be covered in the given time.</p>
 </section>
 <section id="id16">
-<h5>Input data<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h5>
+<h5>Input data<a class="headerlink" href="#id16" title="Link to this heading">#</a></h5>
 <p>The diameter of the sub-image (<em>aka</em> image block) to be used in the CMCC, in number of pixels.</p>
 <p>The maximum allowed drift speed <span class="math notranslate nohighlight">\(v_{max}\)</span> (to define <span class="math notranslate nohighlight">\(\mathbf{L}\)</span>) and \mathcal{D}).</p>
 <p>The 8 imagery bands for the start and end images, as well as the associated valid times <span class="math notranslate nohighlight">\(\mathbf{T}\)</span>.</p>
 </section>
 <section id="id17">
-<h5>Output data<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h5>
+<h5>Output data<a class="headerlink" href="#id17" title="Link to this heading">#</a></h5>
 <p>A 2D field of drift vectors (<span class="math notranslate nohighlight">\(\delta_x\)</span> and <span class="math notranslate nohighlight">\(\delta_y\)</span> components) on the <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-250</span></code> grid.</p>
 <p>A 2D field of maximum cross-correlation value for each vector.</p>
 <p>A 2D field of status flags recording the status at the end of the CMCC optimization.</p>
 </section>
 </section>
 <section id="quality-control-detect-and-correct-outliers-rogue-vectors">
-<h4>Quality Control: detect and correct outliers (“rogue” vectors)<a class="headerlink" href="#quality-control-detect-and-correct-outliers-rogue-vectors" title="Permalink to this heading">#</a></h4>
+<h4>Quality Control: detect and correct outliers (“rogue” vectors)<a class="headerlink" href="#quality-control-detect-and-correct-outliers-rogue-vectors" title="Link to this heading">#</a></h4>
 <p>Once the CMCC described above has been applied once to each of the
 start positions selected by the preliminary checks, a filtering step
 is taken to detect, correct or remove obviously erroneous vectors (so called “rogue” vectors).</p>
@@ -833,25 +837,25 @@ is taken to detect, correct or remove obviously erroneous vectors (so called “
 </ol>
 <p>Whatever the reason be, the filtering step is based on the
 distance from individual displacement vectors to the average of its
-neighbouring vectors. If this distance is less than a fixed threshold,
+neighboring vectors. If this distance is less than a fixed threshold,
 the displacement vector being tested is validated and another vector is
-tested upon. Otherwise, a new CMCC motion tracking optimisation is triggered.</p>
+tested upon. Otherwise, a new CMCC motion tracking optimization is triggered.</p>
 <p>In this new CMCC optimization, the Nelder Mead algorithm is initialised and run like in the previous
 section, except that the validity domain <span class="math notranslate nohighlight">\(\mathbf{D}\)</span> is adapted (center and radius) to translate the new constraint.</p>
 <p>Erroneous vectors are detected and corrected one by one, from the “most erroneous” (see below) until
 all vectors are either corrected or flagged as bad.</p>
 <section id="id18">
-<h5>Mathematical description<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h5>
+<h5>Mathematical description<a class="headerlink" href="#id18" title="Link to this heading">#</a></h5>
 <p>Let <span class="math notranslate nohighlight">\(\Delta_{\textrm{avg}}\)</span> be the distance between the tip of the
 current drift vector <span class="math notranslate nohighlight">\((\delta_x,\delta_y)\)</span> and the tip of the zonal
 average drift vector
 <span class="math notranslate nohighlight">\((\delta^{\textrm{avg}}_x,\delta^{\textrm{avg}}_y)\)</span>. The average drift
-vector is computed from the 8 neighbouring drift vectors, that is the 8
+vector is computed from the 8 neighboring drift vectors, that is the 8
 closest vectors <em>not including the current one</em>. The local <span class="math notranslate nohighlight">\(\mathbf{D}\)</span>
 domain is then the disc with centre
 <span class="math notranslate nohighlight">\((\delta^{\textrm{avg}}_x,\delta^{\textrm{avg}}_y)\)</span> and radius
 <span class="math notranslate nohighlight">\(\Delta^{\textrm{avg}}_{\textrm{max}}\)</span>. <span class="math notranslate nohighlight">\(\Delta^{\textrm{avg}}_{\textrm{max}}\)</span> is set to <span class="math notranslate nohighlight">\(10\)</span>km.
-Neighbouring vectors with a maximum correlation value of less than <span class="math notranslate nohighlight">\(0.5\)</span> are not
+Neighboring vectors with a maximum correlation value of less than <span class="math notranslate nohighlight">\(0.5\)</span> are not
 used, to avoid degrading the average drift field with possibly wrong
 estimates.</p>
 <figure class="align-default" id="fig-filter">
@@ -859,21 +863,21 @@ estimates.</p>
 <figcaption>
 <p><span class="caption-number">Fig. 6 </span><span class="caption-text">Example case where the current drift vector (in red) is obviously erroneous, considered the smoother vector field from the first estimate from
 CMCC (in black). The locally averaged vector field is plotted in green. <span class="math notranslate nohighlight">\(\Delta^{\textrm{avg}}\)</span> is the length of the dashed red line.
-The red disc has radius <span class="math notranslate nohighlight">\(\Delta^{\textrm{avg}}_{\textrm{max}}\)</span> and is the validity domain $\mathbf{D} that is used to re-optimise the drift vector.</span><a class="headerlink" href="#fig-filter" title="Permalink to this image">#</a></p>
+The red disc has radius <span class="math notranslate nohighlight">\(\Delta^{\textrm{avg}}_{\textrm{max}}\)</span> and is the validity domain $\mathbf{D} that is used to re-optimise the drift vector.</span><a class="headerlink" href="#fig-filter" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><a class="reference internal" href="#fig-filter"><span class="std std-numref">Fig. 6</span></a> illustrates a typical case where a single erroneous vector is surrounded by a smooth vector field. Since the central estimate is not used in the
 average, isolated wrong vectors stand out very easily in terms of their <span class="math notranslate nohighlight">\(\Delta_{\textrm{avg}}\)</span>.</p>
-<p>During this second CMCC optimisation, the search for the maximum is limited to the area eclosed by the red circle. If a satisfying maximum
+<p>During this second CMCC optimization, the search for the maximum is limited to the area enclosed by the red circle. If a satisfying maximum
 correlation is found inside <span class="math notranslate nohighlight">\(\mathbf{D}\)</span> it is kept and the surrounding average vectors are immediately updated, as well as each
-<span class="math notranslate nohighlight">\(\Delta_{\textrm{avg}}\)</span> lengths. If the constrained optimisation does not converge or if the new vector does not have a good enough maximum
-correlation value, both the old and new vectors are discarded and the average vectors, as well as <span class="math notranslate nohighlight">\(\Delta_{\textrm{avg}}\)</span> at the neighbouring
+<span class="math notranslate nohighlight">\(\Delta_{\textrm{avg}}\)</span> lengths. If the constrained optimization does not converge or if the new vector does not have a good enough maximum
+correlation value, both the old and new vectors are discarded and the average vectors, as well as <span class="math notranslate nohighlight">\(\Delta_{\textrm{avg}}\)</span> at the neighboring
 locations are updated.</p>
 <p>Although the method described above works in many cases, it sometimes fail when several erroneous vectors are close one to each other. This
 happens especially when noise dominates the signal in a large region of one of the image. If the case, the order in which the vectors are
 corrected has an influence on the final efficiency for the filtering.</p>
 <p>To minimize this influence, motion vectors are first sorted from the largest to the shortest <span class="math notranslate nohighlight">\(\Delta_{\textrm{avg}}\)</span> and the filtering is
-applied to the vector exhibiting the worst of those distances. Since, changing a vector has an influence on its direct neighbours, the sorting
+applied to the vector exhibiting the worst of those distances. Since, changing a vector has an influence on its direct neighbors, the sorting
 is repeated after each correction. A mechanism is put in place to avoid falling into an infinite loop. This strategy also ensures that the good
 vectors around an erroneous estimate are not modified before the latter is actually processed through the filter.</p>
 <p>In the case where the new optimization does not lead to an acceptable maximum cross-correlation value (value below the threshold, non-convergence of the CMCC with the new contraint),
@@ -881,13 +885,13 @@ the vector position is recorded as non-feasible in the status flags, and the fie
 <p>This detection / correction process continues until all vectors are either corrected or flagged as non-feasible.</p>
 </section>
 <section id="id19">
-<h5>Input data<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h5>
+<h5>Input data<a class="headerlink" href="#id19" title="Link to this heading">#</a></h5>
 <p>The 2D field of drift vectors (<span class="math notranslate nohighlight">\(\delta_x\)</span> and <span class="math notranslate nohighlight">\(\delta_y\)</span> components) on the <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-250</span></code> grid from the initial CMCC run.</p>
 <p>The 2D field of maximum cross-correlation value for each vector from the initial CMCC run.</p>
 <p>The 2D field of status flags recording the status at the end of the initial CMCC optimization.</p>
 </section>
 <section id="id20">
-<h5>Output data<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h5>
+<h5>Output data<a class="headerlink" href="#id20" title="Link to this heading">#</a></h5>
 <p>Updates:</p>
 <p>The 2D field of drift vectors (<span class="math notranslate nohighlight">\(\delta_x\)</span> and <span class="math notranslate nohighlight">\(\delta_y\)</span> components) on the <code class="docutils literal notranslate"><span class="pre">(n,s)h_ease2-250</span></code> grid from the initial CMCC run.</p>
 <p>The 2D field of maximum cross-correlation value for each vector from the initial CMCC run.</p>
@@ -925,7 +929,7 @@ the vector position is recorded as non-feasible in the status flags, and the fie
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1061,8 +1065,8 @@ ESA is not responsible in any way for the content of this document.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

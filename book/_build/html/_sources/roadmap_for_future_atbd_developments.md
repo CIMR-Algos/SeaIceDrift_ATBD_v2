@@ -1,31 +1,11 @@
 # Roadmap for future ATBD development
 
-The core algorithm of the Sea Ice Drift has been long used in other projects,
-and there was as thorough investigation of the use of this algorithm for
-swath-to-swath calculations as required by CIMR (paper ref). The future
-development work is therefore largely focussed on the niche requirements
-for CIMR test cards needed to thoroughly validate this algorithm.
+The SID ATBD was prepared by gathering text and equations from a number of existing documentations, for example from the EUMETSAT OSI SAF or CIMR MRC. This was greatly facilitated by the similarities between the LaTeX and Markdown syntax for mathematical expressions.
 
-## Expansion of core code to process all channels
+In terms of algorithm, we continue the approach introduced in CIMR MRC to do Level-2 “swath-to-swath” retrievals of sea-ice motion, instead of the classical approach to prepare sea-ice motion products at Level-3 from daily aggregated maps of brightness temperatures. Several characteristics of the L2 SID product will put specific requirements on the future CIMR ground segment: it is one of the only products that will start with a remapping of the L1B TB onto an EASE2 grid as sea-ice drift cannot be processed in swath projection. In addition, sea-ice drift cannot be computed from a single incoming L1B swath but requires two swaths: the incoming swath, and a previous swath that is accessible to the processing and stored from a previous run. If multiple processors or computing nodes are available for the SID processor, one can prepare several sea-ice drift products for each incoming swath, to fully exploit the frequent revisit time of the CIMR mission.   
 
-The core cross-correlation algorithm used for the calculation of sea-ice
-drift optimises multiple channels at once. This is currently able to optimise
-up to 6 channels simultaneously, however, since we require 8 channels (Ku-band
-and Ka-band, V and H-polarisations, and forward and back scans in all
-permutations), this code needs expansion to ensure that it can run without
-encountering memory issues. The current demonstration uses only Ka-band.
+Since the core SID algorithm has been long used in other projects, and has already been investigated for “swath-to-swath use”, the future development work is therefore largely focused on the niche requirements for CIMR test cards needed to thoroughly validate this algorithm. There are two technical points in the algorithm itself which will be investigated during the L2PAD project. Firstly, the core cross-correlation algorithm used for the calculation of SID optimizes multiple channels at once. This is currently able to optimize up to 6 channels simultaneously, however, since we require 8 channels (Ku-band and Ka-band, V and H-polarizations, and forward and back scans in all permutations), this code needs expansion to ensure that it can run without encountering memory issues. The current demonstration uses only Ka-band. Secondly, there is a time delay of around ~5 minutes between the forward and backward scans of CIMR (at the center of the swaths). This is currently ignored as being significantly less than the 24-hour period used for the manufactured test data, however, when we investigate shorter time delays between swaths, this short time delay will become more significant, so we will investigate if this should be corrected to improve accuracy of the calculated drift.
 
-## Requirement for new test scenes
+A significant part of the work for the next phase will be to investigate possible separation times between the incoming swaths, and which swaths should be paired to give the most accurate ice drift with the shortest waiting time. The longer the period between two swaths, the easier it is to extract accurate sea-ice motion as the ice features have travelled a longer distance. However, since the trajectories of the sea ice are not measured, but instead the displacement vector between the two timepoints, the shorter the delay between each measurement, the better picture overall can be built up of the motion, given many successive measurements. In addition, we wish to provide users with as recent information as possible, approaching a near-real time option. It is not realistic to pair each and every swath with every other, given the large number per 24-hour period, so we need to determine the optimal swath pairings.
 
-In order to calculate sea-ice drift, it is required to have two swaths
-separated in time, between which features in the ice are cross-correlated
-to determine the ice motion. In the initial validation, we were lacking any
-such pair of test scenes, and therefore we made a simple test by shifting
-the data from the Radiometric test scene by 3 pixels in x and 4 pixels in
-y, as well as with a 24-hour offset.
-
-...
-
-## Investigation of optimum time offsets for swath combination
-
-...
+The biggest limitation with the current performance assessment is the test data available. Since we must use two swaths separated in time to calculate the ice drift, we require this kind of test data. The algorithm cross-correlates sea-ice features between two swaths, and so we also require reasonably physical sea-ice texture in the test scenes. We saw in the initial performance assessment that the algorithm gave “blocky” results due to the blockiness of the Radiometric test card. The plan for L2PAD is to obtain model data of brightness temperature and ice drift for a set of timestamps, for example from neXtSIM, to grid this model data onto simulated CIMR swaths according to the timestamps, and then to use these data as input to create simulated CIMR swath test scenes. This will allow us to make realistic validations, ideally on a range of different time delays between swath pairs.
