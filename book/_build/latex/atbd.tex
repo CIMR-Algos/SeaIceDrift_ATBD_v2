@@ -1835,7 +1835,7 @@ User\sphinxhyphen{}set parameters for the running of the whole notebook. Note th
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-Written a version of https://thredds.met.no/thredds/dodsC/osisaf/met.no/reprocessed/ice/conc\PYGZus{}450a\PYGZus{}files/2018/01/ice\PYGZus{}conc\PYGZus{}nh\PYGZus{}ease2\PYGZhy{}250\PYGZus{}cdr\PYGZhy{}v3p0\PYGZus{}201801101200.nc to /home/emilyjd/cimr\PYGZhy{}devalgo/SeaIceDrift\PYGZus{}ATBD\PYGZus{}v2/book/../../data/conc/ice\PYGZus{}conc\PYGZus{}nh\PYGZus{}ease2\PYGZhy{}250\PYGZus{}cdr\PYGZhy{}v3p0\PYGZus{}202801101200.nc
+Written a version of https://thredds.met.no/thredds/dodsC/osisaf/met.no/reprocessed/ice/conc\PYGZus{}450a\PYGZus{}files/2018/01/ice\PYGZus{}conc\PYGZus{}nh\PYGZus{}ease2\PYGZhy{}250\PYGZus{}cdr\PYGZhy{}v3p0\PYGZus{}201801101200.nc to /home/emilyjd/cimr\PYGZhy{}devalgo/SeaIceDrift\PYGZus{}ATBD\PYGZus{}v2/algorithm/../../data/conc/ice\PYGZus{}conc\PYGZus{}nh\PYGZus{}ease2\PYGZhy{}250\PYGZus{}cdr\PYGZhy{}v3p0\PYGZus{}202801101200.nc
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1898,7 +1898,7 @@ A land/ocean/ice mask is required to define the areas with ice to the algorithm.
 \begin{sphinxVerbatimOutput}
 
 \begin{sphinxuseclass}{cell_output}
-\noindent\sphinxincludegraphics{{c20f0c5941cbd050831a5db9957d0298208f3eb3f05aee22d99c79a9a3f7172e}.png}
+\noindent\sphinxincludegraphics{{1154b83df23d79e4dfb95aba3a677889659318052d1675f0ce77a28ec75deade}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -1940,196 +1940,6 @@ The L1B data is read in and split into forward and backward scans using software
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimInput}
-\begin{sphinxVerbatimOutput}
-
-\begin{sphinxuseclass}{cell_output}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{g+gt}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
-\PYG{n+ne}{KeyboardInterrupt}\PYG{g+gWhitespace}{                         }Traceback (most recent call last)
-\PYG{n}{Cell} \PYG{n}{In}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{]}\PYG{p}{,} \PYG{n}{line} \PYG{l+m+mi}{4}
-\PYG{g+gWhitespace}{      }\PYG{l+m+mi}{1} \PYG{c+c1}{\PYGZsh{} Split into forward / backward scan}
-\PYG{g+gWhitespace}{      }\PYG{l+m+mi}{3} \PYG{n}{l1b} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{p}{\PYGZcb{}}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{4} \PYG{n}{l1b}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{fw}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{l1b}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{bk}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{full\PYGZus{}l1b}\PYG{o}{.}\PYG{n}{split\PYGZus{}forward\PYGZus{}backward\PYGZus{}scans}\PYG{p}{(}\PYG{n}{method}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{horn\PYGZus{}scan\PYGZus{}angle}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/cimr\PYGZhy{}devalgo/SeaIceDrift\PYGZus{}ATBD\PYGZus{}v2/book/../../Tools/tools/io\PYGZus{}handler.py:328,} in \PYG{n+ni}{CIMR\PYGZus{}L1B.split\PYGZus{}forward\PYGZus{}backward\PYGZus{}scans}\PYG{n+nt}{(self, method)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{325}     \PYG{n}{bck\PYGZus{}mask} \PYG{o}{=} \PYG{p}{(}\PYG{n}{horn\PYGZus{}scan\PYGZus{}angle} \PYG{o}{\PYGZgt{}}\PYG{o}{=} \PYG{l+m+mf}{180.}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{horn\PYGZus{}scan\PYGZus{}angle} \PYG{o}{\PYGZlt{}} \PYG{l+m+mf}{360.}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{327} \PYG{c+c1}{\PYGZsh{} do the selection}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{328} \PYG{n}{fwd\PYGZus{}l1b}\PYG{o}{.}\PYG{n}{data}\PYG{p}{[}\PYG{n}{band}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{data}\PYG{p}{[}\PYG{n}{band}\PYG{p}{]}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{n}{fwd\PYGZus{}mask}\PYG{p}{,} \PYG{n}{drop}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{329} \PYG{n}{bck\PYGZus{}l1b}\PYG{o}{.}\PYG{n}{data}\PYG{p}{[}\PYG{n}{band}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{data}\PYG{p}{[}\PYG{n}{band}\PYG{p}{]}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{n}{bck\PYGZus{}mask}\PYG{p}{,} \PYG{n}{drop}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{331} \PYG{c+c1}{\PYGZsh{} ensure that the first three dimensions stay (\PYGZsq{}n\PYGZus{}scans\PYGZsq{}, \PYGZsq{}n\PYGZus{}samples\PYGZus{}earth\PYGZsq{}, \PYGZsq{}n\PYGZus{}horns\PYGZsq{})}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{332} \PYG{c+c1}{\PYGZsh{}   sometimes xarray creates a n\PYGZus{}horns dimension at the end of the dimension tuplet, but}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{333} \PYG{c+c1}{\PYGZsh{}   most of our software relies on having these three dims first}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/common.py:1246,} in \PYG{n+ni}{DataWithCoords.where}\PYG{n+nt}{(self, cond, other, drop)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1243}     \PYG{n+nb+bp}{self} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{isel}\PYG{p}{(}\PYG{o}{*}\PYG{o}{*}\PYG{n}{indexers}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1244}     \PYG{n}{cond} \PYG{o}{=} \PYG{n}{cond}\PYG{o}{.}\PYG{n}{isel}\PYG{p}{(}\PYG{o}{*}\PYG{o}{*}\PYG{n}{indexers}\PYG{p}{)}
-\PYG{n+ne}{\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{1246} \PYG{k}{return} \PYG{n}{ops}\PYG{o}{.}\PYG{n}{where\PYGZus{}method}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{cond}\PYG{p}{,} \PYG{n}{other}\PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/ops.py:179,} in \PYG{n+ni}{where\PYGZus{}method}\PYG{n+nt}{(self, cond, other)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{177} \PYG{c+c1}{\PYGZsh{} alignment for three arguments is complicated, so don\PYGZsq{}t support it yet}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{178} \PYG{n}{join} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{inner}\PYG{l+s+s2}{\PYGZdq{}} \PYG{k}{if} \PYG{n}{other} \PYG{o+ow}{is} \PYG{n}{dtypes}\PYG{o}{.}\PYG{n}{NA} \PYG{k}{else} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{exact}\PYG{l+s+s2}{\PYGZdq{}}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{179} \PYG{k}{return} \PYG{n}{apply\PYGZus{}ufunc}\PYG{p}{(}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{180}     \PYG{n}{duck\PYGZus{}array\PYGZus{}ops}\PYG{o}{.}\PYG{n}{where\PYGZus{}method}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{181}     \PYG{n+nb+bp}{self}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{182}     \PYG{n}{cond}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{183}     \PYG{n}{other}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{184}     \PYG{n}{join}\PYG{o}{=}\PYG{n}{join}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{185}     \PYG{n}{dataset\PYGZus{}join}\PYG{o}{=}\PYG{n}{join}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{186}     \PYG{n}{dask}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{allowed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{187}     \PYG{n}{keep\PYGZus{}attrs}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{188} \PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/computation.py:1253,} in \PYG{n+ni}{apply\PYGZus{}ufunc}\PYG{n+nt}{(func, input\PYGZus{}core\PYGZus{}dims, output\PYGZus{}core\PYGZus{}dims, exclude\PYGZus{}dims, vectorize, join, dataset\PYGZus{}join, dataset\PYGZus{}fill\PYGZus{}value, keep\PYGZus{}attrs, kwargs, dask, output\PYGZus{}dtypes, output\PYGZus{}sizes, meta, dask\PYGZus{}gufunc\PYGZus{}kwargs, on\PYGZus{}missing\PYGZus{}core\PYGZus{}dim, *args)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1251} \PYG{c+c1}{\PYGZsh{} feed datasets apply\PYGZus{}variable\PYGZus{}ufunc through apply\PYGZus{}dataset\PYGZus{}vfunc}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1252} \PYG{k}{elif} \PYG{n+nb}{any}\PYG{p}{(}\PYG{n}{is\PYGZus{}dict\PYGZus{}like}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)} \PYG{k}{for} \PYG{n}{a} \PYG{o+ow}{in} \PYG{n}{args}\PYG{p}{)}\PYG{p}{:}
-\PYG{n+ne}{\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{1253}     \PYG{k}{return} \PYG{n}{apply\PYGZus{}dataset\PYGZus{}vfunc}\PYG{p}{(}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1254}         \PYG{n}{variables\PYGZus{}vfunc}\PYG{p}{,}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1255}         \PYG{o}{*}\PYG{n}{args}\PYG{p}{,}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1256}         \PYG{n}{signature}\PYG{o}{=}\PYG{n}{signature}\PYG{p}{,}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1257}         \PYG{n}{join}\PYG{o}{=}\PYG{n}{join}\PYG{p}{,}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1258}         \PYG{n}{exclude\PYGZus{}dims}\PYG{o}{=}\PYG{n}{exclude\PYGZus{}dims}\PYG{p}{,}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1259}         \PYG{n}{dataset\PYGZus{}join}\PYG{o}{=}\PYG{n}{dataset\PYGZus{}join}\PYG{p}{,}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1260}         \PYG{n}{fill\PYGZus{}value}\PYG{o}{=}\PYG{n}{dataset\PYGZus{}fill\PYGZus{}value}\PYG{p}{,}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1261}         \PYG{n}{keep\PYGZus{}attrs}\PYG{o}{=}\PYG{n}{keep\PYGZus{}attrs}\PYG{p}{,}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1262}         \PYG{n}{on\PYGZus{}missing\PYGZus{}core\PYGZus{}dim}\PYG{o}{=}\PYG{n}{on\PYGZus{}missing\PYGZus{}core\PYGZus{}dim}\PYG{p}{,}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1263}     \PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1264} \PYG{c+c1}{\PYGZsh{} feed DataArray apply\PYGZus{}variable\PYGZus{}ufunc through apply\PYGZus{}dataarray\PYGZus{}vfunc}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1265} \PYG{k}{elif} \PYG{n+nb}{any}\PYG{p}{(}\PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{DataArray}\PYG{p}{)} \PYG{k}{for} \PYG{n}{a} \PYG{o+ow}{in} \PYG{n}{args}\PYG{p}{)}\PYG{p}{:}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/computation.py:528,} in \PYG{n+ni}{apply\PYGZus{}dataset\PYGZus{}vfunc}\PYG{n+nt}{(func, signature, join, dataset\PYGZus{}join, fill\PYGZus{}value, exclude\PYGZus{}dims, keep\PYGZus{}attrs, on\PYGZus{}missing\PYGZus{}core\PYGZus{}dim, *args)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{523} \PYG{n}{list\PYGZus{}of\PYGZus{}coords}\PYG{p}{,} \PYG{n}{list\PYGZus{}of\PYGZus{}indexes} \PYG{o}{=} \PYG{n}{build\PYGZus{}output\PYGZus{}coords\PYGZus{}and\PYGZus{}indexes}\PYG{p}{(}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{524}     \PYG{n}{args}\PYG{p}{,} \PYG{n}{signature}\PYG{p}{,} \PYG{n}{exclude\PYGZus{}dims}\PYG{p}{,} \PYG{n}{combine\PYGZus{}attrs}\PYG{o}{=}\PYG{n}{keep\PYGZus{}attrs}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{525} \PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{526} \PYG{n}{args} \PYG{o}{=} \PYG{n+nb}{tuple}\PYG{p}{(}\PYG{n+nb}{getattr}\PYG{p}{(}\PYG{n}{arg}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{data\PYGZus{}vars}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{arg}\PYG{p}{)} \PYG{k}{for} \PYG{n}{arg} \PYG{o+ow}{in} \PYG{n}{args}\PYG{p}{)}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{528} \PYG{n}{result\PYGZus{}vars} \PYG{o}{=} \PYG{n}{apply\PYGZus{}dict\PYGZus{}of\PYGZus{}variables\PYGZus{}vfunc}\PYG{p}{(}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{529}     \PYG{n}{func}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{530}     \PYG{o}{*}\PYG{n}{args}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{531}     \PYG{n}{signature}\PYG{o}{=}\PYG{n}{signature}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{532}     \PYG{n}{join}\PYG{o}{=}\PYG{n}{dataset\PYGZus{}join}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{533}     \PYG{n}{fill\PYGZus{}value}\PYG{o}{=}\PYG{n}{fill\PYGZus{}value}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{534}     \PYG{n}{on\PYGZus{}missing\PYGZus{}core\PYGZus{}dim}\PYG{o}{=}\PYG{n}{on\PYGZus{}missing\PYGZus{}core\PYGZus{}dim}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{535} \PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{537} \PYG{n}{out}\PYG{p}{:} \PYG{n}{Dataset} \PYG{o}{|} \PYG{n+nb}{tuple}\PYG{p}{[}\PYG{n}{Dataset}\PYG{p}{,} \PYG{o}{.}\PYG{o}{.}\PYG{o}{.}\PYG{p}{]}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{538} \PYG{k}{if} \PYG{n}{signature}\PYG{o}{.}\PYG{n}{num\PYGZus{}outputs} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1}\PYG{p}{:}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/computation.py:452,} in \PYG{n+ni}{apply\PYGZus{}dict\PYGZus{}of\PYGZus{}variables\PYGZus{}vfunc}\PYG{n+nt}{(func, signature, join, fill\PYGZus{}value, on\PYGZus{}missing\PYGZus{}core\PYGZus{}dim, *args)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{450} \PYG{n}{core\PYGZus{}dim\PYGZus{}present} \PYG{o}{=} \PYG{n}{\PYGZus{}check\PYGZus{}core\PYGZus{}dims}\PYG{p}{(}\PYG{n}{signature}\PYG{p}{,} \PYG{n}{variable\PYGZus{}args}\PYG{p}{,} \PYG{n}{name}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{451} \PYG{k}{if} \PYG{n}{core\PYGZus{}dim\PYGZus{}present} \PYG{o+ow}{is} \PYG{k+kc}{True}\PYG{p}{:}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{452}     \PYG{n}{result\PYGZus{}vars}\PYG{p}{[}\PYG{n}{name}\PYG{p}{]} \PYG{o}{=} \PYG{n}{func}\PYG{p}{(}\PYG{o}{*}\PYG{n}{variable\PYGZus{}args}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{453} \PYG{k}{else}\PYG{p}{:}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{454}     \PYG{k}{if} \PYG{n}{on\PYGZus{}missing\PYGZus{}core\PYGZus{}dim} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{raise}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/computation.py:730,} in \PYG{n+ni}{apply\PYGZus{}variable\PYGZus{}ufunc}\PYG{n+nt}{(func, signature, exclude\PYGZus{}dims, dask, output\PYGZus{}dtypes, vectorize, keep\PYGZus{}attrs, dask\PYGZus{}gufunc\PYGZus{}kwargs, *args)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{725} \PYG{n}{broadcast\PYGZus{}dims} \PYG{o}{=} \PYG{n+nb}{tuple}\PYG{p}{(}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{726}     \PYG{n}{dim} \PYG{k}{for} \PYG{n}{dim} \PYG{o+ow}{in} \PYG{n}{dim\PYGZus{}sizes} \PYG{k}{if} \PYG{n}{dim} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{signature}\PYG{o}{.}\PYG{n}{all\PYGZus{}core\PYGZus{}dims}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{727} \PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{728} \PYG{n}{output\PYGZus{}dims} \PYG{o}{=} \PYG{p}{[}\PYG{n}{broadcast\PYGZus{}dims} \PYG{o}{+} \PYG{n}{out} \PYG{k}{for} \PYG{n}{out} \PYG{o+ow}{in} \PYG{n}{signature}\PYG{o}{.}\PYG{n}{output\PYGZus{}core\PYGZus{}dims}\PYG{p}{]}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{730} \PYG{n}{input\PYGZus{}data} \PYG{o}{=} \PYG{p}{[}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{731}     \PYG{p}{(}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{732}         \PYG{n}{broadcast\PYGZus{}compat\PYGZus{}data}\PYG{p}{(}\PYG{n}{arg}\PYG{p}{,} \PYG{n}{broadcast\PYGZus{}dims}\PYG{p}{,} \PYG{n}{core\PYGZus{}dims}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{733}         \PYG{k}{if} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{arg}\PYG{p}{,} \PYG{n}{Variable}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{734}         \PYG{k}{else} \PYG{n}{arg}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{735}     \PYG{p}{)}
-\PYG{n+nn}{    736     for arg, core\PYGZus{}dims} in \PYG{n+ni}{zip}\PYG{n+nt}{(args, signature.input\PYGZus{}core\PYGZus{}dims)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{737} \PYG{p}{]}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{739} \PYG{k}{if} \PYG{n+nb}{any}\PYG{p}{(}\PYG{n}{is\PYGZus{}chunked\PYGZus{}array}\PYG{p}{(}\PYG{n}{array}\PYG{p}{)} \PYG{k}{for} \PYG{n}{array} \PYG{o+ow}{in} \PYG{n}{input\PYGZus{}data}\PYG{p}{)}\PYG{p}{:}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{740}     \PYG{k}{if} \PYG{n}{dask} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{forbidden}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/computation.py:732,} in \PYG{n+ni}{\PYGZlt{}listcomp\PYGZgt{}}\PYG{n+nt}{(.0)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{725} \PYG{n}{broadcast\PYGZus{}dims} \PYG{o}{=} \PYG{n+nb}{tuple}\PYG{p}{(}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{726}     \PYG{n}{dim} \PYG{k}{for} \PYG{n}{dim} \PYG{o+ow}{in} \PYG{n}{dim\PYGZus{}sizes} \PYG{k}{if} \PYG{n}{dim} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{signature}\PYG{o}{.}\PYG{n}{all\PYGZus{}core\PYGZus{}dims}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{727} \PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{728} \PYG{n}{output\PYGZus{}dims} \PYG{o}{=} \PYG{p}{[}\PYG{n}{broadcast\PYGZus{}dims} \PYG{o}{+} \PYG{n}{out} \PYG{k}{for} \PYG{n}{out} \PYG{o+ow}{in} \PYG{n}{signature}\PYG{o}{.}\PYG{n}{output\PYGZus{}core\PYGZus{}dims}\PYG{p}{]}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{730} \PYG{n}{input\PYGZus{}data} \PYG{o}{=} \PYG{p}{[}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{731}     \PYG{p}{(}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{732}         \PYG{n}{broadcast\PYGZus{}compat\PYGZus{}data}\PYG{p}{(}\PYG{n}{arg}\PYG{p}{,} \PYG{n}{broadcast\PYGZus{}dims}\PYG{p}{,} \PYG{n}{core\PYGZus{}dims}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{733}         \PYG{k}{if} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{arg}\PYG{p}{,} \PYG{n}{Variable}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{734}         \PYG{k}{else} \PYG{n}{arg}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{735}     \PYG{p}{)}
-\PYG{n+nn}{    736     for arg, core\PYGZus{}dims} in \PYG{n+ni}{zip}\PYG{n+nt}{(args, signature.input\PYGZus{}core\PYGZus{}dims)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{737} \PYG{p}{]}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{739} \PYG{k}{if} \PYG{n+nb}{any}\PYG{p}{(}\PYG{n}{is\PYGZus{}chunked\PYGZus{}array}\PYG{p}{(}\PYG{n}{array}\PYG{p}{)} \PYG{k}{for} \PYG{n}{array} \PYG{o+ow}{in} \PYG{n}{input\PYGZus{}data}\PYG{p}{)}\PYG{p}{:}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{740}     \PYG{k}{if} \PYG{n}{dask} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{forbidden}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/computation.py:653,} in \PYG{n+ni}{broadcast\PYGZus{}compat\PYGZus{}data}\PYG{n+nt}{(variable, broadcast\PYGZus{}dims, core\PYGZus{}dims)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{648} \PYG{k}{def} \PYG{n+nf}{broadcast\PYGZus{}compat\PYGZus{}data}\PYG{p}{(}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{649}     \PYG{n}{variable}\PYG{p}{:} \PYG{n}{Variable}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{650}     \PYG{n}{broadcast\PYGZus{}dims}\PYG{p}{:} \PYG{n+nb}{tuple}\PYG{p}{[}\PYG{n}{Hashable}\PYG{p}{,} \PYG{o}{.}\PYG{o}{.}\PYG{o}{.}\PYG{p}{]}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{651}     \PYG{n}{core\PYGZus{}dims}\PYG{p}{:} \PYG{n+nb}{tuple}\PYG{p}{[}\PYG{n}{Hashable}\PYG{p}{,} \PYG{o}{.}\PYG{o}{.}\PYG{o}{.}\PYG{p}{]}\PYG{p}{,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{652} \PYG{p}{)} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}} \PYG{n}{Any}\PYG{p}{:}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{653}     \PYG{n}{data} \PYG{o}{=} \PYG{n}{variable}\PYG{o}{.}\PYG{n}{data}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{655}     \PYG{n}{old\PYGZus{}dims} \PYG{o}{=} \PYG{n}{variable}\PYG{o}{.}\PYG{n}{dims}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{656}     \PYG{n}{new\PYGZus{}dims} \PYG{o}{=} \PYG{n}{broadcast\PYGZus{}dims} \PYG{o}{+} \PYG{n}{core\PYGZus{}dims}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/variable.py:448,} in \PYG{n+ni}{Variable.data}\PYG{n+nt}{(self)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{446}     \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}data}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{447} \PYG{k}{elif} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}data}\PYG{p}{,} \PYG{n}{indexing}\PYG{o}{.}\PYG{n}{ExplicitlyIndexed}\PYG{p}{)}\PYG{p}{:}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{448}     \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}data}\PYG{o}{.}\PYG{n}{get\PYGZus{}duck\PYGZus{}array}\PYG{p}{(}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{449} \PYG{k}{else}\PYG{p}{:}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{450}     \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{values}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/indexing.py:836,} in \PYG{n+ni}{MemoryCachedArray.get\PYGZus{}duck\PYGZus{}array}\PYG{n+nt}{(self)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{835} \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}duck\PYGZus{}array}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)}\PYG{p}{:}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{836}     \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}ensure\PYGZus{}cached}\PYG{p}{(}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{837}     \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{array}\PYG{o}{.}\PYG{n}{get\PYGZus{}duck\PYGZus{}array}\PYG{p}{(}\PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/indexing.py:830,} in \PYG{n+ni}{MemoryCachedArray.\PYGZus{}ensure\PYGZus{}cached}\PYG{n+nt}{(self)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{829} \PYG{k}{def} \PYG{n+nf}{\PYGZus{}ensure\PYGZus{}cached}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)}\PYG{p}{:}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{830}     \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{array} \PYG{o}{=} \PYG{n}{as\PYGZus{}indexable}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{array}\PYG{o}{.}\PYG{n}{get\PYGZus{}duck\PYGZus{}array}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/indexing.py:787,} in \PYG{n+ni}{CopyOnWriteArray.get\PYGZus{}duck\PYGZus{}array}\PYG{n+nt}{(self)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{786} \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}duck\PYGZus{}array}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)}\PYG{p}{:}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{787}     \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{array}\PYG{o}{.}\PYG{n}{get\PYGZus{}duck\PYGZus{}array}\PYG{p}{(}\PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/indexing.py:650,} in \PYG{n+ni}{LazilyIndexedArray.get\PYGZus{}duck\PYGZus{}array}\PYG{n+nt}{(self)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{646}     \PYG{n}{array} \PYG{o}{=} \PYG{n}{apply\PYGZus{}indexer}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{array}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{key}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{647} \PYG{k}{else}\PYG{p}{:}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{648}     \PYG{c+c1}{\PYGZsh{} If the array is not an ExplicitlyIndexedNDArrayMixin,}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{649}     \PYG{c+c1}{\PYGZsh{} it may wrap a BackendArray so use its \PYGZus{}\PYGZus{}getitem\PYGZus{}\PYGZus{}}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{650}     \PYG{n}{array} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{array}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{key}\PYG{p}{]}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{652} \PYG{c+c1}{\PYGZsh{} self.array[self.key] is now a numpy array when}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{653} \PYG{c+c1}{\PYGZsh{} self.array is a BackendArray subclass}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{654} \PYG{c+c1}{\PYGZsh{} and self.key is BasicIndexer((slice(None, None, None),))}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{655} \PYG{c+c1}{\PYGZsh{} so we need the explicit check for ExplicitlyIndexed}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{656} \PYG{k}{if} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{array}\PYG{p}{,} \PYG{n}{ExplicitlyIndexed}\PYG{p}{)}\PYG{p}{:}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/backends/netCDF4\PYGZus{}.py:100,} in \PYG{n+ni}{NetCDF4ArrayWrapper.\PYGZus{}\PYGZus{}getitem\PYGZus{}\PYGZus{}}\PYG{n+nt}{(self, key)}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{99} \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}getitem\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{key}\PYG{p}{)}\PYG{p}{:}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{100}     \PYG{k}{return} \PYG{n}{indexing}\PYG{o}{.}\PYG{n}{explicit\PYGZus{}indexing\PYGZus{}adapter}\PYG{p}{(}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{101}         \PYG{n}{key}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{,} \PYG{n}{indexing}\PYG{o}{.}\PYG{n}{IndexingSupport}\PYG{o}{.}\PYG{n}{OUTER}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}getitem}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{102}     \PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/core/indexing.py:1014,} in \PYG{n+ni}{explicit\PYGZus{}indexing\PYGZus{}adapter}\PYG{n+nt}{(key, shape, indexing\PYGZus{}support, raw\PYGZus{}indexing\PYGZus{}method)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{992}\PYG{+w}{ }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Support explicit indexing by delegating to a raw indexing method.}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{993}\PYG{l+s+sd}{ }
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{994}\PYG{l+s+sd}{ Outer and/or vectorized indexers are supported by indexing a second time}
-\PYG{l+s+sd}{   (...)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1011}\PYG{l+s+sd}{ Indexing result, in the form of a duck numpy\PYGZhy{}array.}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1012}\PYG{l+s+sd}{ \PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1013} \PYG{n}{raw\PYGZus{}key}\PYG{p}{,} \PYG{n}{numpy\PYGZus{}indices} \PYG{o}{=} \PYG{n}{decompose\PYGZus{}indexer}\PYG{p}{(}\PYG{n}{key}\PYG{p}{,} \PYG{n}{shape}\PYG{p}{,} \PYG{n}{indexing\PYGZus{}support}\PYG{p}{)}
-\PYG{n+ne}{\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{1014} \PYG{n}{result} \PYG{o}{=} \PYG{n}{raw\PYGZus{}indexing\PYGZus{}method}\PYG{p}{(}\PYG{n}{raw\PYGZus{}key}\PYG{o}{.}\PYG{n}{tuple}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1015} \PYG{k}{if} \PYG{n}{numpy\PYGZus{}indices}\PYG{o}{.}\PYG{n}{tuple}\PYG{p}{:}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1016}     \PYG{c+c1}{\PYGZsh{} index the loaded np.ndarray}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1017}     \PYG{n}{indexable} \PYG{o}{=} \PYG{n}{NumpyIndexingAdapter}\PYG{p}{(}\PYG{n}{result}\PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/xarray/backends/netCDF4\PYGZus{}.py:113,} in \PYG{n+ni}{NetCDF4ArrayWrapper.\PYGZus{}getitem}\PYG{n+nt}{(self, key)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{111}     \PYG{k}{with} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{datastore}\PYG{o}{.}\PYG{n}{lock}\PYG{p}{:}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{112}         \PYG{n}{original\PYGZus{}array} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}array}\PYG{p}{(}\PYG{n}{needs\PYGZus{}lock}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{)}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{113}         \PYG{n}{array} \PYG{o}{=} \PYG{n}{getitem}\PYG{p}{(}\PYG{n}{original\PYGZus{}array}\PYG{p}{,} \PYG{n}{key}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{114} \PYG{k}{except} \PYG{n+ne}{IndexError}\PYG{p}{:}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{115}     \PYG{c+c1}{\PYGZsh{} Catch IndexError in netCDF4 and return a more informative}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{116}     \PYG{c+c1}{\PYGZsh{} error message.  This is most often called when an unsorted}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{117}     \PYG{c+c1}{\PYGZsh{} indexer is used before the data is loaded from disk.}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{118}     \PYG{n}{msg} \PYG{o}{=} \PYG{p}{(}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{119}         \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{The indexing operation you are attempting to perform }\PYG{l+s+s2}{\PYGZdq{}}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{120}         \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{is not valid on netCDF4.Variable object. Try loading }\PYG{l+s+s2}{\PYGZdq{}}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{121}         \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{your data into memory first by calling .load().}\PYG{l+s+s2}{\PYGZdq{}}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{122}     \PYG{p}{)}
-
-\PYG{n+ne}{KeyboardInterrupt}: 
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
 
@@ -2834,7 +2644,7 @@ In addition, the forward and backward scans are treated here as having the same 
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZsq{}/home/emilyjd/cimr\PYGZhy{}devalgo/SeaIceDrift\PYGZus{}ATBD\PYGZus{}v2/book/../../data/processing/tc\PYGZus{}wght\PYGZus{}cimr\PYGZhy{}cimr\PYGZus{}tb19hfw\PYGZhy{}tb19vfw\PYGZhy{}tb19hbk\PYGZhy{}tb19vbk\PYGZhy{}tb37hfw\PYGZhy{}tb37vfw\PYGZhy{}tb37hbk\PYGZhy{}tb37vbk\PYGZus{}nh\PYGZhy{}ease2\PYGZhy{}050\PYGZus{}2028011112.nc\PYGZsq{}
+\PYGZsq{}/home/emilyjd/cimr\PYGZhy{}devalgo/SeaIceDrift\PYGZus{}ATBD\PYGZus{}v2/algorithm/../../data/processing/tc\PYGZus{}wght\PYGZus{}cimr\PYGZhy{}cimr\PYGZus{}tb19hfw\PYGZhy{}tb19vfw\PYGZhy{}tb19hbk\PYGZhy{}tb19vbk\PYGZhy{}tb37hfw\PYGZhy{}tb37vfw\PYGZhy{}tb37hbk\PYGZhy{}tb37vbk\PYGZus{}nh\PYGZhy{}ease2\PYGZhy{}050\PYGZus{}2028011112.nc\PYGZsq{}
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -2870,137 +2680,21 @@ In addition, the forward and backward scans are treated here as having the same 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 Daily maps found (cimr\PYGZhy{}cimr):
 
-	Day 1 : /home/emilyjd/cimr\PYGZhy{}devalgo/SeaIceDrift\PYGZus{}ATBD\PYGZus{}v2/book/../../data/processing/tc\PYGZus{}wght\PYGZus{}cimr\PYGZhy{}cimr\PYGZus{}tb19hfw\PYGZhy{}tb19vfw\PYGZhy{}tb19hbk\PYGZhy{}tb19vbk\PYGZhy{}tb37hfw\PYGZhy{}tb37vfw\PYGZhy{}tb37hbk\PYGZhy{}tb37vbk\PYGZus{}nh\PYGZhy{}ease2\PYGZhy{}050\PYGZus{}2028011012.nc 
+	Day 1 : /home/emilyjd/cimr\PYGZhy{}devalgo/SeaIceDrift\PYGZus{}ATBD\PYGZus{}v2/algorithm/../../data/processing/tc\PYGZus{}wght\PYGZus{}cimr\PYGZhy{}cimr\PYGZus{}tb19hfw\PYGZhy{}tb19vfw\PYGZhy{}tb19hbk\PYGZhy{}tb19vbk\PYGZhy{}tb37hfw\PYGZhy{}tb37vfw\PYGZhy{}tb37hbk\PYGZhy{}tb37vbk\PYGZus{}nh\PYGZhy{}ease2\PYGZhy{}050\PYGZus{}2028011012.nc 
 
-	Day 2 : /home/emilyjd/cimr\PYGZhy{}devalgo/SeaIceDrift\PYGZus{}ATBD\PYGZus{}v2/book/../../data/processing/tc\PYGZus{}wght\PYGZus{}cimr\PYGZhy{}cimr\PYGZus{}tb19hfw\PYGZhy{}tb19vfw\PYGZhy{}tb19hbk\PYGZhy{}tb19vbk\PYGZhy{}tb37hfw\PYGZhy{}tb37vfw\PYGZhy{}tb37hbk\PYGZhy{}tb37vbk\PYGZus{}nh\PYGZhy{}ease2\PYGZhy{}050\PYGZus{}2028011112.nc 
-\end{sphinxVerbatim}
+	Day 2 : /home/emilyjd/cimr\PYGZhy{}devalgo/SeaIceDrift\PYGZus{}ATBD\PYGZus{}v2/algorithm/../../data/processing/tc\PYGZus{}wght\PYGZus{}cimr\PYGZhy{}cimr\PYGZus{}tb19hfw\PYGZhy{}tb19vfw\PYGZhy{}tb19hbk\PYGZhy{}tb19vbk\PYGZhy{}tb37hfw\PYGZhy{}tb37vfw\PYGZhy{}tb37hbk\PYGZhy{}tb37vbk\PYGZus{}nh\PYGZhy{}ease2\PYGZhy{}050\PYGZus{}2028011112.nc 
 
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{g+gt}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
-\PYG{n+ne}{KeyboardInterrupt}\PYG{g+gWhitespace}{                         }Traceback (most recent call last)
-\PYG{n}{Cell} \PYG{n}{In}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{]}\PYG{p}{,} \PYG{n}{line} \PYG{l+m+mi}{15}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{12} \PYG{k}{with} \PYG{n}{warnings}\PYG{o}{.}\PYG{n}{catch\PYGZus{}warnings}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{13}     \PYG{n}{warnings}\PYG{o}{.}\PYG{n}{simplefilter}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ignore}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{15}     \PYG{n}{idrift} \PYG{o}{=} \PYG{n}{icedrift\PYGZus{}wrapper}\PYG{p}{(}\PYG{n}{pdate}\PYG{p}{,} \PYG{n}{qdate}\PYG{p}{,} \PYG{n}{procpath}\PYG{p}{,} \PYG{n}{procpath}\PYG{p}{,} \PYG{n}{driftpath}\PYG{p}{,} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{logpath}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{cmcc\PYGZhy{}test.log}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{,}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{16}                           \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{cimr\PYGZhy{}cimr}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{gridin}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{hemi}\PYG{p}{)}\PYG{p}{,} \PYG{n}{chan\PYGZus{}list}\PYG{p}{,} \PYG{n}{rad}\PYG{p}{,} \PYG{n}{rad\PYGZus{}neigh}\PYG{p}{,} 
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{17}                           \PYG{n}{area\PYGZus{}out}\PYG{o}{=}\PYG{n}{gridout}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{hemi}\PYG{p}{)}\PYG{p}{)}
 
-\PYG{n+nn}{File \PYGZti{}/cimr\PYGZhy{}devalgo/SeaIceDrift\PYGZus{}ATBD\PYGZus{}v2/book/../../SeaIceDrift\PYGZus{}ATBD\PYGZus{}v2/algorithm/src\PYGZus{}sied/icedrift\PYGZus{}wrapper.py:377,} in \PYG{n+ni}{icedrift\PYGZus{}wrapper}\PYG{n+nt}{(start\PYGZus{}date, end\PYGZus{}date, start\PYGZus{}dir, end\PYGZus{}dir, out\PYGZus{}dir, c\PYGZus{}logfile, instr, area, channels, radius, rad\PYGZus{}neigh, area\PYGZus{}out)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{375} \PYG{n}{lon} \PYG{o}{=} \PYG{n}{out\PYGZus{}lons}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{376} \PYG{n}{lat} \PYG{o}{=} \PYG{n}{out\PYGZus{}lats}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{377} \PYG{p}{(}\PYG{n}{newrow}\PYG{p}{,} \PYG{n}{newcol}\PYG{p}{)} \PYG{o}{=} \PYG{n}{img\PYGZus{}area\PYGZus{}def}\PYG{o}{.}\PYG{n}{get\PYGZus{}xy\PYGZus{}from\PYGZus{}lonlat}\PYG{p}{(}\PYG{n}{lon}\PYG{p}{,} \PYG{n}{lat}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{378} \PYG{k}{try}\PYG{p}{:}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{379}     \PYG{n}{iwcs}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{p}{(}\PYG{n}{newcol} \PYG{o}{*} \PYG{n}{img\PYGZus{}nx}\PYG{p}{)} \PYG{o}{+} \PYG{n}{newrow}\PYG{p}{)}
 
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/pyresample/geometry.py:2340,} in \PYG{n+ni}{AreaDefinition.get\PYGZus{}xy\PYGZus{}from\PYGZus{}lonlat}\PYG{n+nt}{(self, lon, lat)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2321}\PYG{+w}{ }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Retrieve closest x and y coordinates.}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2322}\PYG{l+s+sd}{ }
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2323}\PYG{l+s+sd}{ Retrieve the closest x and y coordinates (column, row indices) for the}
-\PYG{l+s+sd}{   (...)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2334}\PYG{l+s+sd}{     (x, y) : tuple of points/arrays}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2335}\PYG{l+s+sd}{ \PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2336} \PYG{n}{warnings}\PYG{o}{.}\PYG{n}{warn}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{get\PYGZus{}xy\PYGZus{}from\PYGZus{}lonlat}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{ is deprecated, please use }\PYG{l+s+s2}{\PYGZdq{}}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2337}               \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{get\PYGZus{}array\PYGZus{}indices\PYGZus{}from\PYGZus{}lonlat}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{ instead.}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n+ne}{DeprecationWarning}\PYG{p}{,}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2338}               \PYG{n}{stacklevel}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
-\PYG{n+ne}{\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{2340} \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}array\PYGZus{}indices\PYGZus{}from\PYGZus{}lonlat}\PYG{p}{(}\PYG{n}{lon}\PYG{p}{,} \PYG{n}{lat}\PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/pyresample/geometry.py:1453,} in \PYG{n+ni}{masked\PYGZus{}ints.\PYGZlt{}locals\PYGZgt{}.wrapper}\PYG{n+nt}{(self, xm, ym)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1449} \PYG{n+nd}{@wraps}\PYG{p}{(}\PYG{n}{func}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1450} \PYG{k}{def} \PYG{n+nf}{wrapper}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{xm}\PYG{p}{,} \PYG{n}{ym}\PYG{p}{)}\PYG{p}{:}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1451}     \PYG{n}{is\PYGZus{}scalar} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{isscalar}\PYG{p}{(}\PYG{n}{xm}\PYG{p}{)} \PYG{o+ow}{and} \PYG{n}{np}\PYG{o}{.}\PYG{n}{isscalar}\PYG{p}{(}\PYG{n}{ym}\PYG{p}{)}
-\PYG{n+ne}{\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{1453}     \PYG{n}{x\PYGZus{}\PYGZus{}}\PYG{p}{,} \PYG{n}{y\PYGZus{}\PYGZus{}} \PYG{o}{=} \PYG{n}{func}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{xm}\PYG{p}{,} \PYG{n}{ym}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1454}     \PYG{n}{x\PYGZus{}\PYGZus{}} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{round}\PYG{p}{(}\PYG{n}{x\PYGZus{}\PYGZus{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1455}     \PYG{n}{y\PYGZus{}\PYGZus{}} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{round}\PYG{p}{(}\PYG{n}{y\PYGZus{}\PYGZus{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/pyresample/geometry.py:2197,} in \PYG{n+ni}{AreaDefinition.get\PYGZus{}array\PYGZus{}indices\PYGZus{}from\PYGZus{}lonlat}\PYG{n+nt}{(self, lon, lat)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2177} \PYG{n+nd}{@masked\PYGZus{}ints}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2178} \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}array\PYGZus{}indices\PYGZus{}from\PYGZus{}lonlat}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{lon}\PYG{p}{,} \PYG{n}{lat}\PYG{p}{)}\PYG{p}{:}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2179}\PYG{+w}{     }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Find the closest integer grid cell index for a given lon/lat.}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2180}\PYG{l+s+sd}{ }
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2181}\PYG{l+s+sd}{     If lon,lat is a point, a ValueError is raised if it is outside the area}
-\PYG{l+s+sd}{   (...)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2195}\PYG{l+s+sd}{         ValueError: if the return point is outside the area domain}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2196}\PYG{l+s+sd}{     \PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{n+ne}{\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{2197}     \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}array\PYGZus{}coordinates\PYGZus{}from\PYGZus{}lonlat}\PYG{p}{(}\PYG{n}{lon}\PYG{p}{,} \PYG{n}{lat}\PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/pyresample/geometry.py:1489,} in \PYG{n+ni}{daskify\PYGZus{}2in\PYGZus{}2out.\PYGZlt{}locals\PYGZgt{}.wrapper}\PYG{n+nt}{(self, coord1, coord2)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1486} \PYG{n+nd}{@wraps}\PYG{p}{(}\PYG{n}{func}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1487} \PYG{k}{def} \PYG{n+nf}{wrapper}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{coord1}\PYG{p}{,} \PYG{n}{coord2}\PYG{p}{)}\PYG{p}{:}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1488}     \PYG{k}{if} \PYG{n}{da} \PYG{o+ow}{is} \PYG{k+kc}{None} \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{p}{(}\PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{coord1}\PYG{p}{,} \PYG{n}{da}\PYG{o}{.}\PYG{n}{Array}\PYG{p}{)} \PYG{o+ow}{or} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{coord2}\PYG{p}{,} \PYG{n}{da}\PYG{o}{.}\PYG{n}{Array}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
-\PYG{n+ne}{\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{1489}         \PYG{k}{return} \PYG{n}{func}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{coord1}\PYG{p}{,} \PYG{n}{coord2}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1490}     \PYG{n}{newfunc} \PYG{o}{=} \PYG{n}{partial}\PYG{p}{(}\PYG{n}{func}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1491}     \PYG{n}{dims} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{(}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{, }\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{i\PYGZus{}}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{coord1}\PYG{o}{.}\PYG{n}{ndim}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{)}\PYG{l+s+s1}{\PYGZsq{}}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/pyresample/geometry.py:2139,} in \PYG{n+ni}{AreaDefinition.get\PYGZus{}array\PYGZus{}coordinates\PYGZus{}from\PYGZus{}lonlat}\PYG{n+nt}{(self, lon, lat)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2125} \PYG{n+nd}{@daskify\PYGZus{}2in\PYGZus{}2out}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2126} \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}array\PYGZus{}coordinates\PYGZus{}from\PYGZus{}lonlat}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{lon}\PYG{p}{,} \PYG{n}{lat}\PYG{p}{)}\PYG{p}{:}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2127}\PYG{+w}{     }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Retrieve the array coordinates (float) for a given lon/lat.}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2128}\PYG{l+s+sd}{ }
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2129}\PYG{l+s+sd}{     If lon,lat is a tuple of sequences of longitudes and latitudes, a tuple}
-\PYG{l+s+sd}{   (...)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2137}\PYG{l+s+sd}{         floats or arrays of floats: the array coordinates (cols/rows)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2138}\PYG{l+s+sd}{     \PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{n+ne}{\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{2139}     \PYG{n}{xm\PYGZus{}}\PYG{p}{,} \PYG{n}{ym\PYGZus{}} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}projection\PYGZus{}coordinates\PYGZus{}from\PYGZus{}lonlat}\PYG{p}{(}\PYG{n}{lon}\PYG{p}{,} \PYG{n}{lat}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2140}     \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{get\PYGZus{}array\PYGZus{}coordinates\PYGZus{}from\PYGZus{}projection\PYGZus{}coordinates}\PYG{p}{(}\PYG{n}{xm\PYGZus{}}\PYG{p}{,} \PYG{n}{ym\PYGZus{}}\PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/pyresample/geometry.py:1489,} in \PYG{n+ni}{daskify\PYGZus{}2in\PYGZus{}2out.\PYGZlt{}locals\PYGZgt{}.wrapper}\PYG{n+nt}{(self, coord1, coord2)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1486} \PYG{n+nd}{@wraps}\PYG{p}{(}\PYG{n}{func}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1487} \PYG{k}{def} \PYG{n+nf}{wrapper}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{coord1}\PYG{p}{,} \PYG{n}{coord2}\PYG{p}{)}\PYG{p}{:}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1488}     \PYG{k}{if} \PYG{n}{da} \PYG{o+ow}{is} \PYG{k+kc}{None} \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{p}{(}\PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{coord1}\PYG{p}{,} \PYG{n}{da}\PYG{o}{.}\PYG{n}{Array}\PYG{p}{)} \PYG{o+ow}{or} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{coord2}\PYG{p}{,} \PYG{n}{da}\PYG{o}{.}\PYG{n}{Array}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
-\PYG{n+ne}{\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{1489}         \PYG{k}{return} \PYG{n}{func}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{coord1}\PYG{p}{,} \PYG{n}{coord2}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1490}     \PYG{n}{newfunc} \PYG{o}{=} \PYG{n}{partial}\PYG{p}{(}\PYG{n}{func}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{1491}     \PYG{n}{dims} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{(}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{, }\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{i\PYGZus{}}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{coord1}\PYG{o}{.}\PYG{n}{ndim}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{)}\PYG{l+s+s1}{\PYGZsq{}}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/pyresample/geometry.py:2235,} in \PYG{n+ni}{AreaDefinition.get\PYGZus{}projection\PYGZus{}coordinates\PYGZus{}from\PYGZus{}lonlat}\PYG{n+nt}{(self, lon, lat)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2221} \PYG{n+nd}{@daskify\PYGZus{}2in\PYGZus{}2out}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2222} \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}projection\PYGZus{}coordinates\PYGZus{}from\PYGZus{}lonlat}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{lon}\PYG{p}{,} \PYG{n}{lat}\PYG{p}{)}\PYG{p}{:}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2223}\PYG{+w}{     }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Get the projection coordinate from longitudes and latitudes.}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2224}\PYG{l+s+sd}{ }
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2225}\PYG{l+s+sd}{     If lon,lat is a tuple of sequences of longitudes and latitudes, a tuple}
-\PYG{l+s+sd}{   (...)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2233}\PYG{l+s+sd}{         floats or arrays of floats: the projection coordinates x, y in meters}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2234}\PYG{l+s+sd}{     \PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{n+ne}{\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{2235}     \PYG{n}{p} \PYG{o}{=} \PYG{n}{Proj}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{crs}\PYG{p}{)}
-\PYG{g+gWhitespace}{   }\PYG{l+m+mi}{2236}     \PYG{k}{return} \PYG{n}{p}\PYG{p}{(}\PYG{n}{lon}\PYG{p}{,} \PYG{n}{lat}\PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/pyproj/proj.py:134,} in \PYG{n+ni}{Proj.\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{n+nt}{(self, projparams, preserve\PYGZus{}units, **kwargs)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{131}     \PYG{n}{projstring} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{crs}\PYG{o}{.}\PYG{n}{to\PYGZus{}proj4}\PYG{p}{(}\PYG{p}{)} \PYG{o+ow}{or} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{crs}\PYG{o}{.}\PYG{n}{srs}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{133} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{srs} \PYG{o}{=} \PYG{n}{re}\PYG{o}{.}\PYG{n}{sub}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZbs{}}\PYG{l+s+s2}{s}\PYG{l+s+s2}{\PYGZbs{}}\PYG{l+s+s2}{+?type=crs}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{projstring}\PYG{p}{)}\PYG{o}{.}\PYG{n}{strip}\PYG{p}{(}\PYG{p}{)}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{134} \PYG{n+nb}{super}\PYG{p}{(}\PYG{p}{)}\PYG{o}{.}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n}{TransformerFromPipeline}\PYG{p}{(}\PYG{n}{cstrencode}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{srs}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/pyproj/transformer.py:326,} in \PYG{n+ni}{Transformer.\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{n+nt}{(self, transformer\PYGZus{}maker)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{320}     \PYG{k}{raise} \PYG{n}{ProjError}\PYG{p}{(}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{321}         \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Transformer must be initialized using: }\PYG{l+s+s2}{\PYGZdq{}}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{322}         \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{from\PYGZus{}crs}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{, }\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{from\PYGZus{}pipeline}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{, or }\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{from\PYGZus{}proj}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{.}\PYG{l+s+s2}{\PYGZdq{}}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{323}     \PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{325} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}local} \PYG{o}{=} \PYG{n}{TransformerLocal}\PYG{p}{(}\PYG{p}{)}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{326} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}local}\PYG{o}{.}\PYG{n}{transformer} \PYG{o}{=} \PYG{n}{transformer\PYGZus{}maker}\PYG{p}{(}\PYG{p}{)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{327} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}transformer\PYGZus{}maker} \PYG{o}{=} \PYG{n}{transformer\PYGZus{}maker}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/pyproj/transformer.py:130,} in \PYG{n+ni}{TransformerFromPipeline.\PYGZus{}\PYGZus{}call\PYGZus{}\PYGZus{}}\PYG{n+nt}{(self)}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{124} \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}call\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}} \PYG{n}{\PYGZus{}Transformer}\PYG{p}{:}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{125}\PYG{+w}{     }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{126}\PYG{l+s+sd}{     Returns}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{127}\PYG{l+s+sd}{     \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{128}\PYG{l+s+sd}{     \PYGZus{}Transformer}
-\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{129}\PYG{l+s+sd}{     \PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{130}     \PYG{k}{return} \PYG{n}{\PYGZus{}Transformer}\PYG{o}{.}\PYG{n}{from\PYGZus{}pipeline}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{proj\PYGZus{}pipeline}\PYG{p}{)}
-
-\PYG{n+nn}{File pyproj/\PYGZus{}transformer.pyx:594,} in \PYG{n+ni}{pyproj.\PYGZus{}transformer.\PYGZus{}Transformer.from\PYGZus{}pipeline}\PYG{n+nt}{()}
-
-\PYG{n+nn}{File pyproj/\PYGZus{}transformer.pyx:328,} in \PYG{n+ni}{pyproj.\PYGZus{}transformer.\PYGZus{}Transformer.\PYGZus{}initialize\PYGZus{}from\PYGZus{}projobj}\PYG{n+nt}{()}
-
-\PYG{n+nn}{File \PYGZti{}/miniconda3/envs/cimr\PYGZhy{}devalgo\PYGZhy{}sid/lib/python3.9/site\PYGZhy{}packages/pyproj/exceptions.py:19,} in \PYG{n+ni}{ProjError.clear}\PYG{n+nt}{()}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{16}         \PYG{n}{ProjError}\PYG{o}{.}\PYG{n}{clear}\PYG{p}{(}\PYG{p}{)}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{17}     \PYG{n+nb}{super}\PYG{p}{(}\PYG{p}{)}\PYG{o}{.}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n}{error\PYGZus{}message}\PYG{p}{)}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{19} \PYG{n+nd}{@staticmethod}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{20} \PYG{k}{def} \PYG{n+nf}{clear}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}} \PYG{k+kc}{None}\PYG{p}{:}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{21}\PYG{+w}{     }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{22}\PYG{l+s+sd}{     This will clear the internal PROJ erro message.}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{23}\PYG{l+s+sd}{     \PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{24}     \PYG{n}{ProjError}\PYG{o}{.}\PYG{n}{internal\PYGZus{}proj\PYGZus{}error} \PYG{o}{=} \PYG{k+kc}{None}
-
-\PYG{n+ne}{KeyboardInterrupt}: 
+Calling the C core code...
+ 
+ LOGMSG [icedrift\PYGZus{}solve\PYGZus{}core 2024\PYGZhy{}06\PYGZhy{}27 11:22]:
+	Start processing.
+ 
+	Log file is \PYGZlt{}/home/emilyjd/cimr\PYGZhy{}devalgo/SeaIceDrift\PYGZus{}ATBD\PYGZus{}v2/algorithm/../../data/logs/cmcc\PYGZhy{}test.log\PYGZgt{}
+	Radius for pattern \PYGZsh{}0 is 100.0km
+	Radius for pattern \PYGZsh{}1 is 50.0km
+	Maximum drift distance is 38.88km
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -3848,7 +3542,7 @@ The chosen 3\sphinxhyphen{}pixel displacement in x over a 24\sphinxhyphen{}hour 
 \begin{sphinxVerbatimOutput}
 
 \begin{sphinxuseclass}{cell_output}
-\noindent\sphinxincludegraphics{{7e759ebd831681254a7b634b01b0f95480ac8afea965312c958f38f32c5cd749}.png}
+\noindent\sphinxincludegraphics{{2602f1c197d2bb92a8f6b8ca87f4d5be8f4a4ae8d59e680172f644be06f80726}.png}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 FLAG VALUES 
@@ -3939,7 +3633,7 @@ There is also a region around 20W,86N where the vectors were interpolated and ar
 \begin{sphinxVerbatimOutput}
 
 \begin{sphinxuseclass}{cell_output}
-\noindent\sphinxincludegraphics{{d93d6f98ab430b9c5616a5b86a1099481b3e60e772a6c5ec425b44dffd323944}.png}
+\noindent\sphinxincludegraphics{{9f162001f52dd5597f72fceb8aff993dd82c15c89cc6e18ed4a105b8c7693caf}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -3983,7 +3677,7 @@ Here the residuals are plotted, and again, the areas in which the algorithm did 
 \begin{sphinxVerbatimOutput}
 
 \begin{sphinxuseclass}{cell_output}
-\noindent\sphinxincludegraphics{{0fd80951530b375def0b91b24ebe3661a3aebeb433eb8fab9dc1d2982f9c6839}.png}
+\noindent\sphinxincludegraphics{{e6f007b9eb700f008c9c48789891bad8be68affa62569c2b20fcd4c687633e2b}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 

@@ -527,7 +527,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Written a version of https://thredds.met.no/thredds/dodsC/osisaf/met.no/reprocessed/ice/conc_450a_files/2018/01/ice_conc_nh_ease2-250_cdr-v3p0_201801101200.nc to /home/emilyjd/cimr-devalgo/SeaIceDrift_ATBD_v2/book/../../data/conc/ice_conc_nh_ease2-250_cdr-v3p0_202801101200.nc
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Written a version of https://thredds.met.no/thredds/dodsC/osisaf/met.no/reprocessed/ice/conc_450a_files/2018/01/ice_conc_nh_ease2-250_cdr-v3p0_201801101200.nc to /home/emilyjd/cimr-devalgo/SeaIceDrift_ATBD_v2/algorithm/../../data/conc/ice_conc_nh_ease2-250_cdr-v3p0_202801101200.nc
 </pre></div>
 </div>
 </div>
@@ -583,7 +583,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c20f0c5941cbd050831a5db9957d0298208f3eb3f05aee22d99c79a9a3f7172e.png" src="_images/c20f0c5941cbd050831a5db9957d0298208f3eb3f05aee22d99c79a9a3f7172e.png" />
+<img alt="_images/1154b83df23d79e4dfb95aba3a677889659318052d1675f0ce77a28ec75deade.png" src="_images/1154b83df23d79e4dfb95aba3a677889659318052d1675f0ce77a28ec75deade.png" />
 </div>
 </div>
 </section>
@@ -613,193 +613,6 @@ document.write(`
 
 <span class="n">l1b</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">l1b</span><span class="p">[</span><span class="s1">&#39;fw&#39;</span><span class="p">],</span> <span class="n">l1b</span><span class="p">[</span><span class="s1">&#39;bk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">full_l1b</span><span class="o">.</span><span class="n">split_forward_backward_scans</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;horn_scan_angle&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Split into forward / backward scan</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">l1b</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">l1b</span><span class="p">[</span><span class="s1">&#39;fw&#39;</span><span class="p">],</span> <span class="n">l1b</span><span class="p">[</span><span class="s1">&#39;bk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">full_l1b</span><span class="o">.</span><span class="n">split_forward_backward_scans</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;horn_scan_angle&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/cimr-devalgo/SeaIceDrift_ATBD_v2/book/../../Tools/tools/io_handler.py:328,</span> in <span class="ni">CIMR_L1B.split_forward_backward_scans</span><span class="nt">(self, method)</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span>     <span class="n">bck_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">horn_scan_angle</span> <span class="o">&gt;=</span> <span class="mf">180.</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">horn_scan_angle</span> <span class="o">&lt;</span> <span class="mf">360.</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span> <span class="c1"># do the selection</span>
-<span class="ne">--&gt; </span><span class="mi">328</span> <span class="n">fwd_l1b</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">band</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">band</span><span class="p">]</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">fwd_mask</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span> <span class="n">bck_l1b</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">band</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">band</span><span class="p">]</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">bck_mask</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span> <span class="c1"># ensure that the first three dimensions stay (&#39;n_scans&#39;, &#39;n_samples_earth&#39;, &#39;n_horns&#39;)</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span> <span class="c1">#   sometimes xarray creates a n_horns dimension at the end of the dimension tuplet, but</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span> <span class="c1">#   most of our software relies on having these three dims first</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/common.py:1246,</span> in <span class="ni">DataWithCoords.where</span><span class="nt">(self, cond, other, drop)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1243</span>     <span class="bp">self</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="o">**</span><span class="n">indexers</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1244</span>     <span class="n">cond</span> <span class="o">=</span> <span class="n">cond</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="o">**</span><span class="n">indexers</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1246</span> <span class="k">return</span> <span class="n">ops</span><span class="o">.</span><span class="n">where_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cond</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/ops.py:179,</span> in <span class="ni">where_method</span><span class="nt">(self, cond, other)</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="c1"># alignment for three arguments is complicated, so don&#39;t support it yet</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="n">join</span> <span class="o">=</span> <span class="s2">&quot;inner&quot;</span> <span class="k">if</span> <span class="n">other</span> <span class="ow">is</span> <span class="n">dtypes</span><span class="o">.</span><span class="n">NA</span> <span class="k">else</span> <span class="s2">&quot;exact&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">179</span> <span class="k">return</span> <span class="n">apply_ufunc</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">duck_array_ops</span><span class="o">.</span><span class="n">where_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="n">cond</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="n">other</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">join</span><span class="o">=</span><span class="n">join</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="n">dataset_join</span><span class="o">=</span><span class="n">join</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="n">dask</span><span class="o">=</span><span class="s2">&quot;allowed&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="n">keep_attrs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span> <span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/computation.py:1253,</span> in <span class="ni">apply_ufunc</span><span class="nt">(func, input_core_dims, output_core_dims, exclude_dims, vectorize, join, dataset_join, dataset_fill_value, keep_attrs, kwargs, dask, output_dtypes, output_sizes, meta, dask_gufunc_kwargs, on_missing_core_dim, *args)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1251</span> <span class="c1"># feed datasets apply_variable_ufunc through apply_dataset_vfunc</span>
-<span class="g g-Whitespace">   </span><span class="mi">1252</span> <span class="k">elif</span> <span class="nb">any</span><span class="p">(</span><span class="n">is_dict_like</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1253</span>     <span class="k">return</span> <span class="n">apply_dataset_vfunc</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1254</span>         <span class="n">variables_vfunc</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1255</span>         <span class="o">*</span><span class="n">args</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1256</span>         <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1257</span>         <span class="n">join</span><span class="o">=</span><span class="n">join</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1258</span>         <span class="n">exclude_dims</span><span class="o">=</span><span class="n">exclude_dims</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1259</span>         <span class="n">dataset_join</span><span class="o">=</span><span class="n">dataset_join</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1260</span>         <span class="n">fill_value</span><span class="o">=</span><span class="n">dataset_fill_value</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1261</span>         <span class="n">keep_attrs</span><span class="o">=</span><span class="n">keep_attrs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1262</span>         <span class="n">on_missing_core_dim</span><span class="o">=</span><span class="n">on_missing_core_dim</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1263</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1264</span> <span class="c1"># feed DataArray apply_variable_ufunc through apply_dataarray_vfunc</span>
-<span class="g g-Whitespace">   </span><span class="mi">1265</span> <span class="k">elif</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">DataArray</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">):</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/computation.py:528,</span> in <span class="ni">apply_dataset_vfunc</span><span class="nt">(func, signature, join, dataset_join, fill_value, exclude_dims, keep_attrs, on_missing_core_dim, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">523</span> <span class="n">list_of_coords</span><span class="p">,</span> <span class="n">list_of_indexes</span> <span class="o">=</span> <span class="n">build_output_coords_and_indexes</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">524</span>     <span class="n">args</span><span class="p">,</span> <span class="n">signature</span><span class="p">,</span> <span class="n">exclude_dims</span><span class="p">,</span> <span class="n">combine_attrs</span><span class="o">=</span><span class="n">keep_attrs</span>
-<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">526</span> <span class="n">args</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="s2">&quot;data_vars&quot;</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">528</span> <span class="n">result_vars</span> <span class="o">=</span> <span class="n">apply_dict_of_variables_vfunc</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">529</span>     <span class="n">func</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">530</span>     <span class="o">*</span><span class="n">args</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">531</span>     <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">532</span>     <span class="n">join</span><span class="o">=</span><span class="n">dataset_join</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">533</span>     <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">534</span>     <span class="n">on_missing_core_dim</span><span class="o">=</span><span class="n">on_missing_core_dim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">535</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="n">out</span><span class="p">:</span> <span class="n">Dataset</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Dataset</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="k">if</span> <span class="n">signature</span><span class="o">.</span><span class="n">num_outputs</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/computation.py:452,</span> in <span class="ni">apply_dict_of_variables_vfunc</span><span class="nt">(func, signature, join, fill_value, on_missing_core_dim, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span> <span class="n">core_dim_present</span> <span class="o">=</span> <span class="n">_check_core_dims</span><span class="p">(</span><span class="n">signature</span><span class="p">,</span> <span class="n">variable_args</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span> <span class="k">if</span> <span class="n">core_dim_present</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">452</span>     <span class="n">result_vars</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">variable_args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">if</span> <span class="n">on_missing_core_dim</span> <span class="o">==</span> <span class="s2">&quot;raise&quot;</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/computation.py:730,</span> in <span class="ni">apply_variable_ufunc</span><span class="nt">(func, signature, exclude_dims, dask, output_dtypes, vectorize, keep_attrs, dask_gufunc_kwargs, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">725</span> <span class="n">broadcast_dims</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">726</span>     <span class="n">dim</span> <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">dim_sizes</span> <span class="k">if</span> <span class="n">dim</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">signature</span><span class="o">.</span><span class="n">all_core_dims</span>
-<span class="g g-Whitespace">    </span><span class="mi">727</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">728</span> <span class="n">output_dims</span> <span class="o">=</span> <span class="p">[</span><span class="n">broadcast_dims</span> <span class="o">+</span> <span class="n">out</span> <span class="k">for</span> <span class="n">out</span> <span class="ow">in</span> <span class="n">signature</span><span class="o">.</span><span class="n">output_core_dims</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">730</span> <span class="n">input_data</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">731</span>     <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">732</span>         <span class="n">broadcast_compat_data</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">broadcast_dims</span><span class="p">,</span> <span class="n">core_dims</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">733</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">Variable</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">734</span>         <span class="k">else</span> <span class="n">arg</span>
-<span class="g g-Whitespace">    </span><span class="mi">735</span>     <span class="p">)</span>
-<span class="nn">    736     for arg, core_dims</span> in <span class="ni">zip</span><span class="nt">(args, signature.input_core_dims)</span>
-<span class="g g-Whitespace">    </span><span class="mi">737</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">739</span> <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">is_chunked_array</span><span class="p">(</span><span class="n">array</span><span class="p">)</span> <span class="k">for</span> <span class="n">array</span> <span class="ow">in</span> <span class="n">input_data</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">740</span>     <span class="k">if</span> <span class="n">dask</span> <span class="o">==</span> <span class="s2">&quot;forbidden&quot;</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/computation.py:732,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">725</span> <span class="n">broadcast_dims</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">726</span>     <span class="n">dim</span> <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">dim_sizes</span> <span class="k">if</span> <span class="n">dim</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">signature</span><span class="o">.</span><span class="n">all_core_dims</span>
-<span class="g g-Whitespace">    </span><span class="mi">727</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">728</span> <span class="n">output_dims</span> <span class="o">=</span> <span class="p">[</span><span class="n">broadcast_dims</span> <span class="o">+</span> <span class="n">out</span> <span class="k">for</span> <span class="n">out</span> <span class="ow">in</span> <span class="n">signature</span><span class="o">.</span><span class="n">output_core_dims</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">730</span> <span class="n">input_data</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">731</span>     <span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">732</span>         <span class="n">broadcast_compat_data</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">broadcast_dims</span><span class="p">,</span> <span class="n">core_dims</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">733</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">Variable</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">734</span>         <span class="k">else</span> <span class="n">arg</span>
-<span class="g g-Whitespace">    </span><span class="mi">735</span>     <span class="p">)</span>
-<span class="nn">    736     for arg, core_dims</span> in <span class="ni">zip</span><span class="nt">(args, signature.input_core_dims)</span>
-<span class="g g-Whitespace">    </span><span class="mi">737</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">739</span> <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">is_chunked_array</span><span class="p">(</span><span class="n">array</span><span class="p">)</span> <span class="k">for</span> <span class="n">array</span> <span class="ow">in</span> <span class="n">input_data</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">740</span>     <span class="k">if</span> <span class="n">dask</span> <span class="o">==</span> <span class="s2">&quot;forbidden&quot;</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/computation.py:653,</span> in <span class="ni">broadcast_compat_data</span><span class="nt">(variable, broadcast_dims, core_dims)</span>
-<span class="g g-Whitespace">    </span><span class="mi">648</span> <span class="k">def</span> <span class="nf">broadcast_compat_data</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">649</span>     <span class="n">variable</span><span class="p">:</span> <span class="n">Variable</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">650</span>     <span class="n">broadcast_dims</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">651</span>     <span class="n">core_dims</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">652</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">653</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">variable</span><span class="o">.</span><span class="n">data</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span>     <span class="n">old_dims</span> <span class="o">=</span> <span class="n">variable</span><span class="o">.</span><span class="n">dims</span>
-<span class="g g-Whitespace">    </span><span class="mi">656</span>     <span class="n">new_dims</span> <span class="o">=</span> <span class="n">broadcast_dims</span> <span class="o">+</span> <span class="n">core_dims</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/variable.py:448,</span> in <span class="ni">Variable.data</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">indexing</span><span class="o">.</span><span class="n">ExplicitlyIndexed</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">448</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">get_duck_array</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">449</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/indexing.py:836,</span> in <span class="ni">MemoryCachedArray.get_duck_array</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">835</span> <span class="k">def</span> <span class="nf">get_duck_array</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">836</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_cached</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">837</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">get_duck_array</span><span class="p">()</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/indexing.py:830,</span> in <span class="ni">MemoryCachedArray._ensure_cached</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">829</span> <span class="k">def</span> <span class="nf">_ensure_cached</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">830</span>     <span class="bp">self</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">as_indexable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">get_duck_array</span><span class="p">())</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/indexing.py:787,</span> in <span class="ni">CopyOnWriteArray.get_duck_array</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">786</span> <span class="k">def</span> <span class="nf">get_duck_array</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">787</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">get_duck_array</span><span class="p">()</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/indexing.py:650,</span> in <span class="ni">LazilyIndexedArray.get_duck_array</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">646</span>     <span class="n">array</span> <span class="o">=</span> <span class="n">apply_indexer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">648</span>     <span class="c1"># If the array is not an ExplicitlyIndexedNDArrayMixin,</span>
-<span class="g g-Whitespace">    </span><span class="mi">649</span>     <span class="c1"># it may wrap a BackendArray so use its __getitem__</span>
-<span class="ne">--&gt; </span><span class="mi">650</span>     <span class="n">array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">652</span> <span class="c1"># self.array[self.key] is now a numpy array when</span>
-<span class="g g-Whitespace">    </span><span class="mi">653</span> <span class="c1"># self.array is a BackendArray subclass</span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span> <span class="c1"># and self.key is BasicIndexer((slice(None, None, None),))</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span> <span class="c1"># so we need the explicit check for ExplicitlyIndexed</span>
-<span class="g g-Whitespace">    </span><span class="mi">656</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">ExplicitlyIndexed</span><span class="p">):</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/backends/netCDF4_.py:100,</span> in <span class="ni">NetCDF4ArrayWrapper.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">100</span>     <span class="k">return</span> <span class="n">indexing</span><span class="o">.</span><span class="n">explicit_indexing_adapter</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>         <span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">indexing</span><span class="o">.</span><span class="n">IndexingSupport</span><span class="o">.</span><span class="n">OUTER</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/core/indexing.py:1014,</span> in <span class="ni">explicit_indexing_adapter</span><span class="nt">(key, shape, indexing_support, raw_indexing_method)</span>
-<span class="g g-Whitespace">    </span><span class="mi">992</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Support explicit indexing by delegating to a raw indexing method.</span>
-<span class="g g-Whitespace">    </span><span class="mi">993</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">994</span><span class="sd"> Outer and/or vectorized indexers are supported by indexing a second time</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1011</span><span class="sd"> Indexing result, in the form of a duck numpy-array.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1012</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">raw_key</span><span class="p">,</span> <span class="n">numpy_indices</span> <span class="o">=</span> <span class="n">decompose_indexer</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">indexing_support</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1014</span> <span class="n">result</span> <span class="o">=</span> <span class="n">raw_indexing_method</span><span class="p">(</span><span class="n">raw_key</span><span class="o">.</span><span class="n">tuple</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1015</span> <span class="k">if</span> <span class="n">numpy_indices</span><span class="o">.</span><span class="n">tuple</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1016</span>     <span class="c1"># index the loaded np.ndarray</span>
-<span class="g g-Whitespace">   </span><span class="mi">1017</span>     <span class="n">indexable</span> <span class="o">=</span> <span class="n">NumpyIndexingAdapter</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/cimr-devalgo-sid/lib/python3.9/site-packages/xarray/backends/netCDF4_.py:113,</span> in <span class="ni">NetCDF4ArrayWrapper._getitem</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">datastore</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="n">original_array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_array</span><span class="p">(</span><span class="n">needs_lock</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">113</span>         <span class="n">array</span> <span class="o">=</span> <span class="n">getitem</span><span class="p">(</span><span class="n">original_array</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="c1"># Catch IndexError in netCDF4 and return a more informative</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span>     <span class="c1"># error message.  This is most often called when an unsorted</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span>     <span class="c1"># indexer is used before the data is loaded from disk.</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span>     <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span>         <span class="s2">&quot;The indexing operation you are attempting to perform &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span>         <span class="s2">&quot;is not valid on netCDF4.Variable object. Try loading &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>         <span class="s2">&quot;your data into memory first by calling .load().&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span>     <span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>

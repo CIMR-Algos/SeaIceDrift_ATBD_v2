@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.4.26)  28 JUN 2024 12:50
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.4.26)  28 JUN 2024 15:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1866,207 +1866,179 @@ Chapter 10.
 ]
 Chapter 11.
 [35] [36] [37]
-File: c20f0c5941cbd050831a5db9957d0298208f3eb3f05aee22d99c79a9a3f7172e.png Grap
+File: 1154b83df23d79e4dfb95aba3a677889659318052d1675f0ce77a28ec75deade.png Grap
 hic file (type bmp)
-<c20f0c5941cbd050831a5db9957d0298208f3eb3f05aee22d99c79a9a3f7172e.png>
- [38]
-Overfull \vbox (1.00775pt too high) detected at line 2130
- []
-
-[39]
-Underfull \vbox (badness 10000) detected at line 2130
- []
-
-
-Underfull \vbox (badness 10000) detected at line 2130
- []
-
-[40]
-Underfull \vbox (badness 10000) detected at line 2130
- []
-
-
-Underfull \vbox (badness 10000) detected at line 2130
- []
-
-[41]
-Underfull \vbox (badness 10000) detected at line 2130
- []
-
-
-Underfull \vbox (badness 10000) detected at line 2130
- []
-
-[42] [43]
-Overfull \vbox (2.98596pt too high) detected at line 2222
- []
-
-[44]
+<1154b83df23d79e4dfb95aba3a677889659318052d1675f0ce77a28ec75deade.png>
+ [38] [39] [40]
 File: dea07a3f183c37952dee3e6dd84b34d24f999b897587b737be11a583fb630c6a.png Grap
 hic file (type bmp)
 <dea07a3f183c37952dee3e6dd84b34d24f999b897587b737be11a583fb630c6a.png>
-
-Overfull \vbox (2.35426pt too high) detected at line 2287
- []
-
-[45]
+ [41] [42]
 File: 9c5eb92e51b62c9765ecd176d8dcd1cddb7d7e4fc17cad0a6ec349697f7cc8ac.png Grap
 hic file (type bmp)
 <9c5eb92e51b62c9765ecd176d8dcd1cddb7d7e4fc17cad0a6ec349697f7cc8ac.png>
- [46] [47]
-Underfull \vbox (badness 10000) detected at line 2478
+ [43] [44]
+Underfull \vbox (badness 10000) detected at line 2288
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2478
+Underfull \vbox (badness 10000) detected at line 2288
  []
 
-[48] [49] [50] [51] [52
+[45]
+Overfull \vbox (1.59604pt too high) detected at line 2386
+ []
 
-]
+[46]
+Underfull \vbox (badness 10000) detected at line 2386
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2386
+ []
+
+[47] [48]
 Chapter 12.
-[53] [54
+[49
+
+] [50
 
 ]
 Chapter 13.
-[55]
-Overfull \vbox (2.98596pt too high) detected at line 2732
+[51]
+Overfull \vbox (2.98596pt too high) detected at line 2542
  []
 
-[56] [57] [58] [59]
-Underfull \vbox (badness 10000) detected at line 3004
- []
-
-
-Underfull \vbox (badness 10000) detected at line 3004
- []
-
-[60] [61] [62] [63] [64]
-Overfull \vbox (2.98596pt too high) detected at line 3290
- []
-
-[65]
-Overfull \vbox (2.98596pt too high) detected at line 3392
- []
-
-[66]
-Underfull \vbox (badness 10000) detected at line 3392
+[52] [53] [54] [55]
+Underfull \vbox (badness 10000) detected at line 2811
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3392
+Underfull \vbox (badness 10000) detected at line 2811
  []
 
-[67]
+[56]
+Overfull \vbox (2.59604pt too high) detected at line 2875
+ []
+
+[57]
+Overfull \vbox (2.98596pt too high) detected at line 2933
+ []
+
+[58]
+Overfull \vbox (2.98596pt too high) detected at line 2984
+ []
+
+[59]
+Overfull \vbox (2.98596pt too high) detected at line 3086
+ []
+
+[60]
 File: ace377039b856cfc7fdcf6229d49d354c79ca57f19a974f36bada17f8b691bb9.png Grap
 hic file (type bmp)
 <ace377039b856cfc7fdcf6229d49d354c79ca57f19a974f36bada17f8b691bb9.png>
-
-Underfull \vbox (badness 2173) detected at line 3422
- []
-
-[68]
+ [61]
 File: 3e43a065d239042e7b0a5797505372f43db083d0ead6b35ce47e96c54b5eead7.png Grap
 hic file (type bmp)
 <3e43a065d239042e7b0a5797505372f43db083d0ead6b35ce47e96c54b5eead7.png>
- [69] [70
+ [62] [63] [64
 
 ]
 Chapter 14.
-[71] [72
+[65] [66
 
 ]
 Chapter 15.
-[73]
-Overfull \vbox (2.59604pt too high) detected at line 3565
+[67]
+Overfull \vbox (2.59604pt too high) detected at line 3259
  []
 
-[74] [75]
-Overfull \vbox (2.98596pt too high) detected at line 3727
+[68] [69]
+Overfull \vbox (2.98596pt too high) detected at line 3421
  []
 
-[76] [77]
-Underfull \vbox (badness 10000) detected at line 3845
+[70] [71]
+Underfull \vbox (badness 10000) detected at line 3539
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3845
+Underfull \vbox (badness 10000) detected at line 3539
  []
 
-[78]
-File: 7e759ebd831681254a7b634b01b0f95480ac8afea965312c958f38f32c5cd749.png Grap
+[72]
+File: 2602f1c197d2bb92a8f6b8ca87f4d5be8f4a4ae8d59e680172f644be06f80726.png Grap
 hic file (type bmp)
-<7e759ebd831681254a7b634b01b0f95480ac8afea965312c958f38f32c5cd749.png>
- [79] [80]
-File: d93d6f98ab430b9c5616a5b86a1099481b3e60e772a6c5ec425b44dffd323944.png Grap
+<2602f1c197d2bb92a8f6b8ca87f4d5be8f4a4ae8d59e680172f644be06f80726.png>
+ [73] [74]
+File: 9f162001f52dd5597f72fceb8aff993dd82c15c89cc6e18ed4a105b8c7693caf.png Grap
 hic file (type bmp)
-<d93d6f98ab430b9c5616a5b86a1099481b3e60e772a6c5ec425b44dffd323944.png>
- [81]
-File: 0fd80951530b375def0b91b24ebe3661a3aebeb433eb8fab9dc1d2982f9c6839.png Grap
+<9f162001f52dd5597f72fceb8aff993dd82c15c89cc6e18ed4a105b8c7693caf.png>
+ [75]
+File: e6f007b9eb700f008c9c48789891bad8be68affa62569c2b20fcd4c687633e2b.png Grap
 hic file (type bmp)
-<0fd80951530b375def0b91b24ebe3661a3aebeb433eb8fab9dc1d2982f9c6839.png>
- [82] [83] [84
+<e6f007b9eb700f008c9c48789891bad8be68affa62569c2b20fcd4c687633e2b.png>
+ [76] [77] [78
 
 ]
 Chapter 16.
-[85] [86
+[79] [80
 
 ]
 Chapter 17.
-[87] [88
+[81] [82
 
 ]
-Underfull \hbox (badness 6876) in paragraph at lines 4048--4050
+Underfull \hbox (badness 6876) in paragraph at lines 3742--3744
 []\TU/FreeSerif(0)/m/n/10 P. Holland and R Kwok. Wind-driven trends in antarcti
 c sea-ice drift. \TU/FreeSerif(0)/m/it/10 Nature Geosciencies\TU/FreeSerif(0)/m
 /n/10 , 2012.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4051--4053
+Underfull \hbox (badness 10000) in paragraph at lines 3745--3747
 \TU/FreeSerif(0)/m/n/10 radarsat-2 images. \TU/FreeSerif(0)/m/it/10 IEEE Transa
 ctions on Geoscience and Remote Sensing\TU/FreeSerif(0)/m/n/10 , 52(1):121–136,
  2014.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4066--4068
+Underfull \hbox (badness 10000) in paragraph at lines 3760--3762
 [][][] [] [][][] [] [][][] [] [][] [] [][][][] [] [][][][] [] [][][][][]$[][]\T
 U/FreeSerif(0)/m/n/10 , [][]arXiv:https://agupubs.onlinelibrary.wiley.com/doi/p
 df/10.1002/jgrc.20191[][],
  []
 
-[89
+[83
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 4108--4110
+Underfull \hbox (badness 10000) in paragraph at lines 3802--3804
 [][][] [] [][] [] [][][][] [] [][][][][][][][][][][][]$[][]\TU/FreeSerif(0)/m/n
 /10 , [][]arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2011GL0
 48970[][],
  []
 
 
-Underfull \hbox (badness 6758) in paragraph at lines 4111--4113
+Underfull \hbox (badness 6758) in paragraph at lines 3805--3807
 \TU/FreeSerif(0)/m/n/10 dynamics in a changing climate. \TU/FreeSerif(0)/m/it/1
 0 Journal of Geophysical Research: Oceans\TU/FreeSerif(0)/m/n/10 , 125(4):e2018
 JC014378,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4111--4113
+Underfull \hbox (badness 10000) in paragraph at lines 3805--3807
 \TU/FreeSerif(0)/m/n/10 2020. e2018JC014378 10.1029/2018JC014378. URL: [][]$[][
 ][][][] [] [] [] [][][][][][][] [] [][][][][][][][][][][][][] [] [][][][][] [] 
 [][][] [] [][][] [] [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4111--4113
+Underfull \hbox (badness 10000) in paragraph at lines 3805--3807
 [][] [] [][][][] [] [][][][][][][][][][][][]$[][]\TU/FreeSerif(0)/m/n/10 , [][]
 arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2018JC014378[][],
 
  []
 
-(./atbd.ind [90] [91
+(./atbd.ind [84] [85
 
 
 ])
@@ -2113,12 +2085,12 @@ Package rerunfilecheck Info: File `atbd.out' has not changed.
 (rerunfilecheck)             Checksum: EE5E33BA5DF8B212B58162A6163C81D9;6988.
  ) 
 Here is how much of TeX's memory you used:
- 44666 strings out of 476191
- 1036840 string characters out of 5812072
- 1801353 words of memory out of 5000000
- 64562 multiletter control sequences out of 15000+600000
+ 44663 strings out of 476191
+ 1036804 string characters out of 5812072
+ 1794353 words of memory out of 5000000
+ 64559 multiletter control sequences out of 15000+600000
  474767 words of font info for 111 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 99i,29n,115p,2744b,2322s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,29n,115p,2744b,2301s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on atbd.pdf (95 pages).
+Output written on atbd.pdf (89 pages).

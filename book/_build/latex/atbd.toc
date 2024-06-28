@@ -53,23 +53,23 @@
 \contentsline {section}{\numberline {11.2}Parametrize the run}{37}{section.11.2}%
 \contentsline {section}{\numberline {11.3}Step 1: Creating and regridding the ice mask}{38}{section.11.3}%
 \contentsline {section}{\numberline {11.4}Step 2: Loading the data}{39}{section.11.4}%
-\contentsline {section}{\numberline {11.5}Step 3: Regridding the data}{43}{section.11.5}%
-\contentsline {section}{\numberline {11.6}Step 4: Laplacian pre\sphinxhyphen {}processing}{45}{section.11.6}%
-\contentsline {section}{\numberline {11.7}Step 5: Writing out the file}{47}{section.11.7}%
-\contentsline {section}{\numberline {11.8}Step 6 (temporary): Creating a test gridded file with “time difference” 24h and pixel shifts added in each x and y}{50}{section.11.8}%
-\contentsline {chapter}{\numberline {12}Algorithm}{53}{chapter.12}%
-\contentsline {chapter}{\numberline {13}Level\sphinxhyphen {}2 Sea Ice Drift (SID) algorithm for CIMR}{55}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Settings}{55}{section.13.1}%
-\contentsline {section}{\numberline {13.2}Parametrize the run}{57}{section.13.2}%
-\contentsline {section}{\numberline {13.3}Step 1: Cross\sphinxhyphen {}correlation algorithm to find ice drift}{58}{section.13.3}%
-\contentsline {section}{\numberline {13.4}Step 2: Format L2 file and write to disk}{62}{section.13.4}%
-\contentsline {section}{\numberline {13.5}Step 3: Plotting}{64}{section.13.5}%
-\contentsline {chapter}{\numberline {14}Performance Assessment}{71}{chapter.14}%
-\contentsline {chapter}{\numberline {15}Level\sphinxhyphen {}2 Sea Ice Drift (SID) algorithm for CIMR}{73}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Settings}{73}{section.15.1}%
-\contentsline {section}{\numberline {15.2}Parametrize the run}{74}{section.15.2}%
-\contentsline {section}{\numberline {15.3}Simple Performance Assessment}{75}{section.15.3}%
-\contentsline {chapter}{\numberline {16}Roadmap for future ATBD development}{85}{chapter.16}%
-\contentsline {chapter}{\numberline {17}References}{87}{chapter.17}%
-\contentsline {chapter}{Bibliography}{89}{chapter*.49}%
-\contentsline {chapter}{Index}{91}{section*.50}%
+\contentsline {section}{\numberline {11.5}Step 3: Regridding the data}{40}{section.11.5}%
+\contentsline {section}{\numberline {11.6}Step 4: Laplacian pre\sphinxhyphen {}processing}{42}{section.11.6}%
+\contentsline {section}{\numberline {11.7}Step 5: Writing out the file}{44}{section.11.7}%
+\contentsline {section}{\numberline {11.8}Step 6 (temporary): Creating a test gridded file with “time difference” 24h and pixel shifts added in each x and y}{46}{section.11.8}%
+\contentsline {chapter}{\numberline {12}Algorithm}{49}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Level\sphinxhyphen {}2 Sea Ice Drift (SID) algorithm for CIMR}{51}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Settings}{51}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Parametrize the run}{53}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Step 1: Cross\sphinxhyphen {}correlation algorithm to find ice drift}{54}{section.13.3}%
+\contentsline {section}{\numberline {13.4}Step 2: Format L2 file and write to disk}{55}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Step 3: Plotting}{57}{section.13.5}%
+\contentsline {chapter}{\numberline {14}Performance Assessment}{65}{chapter.14}%
+\contentsline {chapter}{\numberline {15}Level\sphinxhyphen {}2 Sea Ice Drift (SID) algorithm for CIMR}{67}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Settings}{67}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Parametrize the run}{68}{section.15.2}%
+\contentsline {section}{\numberline {15.3}Simple Performance Assessment}{69}{section.15.3}%
+\contentsline {chapter}{\numberline {16}Roadmap for future ATBD development}{79}{chapter.16}%
+\contentsline {chapter}{\numberline {17}References}{81}{chapter.17}%
+\contentsline {chapter}{Bibliography}{83}{chapter*.49}%
+\contentsline {chapter}{Index}{85}{section*.50}%
