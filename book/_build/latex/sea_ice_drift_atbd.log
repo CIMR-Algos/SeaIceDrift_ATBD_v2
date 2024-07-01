@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.4.26)  1 JUL 2024 12:01
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.4.26)  1 JUL 2024 12:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1743,7 +1743,12 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 \tf@toc=\write7
 \openout7 = `sea_ice_drift_atbd.toc'.
 
- [2] [1
+ [2]
+
+LaTeX Warning: Hyper reference `references::doc' on page 1 undefined on input l
+ine 165.
+
+[1
 
 ] [2
 
@@ -1968,61 +1973,57 @@ Chapter 13.
 [73] [74
 
 ]
-Chapter 14.
-[75] [76
-
-]
-Underfull \hbox (badness 6876) in paragraph at lines 3733--3735
+Underfull \hbox (badness 6876) in paragraph at lines 3731--3733
 []\TU/FreeSerif(0)/m/n/10 P. Holland and R Kwok. Wind-driven trends in antarcti
 c sea-ice drift. \TU/FreeSerif(0)/m/it/10 Nature Geosciencies\TU/FreeSerif(0)/m
 /n/10 , 2012.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3736--3738
+Underfull \hbox (badness 10000) in paragraph at lines 3734--3736
 \TU/FreeSerif(0)/m/n/10 radarsat-2 images. \TU/FreeSerif(0)/m/it/10 IEEE Transa
 ctions on Geoscience and Remote Sensing\TU/FreeSerif(0)/m/n/10 , 52(1):121–136,
  2014.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3751--3753
+Underfull \hbox (badness 10000) in paragraph at lines 3749--3751
 [][][] [] [][][] [] [][][] [] [][] [] [][][][] [] [][][][] [] [][][][][]$[][]\T
 U/FreeSerif(0)/m/n/10 , [][]arXiv:https://agupubs.onlinelibrary.wiley.com/doi/p
 df/10.1002/jgrc.20191[][],
  []
 
-[77
+[75
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 3793--3795
+Underfull \hbox (badness 10000) in paragraph at lines 3791--3793
 [][][] [] [][] [] [][][][] [] [][][][][][][][][][][][]$[][]\TU/FreeSerif(0)/m/n
 /10 , [][]arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2011GL0
 48970[][],
  []
 
 
-Underfull \hbox (badness 6758) in paragraph at lines 3796--3798
+Underfull \hbox (badness 6758) in paragraph at lines 3794--3796
 \TU/FreeSerif(0)/m/n/10 dynamics in a changing climate. \TU/FreeSerif(0)/m/it/1
 0 Journal of Geophysical Research: Oceans\TU/FreeSerif(0)/m/n/10 , 125(4):e2018
 JC014378,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3796--3798
+Underfull \hbox (badness 10000) in paragraph at lines 3794--3796
 \TU/FreeSerif(0)/m/n/10 2020. e2018JC014378 10.1029/2018JC014378. URL: [][]$[][
 ][][][] [] [] [] [][][][][][][] [] [][][][][][][][][][][][][] [] [][][][][] [] 
 [][][] [] [][][] [] [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3796--3798
+Underfull \hbox (badness 10000) in paragraph at lines 3794--3796
 [][] [] [][][][] [] [][][][][][][][][][][][]$[][]\TU/FreeSerif(0)/m/n/10 , [][]
 arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2018JC014378[][],
 
  []
 
-(./sea_ice_drift_atbd.ind [78] [79
+(./sea_ice_drift_atbd.ind [76] [77
 
 
 ])
@@ -2065,16 +2066,19 @@ LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 )
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `sea_ice_drift_atbd.out' has not changed.
-(rerunfilecheck)             Checksum: DD48F3BCFF5E96856AAE61BEED8E2CE5;6670.
+(rerunfilecheck)             Checksum: 4DAF353C85580B964BA589BEDE6F1F65;6623.
  ) 
 Here is how much of TeX's memory you used:
- 44660 strings out of 476191
- 1036910 string characters out of 5812072
+ 44659 strings out of 476191
+ 1036887 string characters out of 5812072
  1794367 words of memory out of 5000000
- 64556 multiletter control sequences out of 15000+600000
+ 64555 multiletter control sequences out of 15000+600000
  474767 words of font info for 111 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  99i,29n,115p,2758b,2301s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sea_ice_drift_atbd.pdf (83 pages).
+Output written on sea_ice_drift_atbd.pdf (81 pages).
