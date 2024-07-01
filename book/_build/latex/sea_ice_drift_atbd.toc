@@ -1,0 +1,72 @@
+\selectlanguage *{english}
+\contentsline {chapter}{\numberline {1}Abstract}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Applicable and reference documents}{5}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Acronyms}{7}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Definitions used in this ATBD}{9}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Introduction, purpose and scope}{11}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Background and justification of selected algorithm}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The Continuous Maximum Cross\sphinxhyphen {}Correlation method (CMCC)}{13}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Choice of K and Ka as main microwave frequencies}{13}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Exploitation of the forward and backward scan}{15}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Swath\sphinxhyphen {}to\sphinxhyphen {}swath Motion Tracking (Level\sphinxhyphen {}2 strategy)}{15}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Level\sphinxhyphen {}2 product definition}{17}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Baseline Algorithm Definition}{19}{chapter.8}%
+\contentsline {section}{\numberline {8.1}CIMR Level\sphinxhyphen {}1b re\sphinxhyphen {}sampling approach}{19}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Algorithm Assumptions and Simplifications}{20}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Level\sphinxhyphen {}2 end to end algorithm functional flow diagram}{20}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Functional description of each Algorithm step}{20}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Pre\sphinxhyphen {}processing}{20}{subsection.8.4.1}%
+\contentsline {subsubsection}{Prepare ice/ocean/land mask}{20}{subsubsection*.23}%
+\contentsline {paragraph}{Input data}{21}{paragraph*.24}%
+\contentsline {paragraph}{Output data}{21}{paragraph*.25}%
+\contentsline {paragraph}{Auxiliary data}{21}{paragraph*.26}%
+\contentsline {subsubsection}{Remap Level\sphinxhyphen {}1b brightness temperatures to the EASE2 image grids}{21}{subsubsection*.27}%
+\contentsline {paragraph}{Mathematical description}{22}{paragraph*.28}%
+\contentsline {paragraph}{Input data}{22}{paragraph*.29}%
+\contentsline {paragraph}{Output data}{22}{paragraph*.30}%
+\contentsline {paragraph}{Ancillary data}{22}{paragraph*.31}%
+\contentsline {subsubsection}{Image preprocessing (Laplacian filter)}{22}{subsubsection*.32}%
+\contentsline {paragraph}{Mathematical description}{22}{paragraph*.33}%
+\contentsline {paragraph}{Input data}{23}{paragraph*.34}%
+\contentsline {paragraph}{Output data}{23}{paragraph*.35}%
+\contentsline {paragraph}{Ancillary data}{23}{paragraph*.36}%
+\contentsline {subsection}{\numberline {8.4.2}Sea\sphinxhyphen {}ice motion tracking}{23}{subsection.8.4.2}%
+\contentsline {subsubsection}{Select grid locations where to apply the CMCC algorithm}{24}{subsubsection*.37}%
+\contentsline {paragraph}{Logical description}{24}{paragraph*.38}%
+\contentsline {paragraph}{Input data}{24}{paragraph*.39}%
+\contentsline {paragraph}{Output data}{24}{paragraph*.40}%
+\contentsline {subsubsection}{Run the CMCC algorithm}{24}{subsubsection*.41}%
+\contentsline {paragraph}{Mathematical description}{25}{paragraph*.42}%
+\contentsline {paragraph}{Input data}{27}{paragraph*.43}%
+\contentsline {paragraph}{Output data}{27}{paragraph*.44}%
+\contentsline {subsubsection}{Quality Control: detect and correct outliers (“rogue” vectors)}{28}{subsubsection*.45}%
+\contentsline {paragraph}{Mathematical description}{28}{paragraph*.46}%
+\contentsline {paragraph}{Input data}{29}{paragraph*.47}%
+\contentsline {paragraph}{Output data}{29}{paragraph*.48}%
+\contentsline {chapter}{\numberline {9}Algorithm Input and Output Data Definition (IODD)}{31}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Input data}{31}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Output data}{31}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Auxiliary data}{31}{section.9.3}%
+\contentsline {chapter}{\numberline {10}Preprocessing}{33}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Settings}{33}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Parametrize the run}{35}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Step 1: Creating and regridding the ice mask}{36}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Step 2: Loading the data}{37}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Step 3: Regridding the data}{38}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Step 4: Laplacian pre\sphinxhyphen {}processing}{40}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Step 5: Writing out the file}{42}{section.10.7}%
+\contentsline {section}{\numberline {10.8}Step 6 (temporary): Creating a test gridded file with “time difference” 24h and pixel shifts added in each x and y}{44}{section.10.8}%
+\contentsline {chapter}{\numberline {11}Algorithm}{47}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Settings}{47}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Parametrize the run}{49}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Step 1: Cross\sphinxhyphen {}correlation algorithm to find ice drift}{50}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Step 2: Format L2 file and write to disk}{51}{section.11.4}%
+\contentsline {section}{\numberline {11.5}Step 3: Plotting}{53}{section.11.5}%
+\contentsline {chapter}{\numberline {12}Performance Assessment}{61}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Settings}{61}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Parametrize the run}{62}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Simple Performance Assessment}{63}{section.12.3}%
+\contentsline {chapter}{\numberline {13}Roadmap for future ATBD development}{73}{chapter.13}%
+\contentsline {chapter}{\numberline {14}References}{75}{chapter.14}%
+\contentsline {chapter}{Bibliography}{77}{chapter*.49}%
+\contentsline {chapter}{Index}{79}{section*.50}%

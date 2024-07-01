@@ -1,19 +1,22 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: CIMR L2 Sea Ice Drift ATBD v1
-author: Thomas Lavergne and Emily Down, Norwegian Meteorological Institute
+title: "CIMR L2 Sea Ice Drift ATBD v2"
+author: "Thomas Lavergne and Emily Down, Norwegian Meteorological Institute"
 logo: logo.jpg
+
+# Only build files in TOC
+only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: off
 
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
-    targetname: atbd.tex
+      targetname: sea_ice_drift_atbd.tex
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
