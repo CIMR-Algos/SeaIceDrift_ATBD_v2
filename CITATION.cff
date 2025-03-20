@@ -15,10 +15,10 @@ authors:
   - given-names: Emily
     family-names: Down
     affiliation: Norwegian Meteorological Institute 
-repository-code: 'https://github.com/CIMR-Algos/SeaIceDrift_ATBD'
+repository-code: 'https://github.com/CIMR-Algos/SeaIceDrift_ATBD_v2'
 url: >-
-  https://cimr-algos.github.io/SeaIceDrift_ATBD/intro.html
+  https://cimr-algos.github.io/SeaIceDrift_ATBD_v2/intro.html
 keywords:
   - Copernicus Imaging Microwave Radiometer (CIMR)
   - ESA DEVALGO
-version: '1'
+version: '2'
