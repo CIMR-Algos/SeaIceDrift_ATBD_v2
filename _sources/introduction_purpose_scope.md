@@ -17,13 +17,13 @@ and coarse spatial resolution (> 30 km) and daily complete coverage for the 
 employed are quite similar and stem from the maximum cross-correlation (MCC) technique {cite:p}`emery:1986:sst-drift`.
 
 ```{note}
-The characteristics of the CIMR mission, and especially the spatial resolution obtained at Ku (5 km)
+The characteristics of the CIMR mission, and especially the spatial resolution obtained at K (5 km)
 and Ka (4 km) should allow global, year-round (irrespective of solar illumination and cloud cover), sub-daily moniroting at medium spatial resolution (25 km), which is unprecedented.
 ```
 
 The Level-2 sea-ice drift product described in this ATBD has been specifically designed to fully exploit the CIMR mission, in particular:
 1. the CIMR sea-ice drift product is a Level-2 product, adopting a swath-to-swath approach {cite:p}`lavergne:2021:s2s`. This is conversely to all existing sea-ice drift products from passive microwave missions (OSI SAF, IFREMER, NSIDC, etc...) that are Level-3 products (available once a day from daily averaged maps of brightness temperatures). SAR-based products (e.g. from the CMEMS Sea Ice Thematic Assembly Center) are generally swath-to-swath products (but with spatial coverage limited by the coverage of the SAR missions).
-2. the CIMR sea-ice drift product aims at a 25 km grid spacing, taking full advantage of the Ku and Ka imagery.
+2. the CIMR sea-ice drift product aims at a 25 km grid spacing, taking full advantage of the K and Ka imagery.
 3. sea-ice drift is derived both from the forward and backward scans separately to improve quality control (filtering of "rogue" vectors)
  
 
